@@ -1,0 +1,33 @@
+{
+  "name": "@pillarwallet/common-models",
+  "version": "1.0.0",
+  "description": "shared Database models between platform microservices.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pillarwallet/common-models.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pillarwallet/common-models/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "5.0.1",
+    "eslint-config-airbnb-base": "13.0.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-import": "2.13.0",
+    "eslint-plugin-jest": "21.17.0",
+    "eslint-plugin-prettier": "2.6.1",
+    "jest": "22.4.4",
+    "jest-cli": "22.4.4",
+    "prettier": "1.13.7"
+  },
+  "homepage": "https://github.com/pillarwallet/common-models#readme"
+}
