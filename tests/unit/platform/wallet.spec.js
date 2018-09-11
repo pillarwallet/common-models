@@ -1,10 +1,18 @@
+const schemaCreator = require('../../../utilities/schemaCreator.js');
+
+jest.spyOn(schemaCreator, 'createSchema');
 const models = require('../../../index');
 
-// TODO: Check if we need to test unique index fields here.
 describe('Wallet Schema Validation', () => {
   let walletObject;
   let Wallet;
   let error;
+  // function to get mocker first call
+  const getMockFirstCall = call => call.mock.calls[0][0];
+
+  afterAll(() => {
+    schemaCreator.createSchema.mockRestore();
+  });
 
   it('should be invalid if try to create empty object', () => {
     walletObject = {};
@@ -88,6 +96,14 @@ describe('Wallet Schema Validation', () => {
     );
   });
 
+  it('creates Schema with unique properties', () => {
+    const firstCall = getMockFirstCall(schemaCreator.createSchema);
+
+    expect(firstCall.publicKey).toHaveProperty('unique', true);
+    expect(firstCall.userId).toHaveProperty('unique', true);
+    expect(firstCall.ethAddress).toHaveProperty('unique', true);
+  });
+
   it('should create object successfully', () => {
     walletObject = {
       userId: 'myUserId',
@@ -97,7 +113,6 @@ describe('Wallet Schema Validation', () => {
     };
     Wallet = new models.platform.Wallet(walletObject);
     error = Wallet.validateSync();
-
     expect(error).toBe(undefined);
     expect(Wallet).toMatchObject(walletObject);
   });
