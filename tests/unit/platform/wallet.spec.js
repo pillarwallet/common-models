@@ -1,18 +1,21 @@
+const schemaCreator = require('../../../utilities/schemaCreator.js');
+
+jest.spyOn(schemaCreator, 'createSchema');
 const models = require('../../../index');
 
-// TODO: Check if we need to test unique index fields here.
 describe('Wallet Schema Validation', () => {
   let walletObject;
   let Wallet;
   let error;
+  // function to get mocker first call
+  const getMockFirstCall = call => call.mock.calls[0][0];
 
-  beforeEach(() => {
-    Wallet = {};
-    walletObject = {};
-    error = {};
+  afterAll(() => {
+    schemaCreator.createSchema.mockRestore();
   });
 
   it('should be invalid if try to create empty object', () => {
+    walletObject = {};
     Wallet = new models.platform.Wallet(walletObject);
 
     expect(Wallet.validateSync).toThrow();
@@ -91,6 +94,14 @@ describe('Wallet Schema Validation', () => {
     expect(error.errors.bcxRegistered.message).toEqual(
       'Cast to Boolean failed for value "WrongType" at path "bcxRegistered"',
     );
+  });
+
+  it('creates Schema with unique properties', () => {
+    const firstCall = getMockFirstCall(schemaCreator.createSchema);
+
+    expect(firstCall.publicKey).toHaveProperty('unique', true);
+    expect(firstCall.userId).toHaveProperty('unique', true);
+    expect(firstCall.ethAddress).toHaveProperty('unique', true);
   });
 
   it('should create object successfully', () => {

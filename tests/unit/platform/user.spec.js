@@ -1,9 +1,15 @@
+const schemaCreator = require('../../../utilities/schemaCreator.js');
+
+jest.spyOn(schemaCreator, 'createSchema');
 const models = require('../../../index');
 
 describe('User Schema Validation', () => {
-  let userObject = {};
+  let userObject;
   let User;
   let error;
+
+  // function to get mocker second call
+  const getMockFirstCall = call => call.mock.calls[1][0];
 
   it('should be invalid if try to create empty object', async () => {
     User = await new models.platform.User(userObject);
@@ -34,6 +40,12 @@ describe('User Schema Validation', () => {
     expect(error.errors.isEmailVerified.message).toEqual(
       'Cast to Boolean failed for value "notValidData" at path "isEmailVerified"',
     );
+  });
+
+  it('creates Schema with unique properties', () => {
+    const secondCall = getMockFirstCall(schemaCreator.createSchema);
+
+    expect(secondCall.username).toHaveProperty('unique', true);
   });
 
   it('should create object successfully', () => {
