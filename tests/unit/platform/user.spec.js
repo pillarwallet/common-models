@@ -1,25 +1,28 @@
 const schemaCreator = require('../../../utilities/schemaCreator.js');
 
 jest.spyOn(schemaCreator, 'createSchema');
-const models = require('../../../index');
+const UserModel = require('../../../lib/platform/user');
 
 describe('User Schema Validation', () => {
   let userObject;
   let User;
   let error;
 
-  // function to get mocker second call
-  const getMockFirstCall = call => call.mock.calls[1][0];
+  afterAll(() => {
+    schemaCreator.createSchema.mockRestore();
+  });
+
+  const getMockFirstCall = call => call.mock.calls[0][0];
 
   it('should be invalid if try to create empty object', async () => {
-    User = await new models.platform.User(userObject);
+    User = await new UserModel(userObject);
 
     expect(User.validateSync).toThrow();
   });
 
   it('should be invalid if try to create object without username field', () => {
     userObject = {};
-    User = new models.platform.User(userObject);
+    User = new UserModel(userObject);
     error = User.validateSync();
 
     expect(User.validateSync).toThrow();
@@ -33,7 +36,7 @@ describe('User Schema Validation', () => {
       username: 'myUserName',
       isEmailVerified: 'notValidData',
     };
-    User = new models.platform.User(userObject);
+    User = new UserModel(userObject);
     error = User.validateSync();
 
     expect(User.validateSync).toThrow();
@@ -43,16 +46,16 @@ describe('User Schema Validation', () => {
   });
 
   it('creates Schema with unique properties', () => {
-    const secondCall = getMockFirstCall(schemaCreator.createSchema);
+    const firstCall = getMockFirstCall(schemaCreator.createSchema);
 
-    expect(secondCall.username).toHaveProperty('unique', true);
+    expect(firstCall.username).toHaveProperty('unique', true);
   });
 
   it('should create object successfully', () => {
     userObject = {
       username: 'myUserName',
     };
-    User = new models.platform.User(userObject);
+    User = new UserModel(userObject);
     error = User.validateSync();
 
     expect(error).toBe(undefined);
