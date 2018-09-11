@@ -6,13 +6,8 @@ describe('Wallet Schema Validation', () => {
   let Wallet;
   let error;
 
-  beforeEach(() => {
-    Wallet = {};
-    walletObject = {};
-    error = {};
-  });
-
   it('should be invalid if try to create empty object', () => {
+    walletObject = {};
     Wallet = new models.platform.Wallet(walletObject);
 
     expect(Wallet.validateSync).toThrow();
