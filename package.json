@@ -1,12 +1,12 @@
 {
   "name": "@pillarwallet/common-models",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "shared Database models between platform microservices.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest unit"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,10 @@
   "bugs": {
     "url": "https://github.com/pillarwallet/common-models/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "mongoose": "5.0.18",
+    "uuid": "3.2.1"
+  },
   "devDependencies": {
     "eslint": "5.0.1",
     "eslint-config-airbnb-base": "13.0.0",
@@ -28,6 +31,9 @@
     "jest": "22.4.4",
     "jest-cli": "22.4.4",
     "prettier": "1.13.7"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "homepage": "https://github.com/pillarwallet/common-models#readme"
 }
