@@ -5,10 +5,6 @@ const schemaCreator = require('../../../utilities/schemaCreator');
 describe('schemaCreator module', () => {
   let schemaObject;
 
-  afterEach(() => {
-    schemaObject = {};
-  });
-
   it('should call Schema containing schemaObject', () => {
     jest.spyOn(mongoose, 'Schema').mockReturnValue();
     schemaObject = {
