@@ -1,7 +1,7 @@
 const schemaCreator = require('../../../utilities/schemaCreator.js');
 
 jest.spyOn(schemaCreator, 'createSchema');
-const models = require('../../../index');
+const WalletModel = require('../../../lib/platform/wallet');
 
 describe('Wallet Schema Validation', () => {
   let walletObject;
@@ -16,7 +16,7 @@ describe('Wallet Schema Validation', () => {
 
   it('should be invalid if try to create empty object', () => {
     walletObject = {};
-    Wallet = new models.platform.Wallet(walletObject);
+    Wallet = new WalletModel(walletObject);
 
     expect(Wallet.validateSync).toThrow();
   });
@@ -27,7 +27,7 @@ describe('Wallet Schema Validation', () => {
       ethAddress: 'myEthAddress',
       fcmToken: 'fcmId',
     };
-    Wallet = new models.platform.Wallet(walletObject);
+    Wallet = new WalletModel(walletObject);
     error = Wallet.validateSync();
 
     expect(Wallet.validateSync).toThrow();
@@ -40,7 +40,7 @@ describe('Wallet Schema Validation', () => {
       ethAddress: 'myEthAddress',
       fcmToken: 'fcmId',
     };
-    Wallet = new models.platform.Wallet(walletObject);
+    Wallet = new WalletModel(walletObject);
     error = Wallet.validateSync();
 
     expect(Wallet.validateSync).toThrow();
@@ -55,7 +55,7 @@ describe('Wallet Schema Validation', () => {
       publicKey: 'myKey',
       fcmToken: 'fcmId',
     };
-    Wallet = new models.platform.Wallet(walletObject);
+    Wallet = new WalletModel(walletObject);
     error = Wallet.validateSync();
 
     expect(Wallet.validateSync).toThrow();
@@ -70,7 +70,7 @@ describe('Wallet Schema Validation', () => {
       publicKey: 'myKey',
       ethAddress: 'myEthAddress',
     };
-    Wallet = new models.platform.Wallet(walletObject);
+    Wallet = new WalletModel(walletObject);
     error = Wallet.validateSync();
 
     expect(Wallet.validateSync).toThrow();
@@ -87,7 +87,7 @@ describe('Wallet Schema Validation', () => {
       fcmToken: 'fcmId',
       bcxRegistered: 'WrongType',
     };
-    Wallet = new models.platform.Wallet(walletObject);
+    Wallet = new WalletModel(walletObject);
     error = Wallet.validateSync();
 
     expect(Wallet.validateSync).toThrow();
@@ -111,7 +111,7 @@ describe('Wallet Schema Validation', () => {
       ethAddress: 'myEthAddress',
       fcmToken: 'fcmId',
     };
-    Wallet = new models.platform.Wallet(walletObject);
+    Wallet = new WalletModel(walletObject);
     error = Wallet.validateSync();
 
     expect(error).toBe(undefined);
