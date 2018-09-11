@@ -1,6 +1,6 @@
-// models
-const Platform = require('./models/platform/platform');
+// lib
+const platform = require('./lib/platform/platform');
 
 module.exports = {
-  Platform,
+  platform,
 };

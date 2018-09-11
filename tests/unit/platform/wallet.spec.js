@@ -1,37 +1,43 @@
-const Models = require('../../../index');
+const models = require('../../../index');
 
 // TODO: Check if we need to test unique index fields here.
 describe('Wallet Schema Validation', () => {
-  let walletObject = {};
+  let walletObject;
   let Wallet;
   let error;
 
-  it('should be invalid if try to create empty object', async () => {
-    Wallet = await new Models.Platform.Wallet(walletObject);
+  beforeEach(() => {
+    Wallet = {};
+    walletObject = {};
+    error = {};
+  });
+
+  it('should be invalid if try to create empty object', () => {
+    Wallet = new models.platform.Wallet(walletObject);
 
     expect(Wallet.validateSync).toThrow();
   });
 
-  it('should be invalid if try to create object without userId field', async () => {
+  it('should be invalid if try to create object without userId field', () => {
     walletObject = {
       publicKey: 'myKey',
       ethAddress: 'myEthAddress',
       fcmToken: 'fcmId',
     };
-    Wallet = await new Models.Platform.Wallet(walletObject);
+    Wallet = new models.platform.Wallet(walletObject);
     error = Wallet.validateSync();
 
     expect(Wallet.validateSync).toThrow();
     expect(error.errors.userId.message).toEqual('Path `userId` is required.');
   });
 
-  it('should be invalid if try to create object without publicKey field', async () => {
+  it('should be invalid if try to create object without publicKey field', () => {
     walletObject = {
       userId: 'myUserId',
       ethAddress: 'myEthAddress',
       fcmToken: 'fcmId',
     };
-    Wallet = await new Models.Platform.Wallet(walletObject);
+    Wallet = new models.platform.Wallet(walletObject);
     error = Wallet.validateSync();
 
     expect(Wallet.validateSync).toThrow();
@@ -40,13 +46,13 @@ describe('Wallet Schema Validation', () => {
     );
   });
 
-  it('should be invalid if try to create object without ethAddress field', async () => {
+  it('should be invalid if try to create object without ethAddress field', () => {
     walletObject = {
       userId: 'myUserId',
       publicKey: 'myKey',
       fcmToken: 'fcmId',
     };
-    Wallet = await new Models.Platform.Wallet(walletObject);
+    Wallet = new models.platform.Wallet(walletObject);
     error = Wallet.validateSync();
 
     expect(Wallet.validateSync).toThrow();
@@ -55,13 +61,13 @@ describe('Wallet Schema Validation', () => {
     );
   });
 
-  it('should be invalid if try to create object without fcmToken field', async () => {
+  it('should be invalid if try to create object without fcmToken field', () => {
     walletObject = {
       userId: 'myUserId',
       publicKey: 'myKey',
       ethAddress: 'myEthAddress',
     };
-    Wallet = await new Models.Platform.Wallet(walletObject);
+    Wallet = new models.platform.Wallet(walletObject);
     error = Wallet.validateSync();
 
     expect(Wallet.validateSync).toThrow();
@@ -70,7 +76,7 @@ describe('Wallet Schema Validation', () => {
     );
   });
 
-  it('should be invalid when bcxRegistered field is not Boolean.', async () => {
+  it('should be invalid when bcxRegistered field is not Boolean.', () => {
     walletObject = {
       userId: 'myUserId',
       publicKey: 'myKey',
@@ -78,7 +84,7 @@ describe('Wallet Schema Validation', () => {
       fcmToken: 'fcmId',
       bcxRegistered: 'WrongType',
     };
-    Wallet = await new Models.Platform.Wallet(walletObject);
+    Wallet = new models.platform.Wallet(walletObject);
     error = Wallet.validateSync();
 
     expect(Wallet.validateSync).toThrow();
@@ -87,14 +93,14 @@ describe('Wallet Schema Validation', () => {
     );
   });
 
-  it('should create object successfully', async () => {
+  it('should create object successfully', () => {
     walletObject = {
       userId: 'myUserId',
       publicKey: 'myKey',
       ethAddress: 'myEthAddress',
       fcmToken: 'fcmId',
     };
-    Wallet = await new Models.Platform.Wallet(walletObject);
+    Wallet = new models.platform.Wallet(walletObject);
     error = Wallet.validateSync();
 
     expect(error).toBe(undefined);
