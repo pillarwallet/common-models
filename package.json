@@ -8,6 +8,9 @@
     "lint:fix": "eslint --fix .",
     "test": "jest unit"
   },
+  "publishConfig": {
+    "registry": "https://pillarproject.jfrog.io/pillarproject/api/npm/npm/"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pillarwallet/common-models.git"
