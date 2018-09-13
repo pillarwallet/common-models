@@ -5,7 +5,7 @@ const UserModel = require('../../../lib/platform/user');
 
 describe('User Schema Validation', () => {
   let userObject;
-  let User;
+  let user;
   let error;
 
   afterAll(() => {
@@ -15,17 +15,17 @@ describe('User Schema Validation', () => {
   const getMockFirstCall = call => call.mock.calls[0][0];
 
   it('should be invalid if try to create empty object', async () => {
-    User = await new UserModel(userObject);
+    user = await new UserModel(userObject);
 
-    expect(User.validateSync).toThrow();
+    expect(user.validateSync).toThrow();
   });
 
   it('should be invalid if try to create object without username field', () => {
     userObject = {};
-    User = new UserModel(userObject);
-    error = User.validateSync();
+    user = new UserModel(userObject);
+    error = user.validateSync();
 
-    expect(User.validateSync).toThrow();
+    expect(user.validateSync).toThrow();
     expect(error.errors.username.message).toEqual(
       'Path `username` is required.',
     );
@@ -36,10 +36,10 @@ describe('User Schema Validation', () => {
       username: 'myUserName',
       isEmailVerified: 'notValidData',
     };
-    User = new UserModel(userObject);
-    error = User.validateSync();
+    user = new UserModel(userObject);
+    error = user.validateSync();
 
-    expect(User.validateSync).toThrow();
+    expect(user.validateSync).toThrow();
     expect(error.errors.isEmailVerified.message).toEqual(
       'Cast to Boolean failed for value "notValidData" at path "isEmailVerified"',
     );
@@ -55,10 +55,10 @@ describe('User Schema Validation', () => {
     userObject = {
       username: 'myUserName',
     };
-    User = new UserModel(userObject);
-    error = User.validateSync();
+    user = new UserModel(userObject);
+    error = user.validateSync();
 
     expect(error).toBe(undefined);
-    expect(User).toMatchObject(userObject);
+    expect(user).toMatchObject(userObject);
   });
 });

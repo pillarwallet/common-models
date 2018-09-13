@@ -5,7 +5,7 @@ const WalletModel = require('../../../lib/platform/wallet');
 
 describe('Wallet Schema Validation', () => {
   let walletObject;
-  let Wallet;
+  let wallet;
   let error;
   // function to get mocker first call
   const getMockFirstCall = call => call.mock.calls[0][0];
@@ -16,9 +16,9 @@ describe('Wallet Schema Validation', () => {
 
   it('should be invalid if try to create empty object', () => {
     walletObject = {};
-    Wallet = new WalletModel(walletObject);
+    wallet = new WalletModel(walletObject);
 
-    expect(Wallet.validateSync).toThrow();
+    expect(wallet.validateSync).toThrow();
   });
 
   it('should be invalid if try to create object without userId field', () => {
@@ -27,10 +27,10 @@ describe('Wallet Schema Validation', () => {
       ethAddress: 'myEthAddress',
       fcmToken: 'fcmId',
     };
-    Wallet = new WalletModel(walletObject);
-    error = Wallet.validateSync();
+    wallet = new WalletModel(walletObject);
+    error = wallet.validateSync();
 
-    expect(Wallet.validateSync).toThrow();
+    expect(wallet.validateSync).toThrow();
     expect(error.errors.userId.message).toEqual('Path `userId` is required.');
   });
 
@@ -40,10 +40,10 @@ describe('Wallet Schema Validation', () => {
       ethAddress: 'myEthAddress',
       fcmToken: 'fcmId',
     };
-    Wallet = new WalletModel(walletObject);
-    error = Wallet.validateSync();
+    wallet = new WalletModel(walletObject);
+    error = wallet.validateSync();
 
-    expect(Wallet.validateSync).toThrow();
+    expect(wallet.validateSync).toThrow();
     expect(error.errors.publicKey.message).toEqual(
       'Path `publicKey` is required.',
     );
@@ -55,10 +55,10 @@ describe('Wallet Schema Validation', () => {
       publicKey: 'myKey',
       fcmToken: 'fcmId',
     };
-    Wallet = new WalletModel(walletObject);
-    error = Wallet.validateSync();
+    wallet = new WalletModel(walletObject);
+    error = wallet.validateSync();
 
-    expect(Wallet.validateSync).toThrow();
+    expect(wallet.validateSync).toThrow();
     expect(error.errors.ethAddress.message).toEqual(
       'Path `ethAddress` is required.',
     );
@@ -70,10 +70,10 @@ describe('Wallet Schema Validation', () => {
       publicKey: 'myKey',
       ethAddress: 'myEthAddress',
     };
-    Wallet = new WalletModel(walletObject);
-    error = Wallet.validateSync();
+    wallet = new WalletModel(walletObject);
+    error = wallet.validateSync();
 
-    expect(Wallet.validateSync).toThrow();
+    expect(wallet.validateSync).toThrow();
     expect(error.errors.fcmToken.message).toEqual(
       'Path `fcmToken` is required.',
     );
@@ -87,10 +87,10 @@ describe('Wallet Schema Validation', () => {
       fcmToken: 'fcmId',
       bcxRegistered: 'WrongType',
     };
-    Wallet = new WalletModel(walletObject);
-    error = Wallet.validateSync();
+    wallet = new WalletModel(walletObject);
+    error = wallet.validateSync();
 
-    expect(Wallet.validateSync).toThrow();
+    expect(wallet.validateSync).toThrow();
     expect(error.errors.bcxRegistered.message).toEqual(
       'Cast to Boolean failed for value "WrongType" at path "bcxRegistered"',
     );
@@ -111,10 +111,10 @@ describe('Wallet Schema Validation', () => {
       ethAddress: 'myEthAddress',
       fcmToken: 'fcmId',
     };
-    Wallet = new WalletModel(walletObject);
-    error = Wallet.validateSync();
+    wallet = new WalletModel(walletObject);
+    error = wallet.validateSync();
 
     expect(error).toBe(undefined);
-    expect(Wallet).toMatchObject(walletObject);
+    expect(wallet).toMatchObject(walletObject);
   });
 });

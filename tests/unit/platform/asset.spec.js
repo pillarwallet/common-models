@@ -5,7 +5,7 @@ const AssetModel = require('../../../lib/platform/asset');
 
 describe('Asset Schema Validation', () => {
   let assetObject;
-  let Asset;
+  let asset;
   let error;
 
   afterAll(() => {
@@ -16,10 +16,10 @@ describe('Asset Schema Validation', () => {
 
   it('should be invalid if try to create empty object', () => {
     assetObject = {};
-    Asset = new AssetModel(assetObject);
-    error = Asset.validateSync();
+    asset = new AssetModel(assetObject);
+    error = asset.validateSync();
 
-    expect(Asset.validateSync).toThrow();
+    expect(asset.validateSync).toThrow();
     expect(error.errors.address.message).toEqual('Path `address` is required.');
     expect(error.errors.decimals.message).toEqual(
       'Path `decimals` is required.',
@@ -32,10 +32,10 @@ describe('Asset Schema Validation', () => {
     assetObject = {
       decimals: 'notNumberValue',
     };
-    Asset = new AssetModel(assetObject);
-    error = Asset.validateSync();
+    asset = new AssetModel(assetObject);
+    error = asset.validateSync();
 
-    expect(Asset.validateSync).toThrow();
+    expect(asset.validateSync).toThrow();
     expect(error.errors.decimals.message).toEqual(
       'Cast to Number failed for value "notNumberValue" at path "decimals"',
     );
@@ -45,10 +45,10 @@ describe('Asset Schema Validation', () => {
     assetObject = {
       isDefault: 'WrongType',
     };
-    Asset = new AssetModel(assetObject);
-    error = Asset.validateSync();
+    asset = new AssetModel(assetObject);
+    error = asset.validateSync();
 
-    expect(Asset.validateSync).toThrow();
+    expect(asset.validateSync).toThrow();
     expect(error.errors.isDefault.message).toEqual(
       'Cast to Boolean failed for value "WrongType" at path "isDefault"',
     );
@@ -79,10 +79,10 @@ describe('Asset Schema Validation', () => {
       isDefault: true,
       isDefaultToken: true,
     };
-    Asset = new AssetModel(assetObject);
-    error = Asset.validateSync();
+    asset = new AssetModel(assetObject);
+    error = asset.validateSync();
 
     expect(error).toBe(undefined);
-    expect(Asset).toMatchObject(assetObject);
+    expect(asset).toMatchObject(assetObject);
   });
 });
