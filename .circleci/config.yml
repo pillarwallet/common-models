@@ -1,0 +1,31 @@
+version: 2
+jobs:
+  test:
+    working_directory: ~/common-models
+    docker:
+      - image: circleci/node:8.11.1
+    steps:
+      - checkout
+         - restore_cache:
+          key: key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install dependencies
+          command: npm i
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Linting
+          command: npm run lint
+      - run:
+          name: Test
+          command: npm test
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
+
+
