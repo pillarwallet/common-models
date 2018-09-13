@@ -72,17 +72,88 @@ describe('Asset Schema Validation', () => {
       wallpaperUrl: 'http://banana.com/bg',
       iconUrl: '/image.png',
       email: 'bananacoin@jungle.com',
-      telegram: 'myTelegram',
-      twitter: 'myTwitter',
+      socialMedia: [
+        {
+          service: 'Telegram',
+          username: 'myTelegram',
+        },
+        {
+          service: 'Twitter',
+          username: 'myTwitter',
+        },
+      ],
       website: 'http://banana.com',
       whitepaper: 'Whitepaper',
       isDefault: true,
-      isDefaultToken: true,
     };
     asset = new AssetModel(assetObject);
     error = asset.validateSync();
 
     expect(error).toBe(undefined);
-    expect(asset).toMatchObject(assetObject);
+    expect(asset.toJSON()).toMatchObject({
+      ...assetObject,
+      id: expect.stringMatching(/.+/),
+    });
+  });
+
+  it('creates an object with ICOs', () => {
+    const now = new Date(Date.now());
+    assetObject = {
+      address: '0xaabbc12322321b',
+      decimals: 12,
+      description: 'One Simple Token that aims to be the best ever',
+      name: 'BananaCoin',
+      symbol: 'BCN',
+      wallpaperUrl: 'http://banana.com/bg',
+      iconUrl: '/image.png',
+      email: 'bananacoin@jungle.com',
+      socialMedia: [
+        {
+          service: 'Telegram',
+          username: 'myTelegram',
+        },
+        {
+          service: 'Twitter',
+          username: 'myTwitter',
+        },
+      ],
+      website: 'http://banana.com',
+      whitepaper: 'Whitepaper',
+      isDefault: true,
+      icos: [
+        {
+          icoStatus: 'PENDING',
+          icoPhase: 'PRE_SALE',
+          icoAddress: '0xabc123',
+          minimumContribution: 10,
+          maximumContribution: 200,
+          baseCurrency: 'ETH',
+          unitPrice: 0.0025,
+          totalSupply: 2000000,
+          totalLocked: 500000,
+          supportedCurrencies: 'GBP,ETH,BTC',
+          icoStartingBlockNumber: 10,
+          icoEndingBlockNumber: 20,
+          plannedOpeningDate: now.toISOString(),
+          plannedClosingDate: now.toISOString(),
+          nationalityRestriction: false,
+          nivauraProjectId: 1,
+          links: [
+            {
+              name: '2030',
+              url: 'http://www.example.com/doc.pdf',
+            },
+          ],
+        },
+      ],
+    };
+    asset = new AssetModel(assetObject);
+    error = asset.validateSync();
+
+    expect(error).toBe(undefined);
+    expect(asset.toJSON()).toMatchObject({
+      ...assetObject,
+      id: expect.stringMatching(/.+/),
+    });
   });
 });
