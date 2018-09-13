@@ -12,7 +12,9 @@ describe('Connection Schema Validation', () => {
 
     expect(Connection.validateSync).toThrow();
     expect(error.errors.userId.message).toEqual('Path `userId` is required.');
-    expect(error.errors.accessKey.message).toEqual('Path `accessKey` is required.');
+    expect(error.errors.accessKey.message).toEqual(
+      'Path `accessKey` is required.',
+    );
     expect(error.errors.status.message).toEqual('Path `status` is required.');
   });
 
