@@ -10,6 +10,10 @@ describe('Notification Type Schema Validation', () => {
 
   const getMockFirstCall = call => call.mock.calls[0][0];
 
+  afterAll(() => {
+    schemaCreator.createSchema.mockRestore();
+  });
+
   it('should be invalid if try to create empty object', () => {
     notificationTypeObject = {};
     notificationType = new NotificationTypesModel(notificationTypeObject);
@@ -26,7 +30,7 @@ describe('Notification Type Schema Validation', () => {
     expect(firstCall.type).toHaveProperty('unique', true);
   });
 
-  it('should be invalid when field is not Boolean.', () => {
+  it('should create object successfully', () => {
     notificationTypeObject = {
       type: 'oneType',
       name: 'oneName',
