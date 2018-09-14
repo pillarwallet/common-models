@@ -10,6 +10,10 @@ describe('Notification Preferences Schema Validation', () => {
 
   const getMockFirstCall = call => call.mock.calls[0][0];
 
+  afterAll(() => {
+    schemaCreator.createSchema.mockRestore();
+  });
+
   it('should be invalid if try to create empty object', () => {
     notificationObject = {};
     notificationPreferences = new NotificationPreferencesModel(
