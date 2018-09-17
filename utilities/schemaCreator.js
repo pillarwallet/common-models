@@ -1,5 +1,12 @@
 const mongoose = require('mongoose');
 
+/**
+ * @name createSchema
+ * @description Method to handle unexpected data when creating mongoose schema
+ *
+ * @param params
+ * @returns Schema
+ */
 const createSchema = (...params) => {
   const schema = new mongoose.Schema(...params);
 
