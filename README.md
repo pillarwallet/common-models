@@ -1,5 +1,5 @@
 # common-model
-Common-model is a utility that aims to be a shared package to facilitate Data manipulation across diferent APIs.
+Common-model is a utility that aims to be a shared package to facilitate data manipulation across different APIs.
 
 ## Updating this README.md
 Run `npm run generateReadme` to parse the code for JSDoc comment blocks and recreate this README.md file.
@@ -41,6 +41,9 @@ const user = new platform.User(options);
 <dt><a href="#NotificationType">NotificationType</a> : <code>object</code></dt>
 <dd><p>NotificationType model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
+<dt><a href="#User">User</a> : <code>object</code></dt>
+<dd><p>User model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
 <dt><a href="#Wallet">Wallet</a> : <code>object</code></dt>
 <dd><p>Wallet model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
@@ -76,7 +79,7 @@ Asset model maps to a MongoDB collection and defines the shape of the document.
 <a name="Asset..address"></a>
 
 ### Asset~address : <code>String</code>
-the smart contract address
+The smart contract address.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)  
 **Unique**:   
@@ -84,20 +87,20 @@ the smart contract address
 <a name="Asset..decimals"></a>
 
 ### Asset~decimals : <code>Number</code>
-refers to how divisible a token can be
+Refers to how divisible a token can be.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)  
 **Required**:   
 <a name="Asset..description"></a>
 
 ### Asset~description : <code>String</code>
-simple description of one Token
+Simple description of one Token.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)  
 <a name="Asset..name"></a>
 
 ### Asset~name : <code>String</code>
-name by which the token contract should be known
+Name by which the token contract should be known.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)  
 **Required**:   
@@ -105,7 +108,7 @@ name by which the token contract should be known
 <a name="Asset..symbol"></a>
 
 ### Asset~symbol : <code>String</code>
-symbol by which the token contract should be known, it is broadly equivalent to a stock ticker
+Symbol by which the token contract should be known, it is broadly equivalent to a stock ticker.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)  
 **Required**:   
@@ -113,49 +116,49 @@ symbol by which the token contract should be known, it is broadly equivalent to 
 <a name="Asset..wallpaperUrl"></a>
 
 ### Asset~wallpaperUrl : <code>String</code>
-the token's predefined background image
+The token's predefined background image.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)  
 <a name="Asset..iconUrl"></a>
 
 ### Asset~iconUrl : <code>String</code>
-the token's predefined icon image
+The token's predefined icon image.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)  
 <a name="Asset..email"></a>
 
 ### Asset~email : <code>String</code>
-the token's email
+The token's email.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)  
 <a name="Asset..socialMedia"></a>
 
 ### Asset~socialMedia : <code>Array</code>
-the token's social media
+The token's social media.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)  
 <a name="Asset..website"></a>
 
 ### Asset~website : <code>String</code>
-the token's website
+The token's website.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)  
 <a name="Asset..whitepaper"></a>
 
 ### Asset~whitepaper : <code>String</code>
-the token's whitepaper
+The token's whitepaper.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)  
 <a name="Asset..isDefault"></a>
 
 ### Asset~isDefault : <code>Boolean</code>
-one flag to check if the Token is default on the wallet
+One flag to check if the Token is default on the wallet.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)  
 <a name="Asset..icos"></a>
 
 ### Asset~icos : <code>Array</code>
-ico details of one Token
+Ico details of one Token.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)  
 <a name="Connection"></a>
@@ -178,21 +181,21 @@ Connection model maps to a MongoDB collection and defines the shape of the docum
 <a name="Connection..userId"></a>
 
 ### Connection~userId : <code>String</code>
-the user identifier
+The user identifier.
 
 **Kind**: inner property of [<code>Connection</code>](#Connection)  
 **Required**:   
 <a name="Connection..accessKey"></a>
 
 ### Connection~accessKey : <code>String</code>
-unique identifier for each connection
+Unique identifier for each connection.
 
 **Kind**: inner property of [<code>Connection</code>](#Connection)  
 **Required**:   
 <a name="Connection..status"></a>
 
 ### Connection~status : <code>String</code>
-the status of each connection
+The status of each connection.
 
 **Kind**: inner property of [<code>Connection</code>](#Connection)  
 **Required**:   
@@ -216,21 +219,21 @@ Notification model maps to a MongoDB collection and defines the shape of the doc
 <a name="Notification..type"></a>
 
 ### Notification~type : <code>String</code>
-the type of one notification
+The type of one notification.
 
 **Kind**: inner property of [<code>Notification</code>](#Notification)  
 **Required**:   
 <a name="Notification..meta"></a>
 
 ### Notification~meta : <code>Object</code>
-additional important information about one notification
+Additional important information about one notification.
 
 **Kind**: inner property of [<code>Notification</code>](#Notification)  
 **Required**:   
 <a name="Notification..payload"></a>
 
 ### Notification~payload : <code>Object</code>
-the content of one notification
+The content of one notification.
 
 **Kind**: inner property of [<code>Notification</code>](#Notification)  
 **Required**:   
@@ -259,7 +262,7 @@ NotificationPreferences model maps to a MongoDB collection and defines the shape
 <a name="NotificationPreferences..userId"></a>
 
 ### NotificationPreferences~userId : <code>String</code>
-The user identifier
+The user identifier.
 
 **Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
 **Required**:   
@@ -267,49 +270,49 @@ The user identifier
 <a name="NotificationPreferences..newOffer"></a>
 
 ### NotificationPreferences~newOffer : <code>Boolean</code>
-One flag for newOffer notification
+One flag for newOffer notification.
 
 **Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
 **Required**:   
 <a name="NotificationPreferences..newReceipt"></a>
 
 ### NotificationPreferences~newReceipt : <code>Boolean</code>
-One flag for newReceipt notification
+One flag for newReceipt notification.
 
 **Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
 **Required**:   
 <a name="NotificationPreferences..paymentConfirmation"></a>
 
 ### NotificationPreferences~paymentConfirmation : <code>Boolean</code>
-One flag for paymentConfirmation notification
+One flag for paymentConfirmation notification.
 
 **Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
 **Required**:   
 <a name="NotificationPreferences..paymentStatusUpdate"></a>
 
 ### NotificationPreferences~paymentStatusUpdate : <code>Boolean</code>
-One flag for paymentStatusUpdate notification
+One flag for paymentStatusUpdate notification.
 
 **Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
 **Required**:   
 <a name="NotificationPreferences..profileUpdate"></a>
 
 ### NotificationPreferences~profileUpdate : <code>Boolean</code>
-One flag for profileUpdate notification
+One flag for profileUpdate notification.
 
 **Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
 **Required**:   
 <a name="NotificationPreferences..fundsDeposit"></a>
 
 ### NotificationPreferences~fundsDeposit : <code>Boolean</code>
-One flag for fundsDeposit notification
+One flag for fundsDeposit notification.
 
 **Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
 **Required**:   
 <a name="NotificationPreferences..transactionEvent"></a>
 
 ### NotificationPreferences~transactionEvent : <code>Boolean</code>
-One flag for transactionEvent notification
+One flag for transactionEvent notification.
 
 **Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
 **Required**:   
@@ -333,7 +336,7 @@ NotificationType model maps to a MongoDB collection and defines the shape of the
 <a name="NotificationType..type"></a>
 
 ### NotificationType~type : <code>String</code>
-The type of one notification
+The type of one notification.
 
 **Kind**: inner property of [<code>NotificationType</code>](#NotificationType)  
 **Required**:   
@@ -341,17 +344,159 @@ The type of one notification
 <a name="NotificationType..name"></a>
 
 ### NotificationType~name : <code>String</code>
-The name of one notification
+The name of one notification.
 
 **Kind**: inner property of [<code>NotificationType</code>](#NotificationType)  
 **Required**:   
 <a name="NotificationType..actions"></a>
 
 ### NotificationType~actions : <code>Object</code>
-Actions related with one notification
+Actions related with one notification.
 
 **Kind**: inner property of [<code>NotificationType</code>](#NotificationType)  
 **Required**:   
+<a name="User"></a>
+
+## User : <code>object</code>
+User model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace  
+
+| Param |
+| --- |
+| schema | 
+
+
+* [User](#User) : <code>object</code>
+    * [~username](#User..username) : <code>String</code>
+    * [~firstName](#User..firstName) : <code>String</code>
+    * [~lastName](#User..lastName) : <code>String</code>
+    * [~email](#User..email) : <code>String</code>
+    * [~isEmailVerified](#User..isEmailVerified) : <code>Boolean</code>
+    * [~emailOneTimePassword](#User..emailOneTimePassword) : <code>String</code>
+    * [~phone](#User..phone) : <code>String</code>
+    * [~isPhoneVerified](#User..isPhoneVerified) : <code>Boolean</code>
+    * [~phoneOneTimePassword](#User..phoneOneTimePassword) : <code>String</code>
+    * [~country](#User..country) : <code>String</code>
+    * [~state](#User..state) : <code>String</code>
+    * [~city](#User..city) : <code>String</code>
+    * [~userSearchable](#User..userSearchable) : <code>Boolean</code>
+    * [~tagline](#User..tagline) : <code>String</code>
+    * [~taglineStatus](#User..taglineStatus) : <code>Boolean</code>
+    * [~profileImage](#User..profileImage) : <code>String</code>
+    * [~icoService](#User..icoService) : <code>Object</code>
+    * [~status](#User..status) : <code>String</code>
+
+<a name="User..username"></a>
+
+### User~username : <code>String</code>
+The username.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+**Required**:   
+**Unique**:   
+<a name="User..firstName"></a>
+
+### User~firstName : <code>String</code>
+The user's first name.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..lastName"></a>
+
+### User~lastName : <code>String</code>
+The user's last name.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..email"></a>
+
+### User~email : <code>String</code>
+The user's email.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..isEmailVerified"></a>
+
+### User~isEmailVerified : <code>Boolean</code>
+One flag to check user's email.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..emailOneTimePassword"></a>
+
+### User~emailOneTimePassword : <code>String</code>
+The user's email one time password.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..phone"></a>
+
+### User~phone : <code>String</code>
+The user's phone.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..isPhoneVerified"></a>
+
+### User~isPhoneVerified : <code>Boolean</code>
+One flag to check user's phone.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..phoneOneTimePassword"></a>
+
+### User~phoneOneTimePassword : <code>String</code>
+The user's phone one time password.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..country"></a>
+
+### User~country : <code>String</code>
+The user's country.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..state"></a>
+
+### User~state : <code>String</code>
+The user's state.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..city"></a>
+
+### User~city : <code>String</code>
+The user's city.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..userSearchable"></a>
+
+### User~userSearchable : <code>Boolean</code>
+One flag to check if user is searchable.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..tagline"></a>
+
+### User~tagline : <code>String</code>
+The user's tagline.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..taglineStatus"></a>
+
+### User~taglineStatus : <code>Boolean</code>
+One flag to check if user's tagline is displayable.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..profileImage"></a>
+
+### User~profileImage : <code>String</code>
+The user's profileImage.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..icoService"></a>
+
+### User~icoService : <code>Object</code>
+Information related to the user's account with a service provider for ICOs.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+<a name="User..status"></a>
+
+### User~status : <code>String</code>
+The user status in the system.
+
+**Kind**: inner property of [<code>User</code>](#User)  
 <a name="Wallet"></a>
 
 ## Wallet : <code>object</code>
@@ -375,7 +520,7 @@ Wallet model maps to a MongoDB collection and defines the shape of the document.
 <a name="Wallet..publicKey"></a>
 
 ### Wallet~publicKey : <code>String</code>
-The public Key of one user
+The public Key of one user.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)  
 **Required**:   
@@ -383,7 +528,7 @@ The public Key of one user
 <a name="Wallet..userId"></a>
 
 ### Wallet~userId : <code>String</code>
-The user identifier
+The user identifier.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)  
 **Required**:   
@@ -391,7 +536,7 @@ The user identifier
 <a name="Wallet..ethAddress"></a>
 
 ### Wallet~ethAddress : <code>String</code>
-The ethereum address of one user
+The ethereum address of one user.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)  
 **Required**:   
@@ -399,19 +544,19 @@ The ethereum address of one user
 <a name="Wallet..fcmToken"></a>
 
 ### Wallet~fcmToken : <code>String</code>
-The fcm identifier of one user
+The fcm identifier of one user.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)  
 **Required**:   
 <a name="Wallet..signalRegistrationId"></a>
 
 ### Wallet~signalRegistrationId : <code>String</code>
-The user's signal identifier
+The user's signal identifier.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)  
 <a name="Wallet..bcxRegistered"></a>
 
 ### Wallet~bcxRegistered : <code>Boolean</code>
-One flag to check BCX registration
+One flag to check BCX registration.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)  
