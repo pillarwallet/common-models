@@ -1,6 +1,6 @@
 {
   "name": "@pillarwallet/common-models",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "shared Database models between platform microservices.",
   "main": "index.js",
   "scripts": {
@@ -22,8 +22,10 @@
     "url": "https://github.com/pillarwallet/common-models/issues"
   },
   "dependencies": {
-    "mongoose": "5.0.18",
     "uuid": "3.2.1"
+  },
+  "peerDependencies": {
+    "mongoose": "^5.0.18"
   },
   "devDependencies": {
     "eslint": "5.0.1",
@@ -35,6 +37,7 @@
     "jsdoc-to-markdown": "4.0.1",
     "jest": "22.4.4",
     "jest-cli": "22.4.4",
+    "mongoose": "^5.0.18",
     "prettier": "1.13.7"
   },
   "jest": {
