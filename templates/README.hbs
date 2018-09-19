@@ -5,7 +5,8 @@ Common-model is a utility that aims to be a shared package to facilitate data ma
 Run `npm run generateReadme` to parse the code for JSDoc comment blocks and recreate this README.md file.
 
 ## Install
-Run `npm i @pillarwallet/common-model`
+Run  `npm i @pillarwallet/common-models`
+Then `npm i mongoose@5.x -E`
 
 ## Examples
 Instantiate a model with options:
@@ -15,7 +16,8 @@ const options =
 {
   username: 'myUserName',
 };
-const { platform } = require('@pillarwallet/common-model');
+
+const { platform } = require('@pillarwallet/common-models');
 // Create user model
 const user = new platform.User(options);
 
