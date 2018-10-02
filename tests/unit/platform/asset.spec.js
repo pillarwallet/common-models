@@ -72,6 +72,8 @@ describe('Asset Schema Validation', () => {
       wallpaperUrl: 'http://banana.com/bg',
       iconUrl: '/image.png',
       email: 'bananacoin@jungle.com',
+      telegram: 'myTelegram',
+      twitter: 'myTwitter',
       socialMedia: [
         {
           service: 'Telegram',
