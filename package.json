@@ -6,7 +6,9 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "test": "jest unit",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "jest unit",
+    "test:integration": "jest integration",
     "generateReadme": "echo \"\" > README.md && jsdoc2md lib/**/* --template templates/README.hbs > README.md"
   },
   "publishConfig": {
@@ -34,9 +36,10 @@
     "eslint-plugin-import": "2.13.0",
     "eslint-plugin-jest": "21.17.0",
     "eslint-plugin-prettier": "2.6.1",
-    "jsdoc-to-markdown": "4.0.1",
     "jest": "22.4.4",
     "jest-cli": "22.4.4",
+    "jsdoc-to-markdown": "4.0.1",
+    "mongodb-memory-server": "2.7.2",
     "mongoose": "^5.0.18",
     "prettier": "1.13.7"
   },
