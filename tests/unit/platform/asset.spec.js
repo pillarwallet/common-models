@@ -96,6 +96,7 @@ describe('Asset Schema Validation', () => {
       ...assetObject,
       id: expect.stringMatching(/.+/),
     });
+    expect(asset.isPreferred).toBe(false);
   });
 
   it('creates an object with ICOs', () => {
