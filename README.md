@@ -40,8 +40,8 @@ const user = new platform.User(options);
 <dt><a href="#Asset">Asset</a> : <code>object</code></dt>
 <dd><p>Asset model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
-<dt><a href="#BlackList">BlackList</a> : <code>object</code></dt>
-<dd><p>BlackList model maps to a MongoDB collection and defines the shape of the document.</p>
+<dt><a href="#Blacklist">Blacklist</a> : <code>object</code></dt>
+<dd><p>Blacklist model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
 <dt><a href="#Connection">Connection</a> : <code>object</code></dt>
 <dd><p>Connection model maps to a MongoDB collection and defines the shape of the document.</p>
@@ -197,10 +197,10 @@ A flag to indicate preferred tokens within the system.
 Ico details of one Token.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)  
-<a name="BlackList"></a>
+<a name="Blacklist"></a>
 
-## BlackList : <code>object</code>
-BlackList model maps to a MongoDB collection and defines the shape of the document.
+## Blacklist : <code>object</code>
+Blacklist model maps to a MongoDB collection and defines the shape of the document.
 
 **Kind**: global namespace  
 

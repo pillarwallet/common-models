@@ -1,10 +1,10 @@
 const schemaCreator = require('../../../utilities/schemaCreator.js');
 
 jest.spyOn(schemaCreator, 'createSchema');
-const BlackListModel = require('../../../lib/platform/blackList');
+const BlacklistModel = require('../../../lib/platform/blacklist');
 
-describe('BlackList Schema Validation', () => {
-  let blackListObject;
+describe('Blacklist Schema Validation', () => {
+  let blacklistObject;
   let Blacklist;
   let error;
 
@@ -13,8 +13,8 @@ describe('BlackList Schema Validation', () => {
   });
 
   it('should be invalid if try to create empty object', () => {
-    blackListObject = {};
-    Blacklist = new BlackListModel(blackListObject);
+    blacklistObject = {};
+    Blacklist = new BlacklistModel(blacklistObject);
     error = Blacklist.validateSync();
 
     expect(Blacklist.validateSync).toThrow();
@@ -25,14 +25,14 @@ describe('BlackList Schema Validation', () => {
   });
 
   it('should create object successfully', () => {
-    blackListObject = {
+    blacklistObject = {
       userId: 'myUserId',
       targetUserId: 'myTargetUserId',
     };
-    Blacklist = new BlackListModel(blackListObject);
+    Blacklist = new BlacklistModel(blacklistObject);
     error = Blacklist.validateSync();
 
     expect(error).toBe(undefined);
-    expect(Blacklist).toMatchObject(blackListObject);
+    expect(Blacklist).toMatchObject(blacklistObject);
   });
 });
