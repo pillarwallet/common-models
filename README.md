@@ -37,6 +37,9 @@ const user = new platform.User(options);
 ## Objects
 
 <dl>
+<dt><a href="#AccessTokenBackup">AccessTokenBackup</a> : <code>object</code></dt>
+<dd><p>AccessTokenBackup model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
 <dt><a href="#Asset">Asset</a> : <code>object</code></dt>
 <dd><p>Asset model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
@@ -78,6 +81,44 @@ const user = new platform.User(options);
 ***Deprecated***
 
 **Kind**: global variable  
+<a name="AccessTokenBackup"></a>
+
+## AccessTokenBackup : <code>object</code>
+AccessTokenBackup model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace  
+
+| Param |
+| --- |
+| schema | 
+
+
+* [AccessTokenBackup](#AccessTokenBackup) : <code>object</code>
+    * [~userId](#AccessTokenBackup..userId) : <code>String</code>
+    * [~contactId](#AccessTokenBackup..contactId) : <code>String</code>
+    * [~accessKey](#AccessTokenBackup..accessKey) : <code>String</code>
+
+<a name="AccessTokenBackup..userId"></a>
+
+### AccessTokenBackup~userId : <code>String</code>
+The user identifier.
+
+**Kind**: inner property of [<code>AccessTokenBackup</code>](#AccessTokenBackup)  
+**Required**:   
+<a name="AccessTokenBackup..contactId"></a>
+
+### AccessTokenBackup~contactId : <code>String</code>
+The contact identifier.
+
+**Kind**: inner property of [<code>AccessTokenBackup</code>](#AccessTokenBackup)  
+**Required**:   
+<a name="AccessTokenBackup..accessKey"></a>
+
+### AccessTokenBackup~accessKey : <code>String</code>
+Unique identifier for each connection.
+
+**Kind**: inner property of [<code>AccessTokenBackup</code>](#AccessTokenBackup)  
+**Required**:   
 <a name="Asset"></a>
 
 ## Asset : <code>object</code>
