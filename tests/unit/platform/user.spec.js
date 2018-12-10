@@ -54,6 +54,7 @@ describe('User Schema Validation', () => {
   it('should create object successfully', () => {
     userObject = {
       username: 'myUserName',
+      registrationId: 'myRegistrationId',
     };
     user = new UserModel(userObject);
     error = user.validateSync();
