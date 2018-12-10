@@ -514,6 +514,7 @@ User model maps to a MongoDB collection and defines the shape of the document.
     * [~userId](#User..userId) : <code>String</code>
     * [~targetUserId](#User..targetUserId) : <code>String</code>
     * [~username](#User..username) : <code>String</code>
+    * [~registrationId](#User..registrationId) : <code>String</code>
     * [~firstName](#User..firstName) : <code>String</code>
     * [~lastName](#User..lastName) : <code>String</code>
     * [~email](#User..email) : <code>String</code>
@@ -550,6 +551,14 @@ The blacklisted user identifier.
 
 ### User~username : <code>String</code>
 The username.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+**Required**:   
+**Unique**:   
+<a name="User..registrationId"></a>
+
+### User~registrationId : <code>String</code>
+The user's registration Id.
 
 **Kind**: inner property of [<code>User</code>](#User)  
 **Required**:   
