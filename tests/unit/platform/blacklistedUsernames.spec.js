@@ -16,11 +16,15 @@ describe('BlacklistedUsernames Schema Validation', () => {
 
   it('should be invalid if try to create empty object', () => {
     blacklistedUsernameObject = {};
-    blacklistedUsername = new BlacklistedUsernamesModel(blacklistedUsernameObject);
+    blacklistedUsername = new BlacklistedUsernamesModel(
+      blacklistedUsernameObject,
+    );
     error = blacklistedUsername.validateSync();
 
     expect(blacklistedUsername.validateSync).toThrow();
-    expect(error.errors.username.message).toEqual('Path `username` is required.');
+    expect(error.errors.username.message).toEqual(
+      'Path `username` is required.',
+    );
   });
 
   it('creates Schema with unique properties', () => {
@@ -33,7 +37,9 @@ describe('BlacklistedUsernames Schema Validation', () => {
     blacklistedUsernameObject = {
       username: 'admin',
     };
-    blacklistedUsername = new BlacklistedUsernamesModel(blacklistedUsernameObject);
+    blacklistedUsername = new BlacklistedUsernamesModel(
+      blacklistedUsernameObject,
+    );
     error = blacklistedUsername.validateSync();
 
     expect(error).toBe(undefined);
