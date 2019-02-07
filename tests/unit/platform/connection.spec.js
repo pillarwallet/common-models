@@ -23,6 +23,8 @@ describe('Connection Schema Validation', () => {
       userId: 'myUserId',
       accessKey: 'myKey',
       status: 'myStatus',
+      sourceIdentityKey: 'sourceIdentityKey',
+      targetIdentityKey: 'targetIdentityKey',
     };
     Connection = new ConnectionModel(connectionObject);
     error = Connection.validateSync();
