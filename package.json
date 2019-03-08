@@ -1,6 +1,6 @@
 {
   "name": "@pillarwallet/common-models",
-  "version": "1.13.1",
+  "version": "1.13.2",
   "description": "shared Database models between platform microservices.",
   "main": "index.js",
   "scripts": {
