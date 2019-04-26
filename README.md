@@ -971,6 +971,7 @@ The generated referral link
 
 **Kind**: inner property of [<code>ReferralLinks</code>](#ReferralLinks)  
 **Required** 
+**Unique** 
 <a name="ReferralLinks..status"></a>
 
 ### ReferralLinks~status : <code>String</code>
