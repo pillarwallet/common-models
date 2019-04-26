@@ -79,6 +79,9 @@ const user = new platform.User(options);
 <dt><a href="#Wallet">Wallet</a> : <code>object</code></dt>
 <dd><p>Wallet model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
+<dt><a href="#ReferralLinks">ReferralLinks</a> : <code>object</code></dt>
+<dd><p>ReferralLinks model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
 </dl>
 
 <a name="telegram"></a>
@@ -936,3 +939,48 @@ The user's signal identifier.
 One flag to check BCX registration.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)  
+<a name="ReferralLinks"></a>
+
+## ReferralLinks : <code>object</code>
+ReferralLinks model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace  
+
+| Param |
+| --- |
+| schema | 
+
+
+* [ReferralLinks](#ReferralLinks) : <code>object</code>
+    * [~userId](#ReferralLinks..userId) : <code>String</code>
+    * [~link](#ReferralLinks..link) : <code>String</code>
+    * [~status](#ReferralLinks..status) : <code>String</code>
+    * [~targetUserId](#ReferralLinks..targetUserId) : <code>String</code>
+
+<a name="ReferralLinks..userId"></a>
+
+### ReferralLinks~userId : <code>String</code>
+The user identifier.
+
+**Kind**: inner property of [<code>User</code>](#User)  
+**Required**
+<a name="ReferralLinks..link"></a>
+
+### ReferralLinks~link : <code>String</code>
+The generated referral link
+
+**Kind**: inner property of [<code>ReferralLinks</code>](#ReferralLinks)  
+**Required** 
+<a name="ReferralLinks..status"></a>
+
+### ReferralLinks~status : <code>String</code>
+The status of each link.
+
+**Kind**: inner property of [<code>ReferralLinks</code>](#ReferralLinks)  
+**Required** 
+<a name="ReferralLinks..targetUserId"></a>
+
+### ReferralLinks~targetUserId : <code>String</code>
+The user who claimed the link.
+
+**Kind**: inner property of [<code>User</code>](#User)  
