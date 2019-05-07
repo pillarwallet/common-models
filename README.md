@@ -911,7 +911,6 @@ The user identifier.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)  
 **Required**:   
-**Unique**:   
 <a name="Wallet..ethAddress"></a>
 
 ### Wallet~ethAddress : <code>String</code>

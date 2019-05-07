@@ -100,7 +100,6 @@ describe('Wallet Schema Validation', () => {
     const firstCall = getMockFirstCall(schemaCreator.createSchema);
 
     expect(firstCall.publicKey).toHaveProperty('unique', true);
-    expect(firstCall.userId).toHaveProperty('unique', true);
     expect(firstCall.ethAddress).toHaveProperty('unique', true);
   });
 
