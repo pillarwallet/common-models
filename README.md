@@ -903,7 +903,6 @@ The public Key of one user.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)  
 **Required**:   
-**Unique**:   
 <a name="Wallet..userId"></a>
 
 ### Wallet~userId : <code>String</code>
