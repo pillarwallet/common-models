@@ -108,6 +108,7 @@ describe('Wallet Schema Validation', () => {
       publicKey: 'myKey',
       ethAddress: 'myEthAddress',
       fcmToken: 'fcmId',
+      type: 'KEY_BASED',
     };
     wallet = new WalletModel(walletObject);
     error = wallet.validateSync();
