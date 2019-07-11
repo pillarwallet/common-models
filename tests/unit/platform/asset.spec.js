@@ -74,7 +74,7 @@ describe('Asset Schema Validation', () => {
       email: 'bananacoin@jungle.com',
       telegram: 'myTelegram',
       twitter: 'myTwitter',
-      totalSupply: 2000000,
+      totalSupply: '2000000',
       socialMedia: [
         {
           service: 'Telegram',
@@ -111,7 +111,7 @@ describe('Asset Schema Validation', () => {
       wallpaperUrl: 'http://banana.com/bg',
       iconUrl: '/image.png',
       email: 'bananacoin@jungle.com',
-      totalSupply: 2000000,
+      totalSupply: '2000000',
       socialMedia: [
         {
           service: 'Telegram',
