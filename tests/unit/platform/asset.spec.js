@@ -71,6 +71,7 @@ describe('Asset Schema Validation', () => {
       symbol: 'BCN',
       wallpaperUrl: 'http://banana.com/bg',
       iconUrl: '/image.png',
+      patternUrl: '/image.png',
       email: 'bananacoin@jungle.com',
       telegram: 'myTelegram',
       twitter: 'myTwitter',
@@ -110,6 +111,7 @@ describe('Asset Schema Validation', () => {
       symbol: 'BCN',
       wallpaperUrl: 'http://banana.com/bg',
       iconUrl: '/image.png',
+      patternUrl: '/image.png',
       email: 'bananacoin@jungle.com',
       totalSupply: '2000000',
       socialMedia: [
