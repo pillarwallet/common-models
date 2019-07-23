@@ -61,5 +61,6 @@ describe('User Schema Validation', () => {
 
     expect(error).toBe(undefined);
     expect(user).toMatchObject(userObject);
+    expect(user).toHaveProperty('secretId');
   });
 });

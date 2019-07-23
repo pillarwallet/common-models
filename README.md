@@ -89,31 +89,31 @@ const user = new platform.User(options);
 ## ~~telegram~~
 ***Deprecated***
 
-**Kind**: global variable  
+**Kind**: global variable
 <a name="twitter"></a>
 
 ## ~~twitter~~
 ***Deprecated***
 
-**Kind**: global variable  
+**Kind**: global variable
 <a name="username"></a>
 
 ## username : <code>String</code>
 The blacklisted username.
 
-**Kind**: global variable  
-**Unique**:   
-**Required**:   
+**Kind**: global variable
+**Unique**:
+**Required**:
 <a name="AccessTokenBackup"></a>
 
 ## AccessTokenBackup : <code>object</code>
 AccessTokenBackup model maps to a MongoDB collection and defines the shape of the document.
 
-**Kind**: global namespace  
+**Kind**: global namespace
 
 | Param |
 | --- |
-| schema | 
+| schema |
 
 
 * [AccessTokenBackup](#AccessTokenBackup) : <code>object</code>
@@ -126,32 +126,32 @@ AccessTokenBackup model maps to a MongoDB collection and defines the shape of th
 ### AccessTokenBackup~userId : <code>String</code>
 The user identifier.
 
-**Kind**: inner property of [<code>AccessTokenBackup</code>](#AccessTokenBackup)  
-**Required**:   
+**Kind**: inner property of [<code>AccessTokenBackup</code>](#AccessTokenBackup)
+**Required**:
 <a name="AccessTokenBackup..contactId"></a>
 
 ### AccessTokenBackup~contactId : <code>String</code>
 The contact identifier.
 
-**Kind**: inner property of [<code>AccessTokenBackup</code>](#AccessTokenBackup)  
-**Required**:   
+**Kind**: inner property of [<code>AccessTokenBackup</code>](#AccessTokenBackup)
+**Required**:
 <a name="AccessTokenBackup..accessKey"></a>
 
 ### AccessTokenBackup~accessKey : <code>String</code>
 Unique identifier for each connection.
 
-**Kind**: inner property of [<code>AccessTokenBackup</code>](#AccessTokenBackup)  
-**Required**:   
+**Kind**: inner property of [<code>AccessTokenBackup</code>](#AccessTokenBackup)
+**Required**:
 <a name="Asset"></a>
 
 ## Asset : <code>object</code>
 Asset model maps to a MongoDB collection and defines the shape of the document.
 
-**Kind**: global namespace  
+**Kind**: global namespace
 
 | Param |
 | --- |
-| schema | 
+| schema |
 
 
 * [Asset](#Asset) : <code>object</code>
@@ -176,44 +176,44 @@ Asset model maps to a MongoDB collection and defines the shape of the document.
 ### Asset~address : <code>String</code>
 The smart contract address.
 
-**Kind**: inner property of [<code>Asset</code>](#Asset)  
-**Unique**:   
-**Required**:   
+**Kind**: inner property of [<code>Asset</code>](#Asset)
+**Unique**:
+**Required**:
 <a name="Asset..decimals"></a>
 
 ### Asset~decimals : <code>Number</code>
 Refers to how divisible a token can be.
 
-**Kind**: inner property of [<code>Asset</code>](#Asset)  
-**Required**:   
+**Kind**: inner property of [<code>Asset</code>](#Asset)
+**Required**:
 <a name="Asset..description"></a>
 
 ### Asset~description : <code>String</code>
 Simple description of one Token.
 
-**Kind**: inner property of [<code>Asset</code>](#Asset)  
+**Kind**: inner property of [<code>Asset</code>](#Asset)
 <a name="Asset..name"></a>
 
 ### Asset~name : <code>String</code>
 Name by which the token contract should be known.
 
-**Kind**: inner property of [<code>Asset</code>](#Asset)  
-**Required**:   
-**Unique**:   
+**Kind**: inner property of [<code>Asset</code>](#Asset)
+**Required**:
+**Unique**:
 <a name="Asset..symbol"></a>
 
 ### Asset~symbol : <code>String</code>
 Symbol by which the token contract should be known, it is broadly equivalent to a stock ticker.
 
-**Kind**: inner property of [<code>Asset</code>](#Asset)  
-**Required**:   
-**Unique**:   
+**Kind**: inner property of [<code>Asset</code>](#Asset)
+**Required**:
+**Unique**:
 <a name="Asset..wallpaperUrl"></a>
 
 ### Asset~wallpaperUrl : <code>String</code>
 The token's predefined background image.
 
-**Kind**: inner property of [<code>Asset</code>](#Asset)  
+**Kind**: inner property of [<code>Asset</code>](#Asset)
 <a name="Asset..iconUrl"></a>
 
 ### Asset~iconUrl : <code>String</code>
@@ -225,59 +225,59 @@ The token's predefined icon image.
 ### Asset~patternUrl : <code>String</code>
 The token's predefined icon image (bigger).
 
-**Kind**: inner property of [<code>Asset</code>](#Asset)  
+**Kind**: inner property of [<code>Asset</code>](#Asset)
 <a name="Asset..email"></a>
 
 ### Asset~email : <code>String</code>
 The token's email.
 
-**Kind**: inner property of [<code>Asset</code>](#Asset)  
+**Kind**: inner property of [<code>Asset</code>](#Asset)
 <a name="Asset..socialMedia"></a>
 
 ### Asset~socialMedia : <code>Array</code>
 The token's social media.
 
-**Kind**: inner property of [<code>Asset</code>](#Asset)  
+**Kind**: inner property of [<code>Asset</code>](#Asset)
 <a name="Asset..website"></a>
 
 ### Asset~website : <code>String</code>
 The token's website.
 
-**Kind**: inner property of [<code>Asset</code>](#Asset)  
+**Kind**: inner property of [<code>Asset</code>](#Asset)
 <a name="Asset..whitepaper"></a>
 
 ### Asset~whitepaper : <code>String</code>
 The token's whitepaper.
 
-**Kind**: inner property of [<code>Asset</code>](#Asset)  
+**Kind**: inner property of [<code>Asset</code>](#Asset)
 <a name="Asset..isDefault"></a>
 
 ### Asset~isDefault : <code>Boolean</code>
 One flag to check if the Token is default on the wallet.
 
-**Kind**: inner property of [<code>Asset</code>](#Asset)  
+**Kind**: inner property of [<code>Asset</code>](#Asset)
 <a name="Asset..isPreferred"></a>
 
 ### Asset~isPreferred : <code>Boolean</code>
 A flag to indicate preferred tokens within the system.
 
-**Kind**: inner property of [<code>Asset</code>](#Asset)  
+**Kind**: inner property of [<code>Asset</code>](#Asset)
 <a name="Asset..icos"></a>
 
 ### Asset~icos : <code>Array</code>
 Ico details of one Token.
 
-**Kind**: inner property of [<code>Asset</code>](#Asset)  
+**Kind**: inner property of [<code>Asset</code>](#Asset)
 <a name="Badge"></a>
 
 ## Badge : <code>object</code>
 Badge model maps to a MongoDB collection and defines the shape of the document.
 
-**Kind**: global namespace  
+**Kind**: global namespace
 
 | Param |
 | --- |
-| schema | 
+| schema |
 
 
 * [Badge](#Badge) : <code>object</code>
@@ -299,88 +299,88 @@ Badge model maps to a MongoDB collection and defines the shape of the document.
 ### Badge~ethereumId : <code>Number</code>
 Refers to badge id on ethereum network.
 
-**Kind**: inner property of [<code>Badge</code>](#Badge)  
-**Required**:   
-**Unique**:   
+**Kind**: inner property of [<code>Badge</code>](#Badge)
+**Required**:
+**Unique**:
 <a name="Badge..name"></a>
 
 ### Badge~name : <code>String</code>
 Name by which the badge should be known.
 
-**Kind**: inner property of [<code>Badge</code>](#Badge)  
-**Required**:   
+**Kind**: inner property of [<code>Badge</code>](#Badge)
+**Required**:
 <a name="Badge..type"></a>
 
 ### Badge~type : <code>String</code>
 Badge type by which backend could find particular badge.
 
-**Kind**: inner property of [<code>Badge</code>](#Badge)  
-**Required**:   
-**Unique**:   
+**Kind**: inner property of [<code>Badge</code>](#Badge)
+**Required**:
+**Unique**:
 <a name="Badge..imageUrl"></a>
 
 ### Badge~imageUrl : <code>String</code>
 Image url of the badge.
 
-**Kind**: inner property of [<code>Badge</code>](#Badge)  
+**Kind**: inner property of [<code>Badge</code>](#Badge)
 <a name="Badge..subtitle"></a>
 
 ### Badge~subtitle : <code>String</code>
 Optional subtitle of the badge.
 
-**Kind**: inner property of [<code>Badge</code>](#Badge)  
+**Kind**: inner property of [<code>Badge</code>](#Badge)
 <a name="Badge..description"></a>
 
 ### Badge~description : <code>String</code>
 Simple description of one badge.
 
-**Kind**: inner property of [<code>Badge</code>](#Badge)  
+**Kind**: inner property of [<code>Badge</code>](#Badge)
 <a name="Badge..selfAward"></a>
 
 ### Badge~selfAward : <code>Boolean</code>
 A flag to indicate if the badge could be self awarded.
 
-**Kind**: inner property of [<code>Badge</code>](#Badge)  
+**Kind**: inner property of [<code>Badge</code>](#Badge)
 <a name="Badge..tokenSupply"></a>
 
 ### Badge~tokenSupply : <code>Number</code>
 Indicates the maximum amount of badges those could be awarded.
 
-**Kind**: inner property of [<code>Badge</code>](#Badge)  
+**Kind**: inner property of [<code>Badge</code>](#Badge)
 <a name="Badge..isTransferable"></a>
 
 ### Badge~isTransferable : <code>Boolean</code>
 A flag to indicate if the badge could be transferred to another user.
 
-**Kind**: inner property of [<code>Badge</code>](#Badge)  
+**Kind**: inner property of [<code>Badge</code>](#Badge)
 <a name="Badge..isNft"></a>
 
 ### Badge~isNft : <code>Boolean</code>
 A flag to indicate if the badge is NFT.
 
-**Kind**: inner property of [<code>Badge</code>](#Badge)  
+**Kind**: inner property of [<code>Badge</code>](#Badge)
 <a name="Badge..txStatus"></a>
 
 ### Badge~txStatus : <code>String</code>
 Ethereum Transaction status.
 
-**Kind**: inner property of [<code>Badge</code>](#Badge)  
+**Kind**: inner property of [<code>Badge</code>](#Badge)
 <a name="Badge..txHash"></a>
 
 ### Badge~txHash : <code>String</code>
 Ethereum Transaction hash.
 
-**Kind**: inner property of [<code>Badge</code>](#Badge)  
+**Kind**: inner property of [<code>Badge</code>](#Badge)
 <a name="BadgeAward"></a>
 
 ## BadgeAward : <code>object</code>
 BadgeAward model maps to a MongoDB collection and defines the shape of the document.
 
-**Kind**: global namespace  
+**Kind**: global namespace
 
 | Param |
 | --- |
-| schema | 
+| schema |
 
 
 * [BadgeAward](#BadgeAward) : <code>object</code>
@@ -396,73 +396,73 @@ BadgeAward model maps to a MongoDB collection and defines the shape of the docum
 ### BadgeAward~badge : <code>String</code>
 Badge id.
 
-**Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)  
-**Required**:   
+**Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)
+**Required**:
 <a name="BadgeAward..badgeType"></a>
 
 ### BadgeAward~badgeType : <code>String</code>
 Badge type.
 
-**Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)  
-**Required**:   
+**Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)
+**Required**:
 <a name="BadgeAward..userId"></a>
 
 ### BadgeAward~userId : <code>String</code>
 User Id.
 
-**Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)  
-**Required**:   
+**Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)
+**Required**:
 <a name="BadgeAward..walletId"></a>
 
 ### BadgeAward~walletId : <code>String</code>
 Wallet Id.
 
-**Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)  
-**Required**:   
+**Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)
+**Required**:
 <a name="BadgeAward..txStatus"></a>
 
 ### BadgeAward~txStatus : <code>String</code>
 Ethereum Transaction status.
 
-**Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)  
+**Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)
 <a name="BadgeAward..txHash"></a>
 
 ### BadgeAward~txHash : <code>String</code>
 Ethereum Transaction hash.
 
-**Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)  
+**Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)
 <a name="Blacklist"></a>
 
 ## Blacklist : <code>object</code>
 Blacklist model maps to a MongoDB collection and defines the shape of the document.
 
-**Kind**: global namespace  
+**Kind**: global namespace
 
 | Param |
 | --- |
-| schema | 
+| schema |
 
 <a name="BlacklistedUsernames"></a>
 
 ## BlacklistedUsernames : <code>object</code>
 BlacklistedUsernames model maps to a MongoDB collection and defines the shape of the document.
 
-**Kind**: global namespace  
+**Kind**: global namespace
 
 | Param |
 | --- |
-| schema | 
+| schema |
 
 <a name="Connection"></a>
 
 ## Connection : <code>object</code>
 Connection model maps to a MongoDB collection and defines the shape of the document.
 
-**Kind**: global namespace  
+**Kind**: global namespace
 
 | Param |
 | --- |
-| schema | 
+| schema |
 
 
 * [Connection](#Connection) : <code>object</code>
@@ -477,46 +477,46 @@ Connection model maps to a MongoDB collection and defines the shape of the docum
 ### Connection~userId : <code>String</code>
 The user identifier.
 
-**Kind**: inner property of [<code>Connection</code>](#Connection)  
-**Required**:   
+**Kind**: inner property of [<code>Connection</code>](#Connection)
+**Required**:
 <a name="Connection..accessKey"></a>
 
 ### Connection~accessKey : <code>String</code>
 Unique identifier for each connection.
 
-**Kind**: inner property of [<code>Connection</code>](#Connection)  
-**Required**:   
+**Kind**: inner property of [<code>Connection</code>](#Connection)
+**Required**:
 <a name="Connection..status"></a>
 
 ### Connection~status : <code>String</code>
 The status of each connection.
 
-**Kind**: inner property of [<code>Connection</code>](#Connection)  
-**Required**:   
+**Kind**: inner property of [<code>Connection</code>](#Connection)
+**Required**:
 <a name="Connection..sourceIdentityKey"></a>
 
 ### Connection~sourceIdentityKey : <code>String</code>
 The sourceIdentityKey of each connection.
 
-**Kind**: inner property of [<code>Connection</code>](#Connection)  
-**Unique**:   
+**Kind**: inner property of [<code>Connection</code>](#Connection)
+**Unique**:
 <a name="Connection..targetIdentityKey"></a>
 
 ### Connection~targetIdentityKey : <code>String</code>
 The targetIdentityKey of each connection.
 
-**Kind**: inner property of [<code>Connection</code>](#Connection)  
-**Unique**:   
+**Kind**: inner property of [<code>Connection</code>](#Connection)
+**Unique**:
 <a name="Notification"></a>
 
 ## Notification : <code>object</code>
 Notification model maps to a MongoDB collection and defines the shape of the document.
 
-**Kind**: global namespace  
+**Kind**: global namespace
 
 | Param |
 | --- |
-| schema | 
+| schema |
 
 
 * [Notification](#Notification) : <code>object</code>
@@ -529,32 +529,32 @@ Notification model maps to a MongoDB collection and defines the shape of the doc
 ### Notification~type : <code>String</code>
 The type of one notification.
 
-**Kind**: inner property of [<code>Notification</code>](#Notification)  
-**Required**:   
+**Kind**: inner property of [<code>Notification</code>](#Notification)
+**Required**:
 <a name="Notification..meta"></a>
 
 ### Notification~meta : <code>Object</code>
 Additional important information about one notification.
 
-**Kind**: inner property of [<code>Notification</code>](#Notification)  
-**Required**:   
+**Kind**: inner property of [<code>Notification</code>](#Notification)
+**Required**:
 <a name="Notification..payload"></a>
 
 ### Notification~payload : <code>Object</code>
 The content of one notification.
 
-**Kind**: inner property of [<code>Notification</code>](#Notification)  
-**Required**:   
+**Kind**: inner property of [<code>Notification</code>](#Notification)
+**Required**:
 <a name="NotificationPreferences"></a>
 
 ## NotificationPreferences : <code>object</code>
 NotificationPreferences model maps to a MongoDB collection and defines the shape of the document.
 
-**Kind**: global namespace  
+**Kind**: global namespace
 
 | Param |
 | --- |
-| schema | 
+| schema |
 
 
 * [NotificationPreferences](#NotificationPreferences) : <code>object</code>
@@ -572,68 +572,68 @@ NotificationPreferences model maps to a MongoDB collection and defines the shape
 ### NotificationPreferences~userId : <code>String</code>
 The user identifier.
 
-**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
-**Required**:   
-**Unique**:   
+**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)
+**Required**:
+**Unique**:
 <a name="NotificationPreferences..newOffer"></a>
 
 ### NotificationPreferences~newOffer : <code>Boolean</code>
 One flag for newOffer notification.
 
-**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
-**Required**:   
+**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)
+**Required**:
 <a name="NotificationPreferences..newReceipt"></a>
 
 ### NotificationPreferences~newReceipt : <code>Boolean</code>
 One flag for newReceipt notification.
 
-**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
-**Required**:   
+**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)
+**Required**:
 <a name="NotificationPreferences..paymentConfirmation"></a>
 
 ### NotificationPreferences~paymentConfirmation : <code>Boolean</code>
 One flag for paymentConfirmation notification.
 
-**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
-**Required**:   
+**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)
+**Required**:
 <a name="NotificationPreferences..paymentStatusUpdate"></a>
 
 ### NotificationPreferences~paymentStatusUpdate : <code>Boolean</code>
 One flag for paymentStatusUpdate notification.
 
-**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
-**Required**:   
+**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)
+**Required**:
 <a name="NotificationPreferences..profileUpdate"></a>
 
 ### NotificationPreferences~profileUpdate : <code>Boolean</code>
 One flag for profileUpdate notification.
 
-**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
-**Required**:   
+**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)
+**Required**:
 <a name="NotificationPreferences..fundsDeposit"></a>
 
 ### NotificationPreferences~fundsDeposit : <code>Boolean</code>
 One flag for fundsDeposit notification.
 
-**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
-**Required**:   
+**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)
+**Required**:
 <a name="NotificationPreferences..transactionEvent"></a>
 
 ### NotificationPreferences~transactionEvent : <code>Boolean</code>
 One flag for transactionEvent notification.
 
-**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)  
-**Required**:   
+**Kind**: inner property of [<code>NotificationPreferences</code>](#NotificationPreferences)
+**Required**:
 <a name="NotificationType"></a>
 
 ## NotificationType : <code>object</code>
 NotificationType model maps to a MongoDB collection and defines the shape of the document.
 
-**Kind**: global namespace  
+**Kind**: global namespace
 
 | Param |
 | --- |
-| schema | 
+| schema |
 
 
 * [NotificationType](#NotificationType) : <code>object</code>
@@ -646,29 +646,29 @@ NotificationType model maps to a MongoDB collection and defines the shape of the
 ### NotificationType~type : <code>String</code>
 The type of one notification.
 
-**Kind**: inner property of [<code>NotificationType</code>](#NotificationType)  
-**Required**:   
-**Unique**:   
+**Kind**: inner property of [<code>NotificationType</code>](#NotificationType)
+**Required**:
+**Unique**:
 <a name="NotificationType..name"></a>
 
 ### NotificationType~name : <code>String</code>
 The name of one notification.
 
-**Kind**: inner property of [<code>NotificationType</code>](#NotificationType)  
-**Required**:   
+**Kind**: inner property of [<code>NotificationType</code>](#NotificationType)
+**Required**:
 <a name="NotificationType..actions"></a>
 
 ### NotificationType~actions : <code>Object</code>
 Actions related with one notification.
 
-**Kind**: inner property of [<code>NotificationType</code>](#NotificationType)  
-**Required**:   
+**Kind**: inner property of [<code>NotificationType</code>](#NotificationType)
+**Required**:
 <a name="Register"></a>
 
 ## Register : <code>object</code>
 Register model
 
-**Kind**: global namespace  
+**Kind**: global namespace
 
 * [Register](#Register) : <code>object</code>
     * [~authorizationCode](#Register..authorizationCode) : <code>String</code>
@@ -683,51 +683,51 @@ Register model
 ### Register~authorizationCode : <code>String</code>
 Authorisation code generated by platform-authentication
 
-**Kind**: inner property of [<code>Register</code>](#Register)  
+**Kind**: inner property of [<code>Register</code>](#Register)
 <a name="Register..nonce"></a>
 
 ### Register~nonce : <code>String</code>
 A one time code for a request between the wallet and platform-core
 
-**Kind**: inner property of [<code>Register</code>](#Register)  
-**Required**:   
+**Kind**: inner property of [<code>Register</code>](#Register)
+**Required**:
 <a name="Register..nonceExpiry"></a>
 
 ### Register~nonceExpiry : <code>String</code>
 The expiry of the nonce
 
-**Kind**: inner property of [<code>Register</code>](#Register)  
-**Required**:   
+**Kind**: inner property of [<code>Register</code>](#Register)
+**Required**:
 <a name="Register..publicKey"></a>
 
 ### Register~publicKey : <code>String</code>
 The public key of a wallet
 
-**Kind**: inner property of [<code>Register</code>](#Register)  
-**Required**:   
+**Kind**: inner property of [<code>Register</code>](#Register)
+**Required**:
 <a name="Register..uuid"></a>
 
 ### Register~uuid : <code>String</code>
 A random unique identifier used for the registration process
 
-**Kind**: inner property of [<code>Register</code>](#Register)  
-**Required**:   
+**Kind**: inner property of [<code>Register</code>](#Register)
+**Required**:
 <a name="Register..walletId"></a>
 
 ### Register~walletId : <code>String</code>
 The ID of a wallet that's created as part of the registration flow
 
-**Kind**: inner property of [<code>Register</code>](#Register)  
+**Kind**: inner property of [<code>Register</code>](#Register)
 <a name="User"></a>
 
 ## User : <code>object</code>
 User model maps to a MongoDB collection and defines the shape of the document.
 
-**Kind**: global namespace  
+**Kind**: global namespace
 
 | Param |
 | --- |
-| schema | 
+| schema |
 
 
 * [User](#User) : <code>object</code>
@@ -752,147 +752,155 @@ User model maps to a MongoDB collection and defines the shape of the document.
     * [~profileImage](#User..profileImage) : <code>String</code>
     * [~icoService](#User..icoService) : <code>Object</code>
     * [~status](#User..status) : <code>String</code>
+    * [~secretId](#User..secretId) : <code>String</code>
 
 <a name="User..userId"></a>
 
 ### User~userId : <code>String</code>
 The user identifier.
 
-**Kind**: inner property of [<code>User</code>](#User)  
-**Required**:   
+**Kind**: inner property of [<code>User</code>](#User)
+**Required**:
+<a name="User..secretId"></a>
+
+### User~secretId : <code>String</code>
+The user secret identifier.
+
+**Kind**: inner property of [<code>User</code>](#User)
+**Required**:
 <a name="User..targetUserId"></a>
 
 ### User~targetUserId : <code>String</code>
 The blacklisted user identifier.
 
-**Kind**: inner property of [<code>User</code>](#User)  
-**Required**:   
+**Kind**: inner property of [<code>User</code>](#User)
+**Required**:
 <a name="User..username"></a>
 
 ### User~username : <code>String</code>
 The username.
 
-**Kind**: inner property of [<code>User</code>](#User)  
-**Required**:   
-**Unique**:   
+**Kind**: inner property of [<code>User</code>](#User)
+**Required**:
+**Unique**:
 <a name="User..registrationId"></a>
 
 ### User~registrationId : <code>String</code>
 The user's registration Id.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..firstName"></a>
 
 ### User~firstName : <code>String</code>
 The user's first name.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..lastName"></a>
 
 ### User~lastName : <code>String</code>
 The user's last name.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..email"></a>
 
 ### User~email : <code>String</code>
 The user's email.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..isEmailVerified"></a>
 
 ### User~isEmailVerified : <code>Boolean</code>
 One flag to check user's email.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..emailOneTimePassword"></a>
 
 ### User~emailOneTimePassword : <code>String</code>
 The user's email one time password.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..phone"></a>
 
 ### User~phone : <code>String</code>
 The user's phone.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..isPhoneVerified"></a>
 
 ### User~isPhoneVerified : <code>Boolean</code>
 One flag to check user's phone.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..phoneOneTimePassword"></a>
 
 ### User~phoneOneTimePassword : <code>String</code>
 The user's phone one time password.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..country"></a>
 
 ### User~country : <code>String</code>
 The user's country.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..state"></a>
 
 ### User~state : <code>String</code>
 The user's state.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..city"></a>
 
 ### User~city : <code>String</code>
 The user's city.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..userSearchable"></a>
 
 ### User~userSearchable : <code>Boolean</code>
 One flag to check if user is searchable.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..tagline"></a>
 
 ### User~tagline : <code>String</code>
 The user's tagline.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..taglineStatus"></a>
 
 ### User~taglineStatus : <code>Boolean</code>
 One flag to check if user's tagline is displayable.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..profileImage"></a>
 
 ### User~profileImage : <code>String</code>
 The user's profileImage.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..icoService"></a>
 
 ### User~icoService : <code>Object</code>
 Information related to the user's account with a service provider for ICOs.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="User..status"></a>
 
 ### User~status : <code>String</code>
 The user status in the system.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 <a name="Wallet"></a>
 
 ## Wallet : <code>object</code>
 Wallet model maps to a MongoDB collection and defines the shape of the document.
 
-**Kind**: global namespace  
+**Kind**: global namespace
 
 | Param |
 | --- |
-| schema | 
+| schema |
 
 
 * [Wallet](#Wallet) : <code>object</code>
@@ -909,58 +917,58 @@ Wallet model maps to a MongoDB collection and defines the shape of the document.
 ### Wallet~publicKey : <code>String</code>
 The public Key of one user.
 
-**Kind**: inner property of [<code>Wallet</code>](#Wallet)  
-**Required**:   
+**Kind**: inner property of [<code>Wallet</code>](#Wallet)
+**Required**:
 <a name="Wallet..userId"></a>
 
 ### Wallet~userId : <code>String</code>
 The user identifier.
 
-**Kind**: inner property of [<code>Wallet</code>](#Wallet)  
-**Required**:   
+**Kind**: inner property of [<code>Wallet</code>](#Wallet)
+**Required**:
 <a name="Wallet..ethAddress"></a>
 
 ### Wallet~ethAddress : <code>String</code>
 The ethereum address of one user.
 
-**Kind**: inner property of [<code>Wallet</code>](#Wallet)  
-**Required**:   
-**Unique**:   
+**Kind**: inner property of [<code>Wallet</code>](#Wallet)
+**Required**:
+**Unique**:
 <a name="Wallet..fcmToken"></a>
 
 ### Wallet~fcmToken : <code>String</code>
 The fcm identifier of one user.
 
-**Kind**: inner property of [<code>Wallet</code>](#Wallet)  
-**Required**:   
+**Kind**: inner property of [<code>Wallet</code>](#Wallet)
+**Required**:
 <a name="Wallet..signalRegistrationId"></a>
 
 ### Wallet~signalRegistrationId : <code>String</code>
 The user's signal identifier.
 
-**Kind**: inner property of [<code>Wallet</code>](#Wallet)  
+**Kind**: inner property of [<code>Wallet</code>](#Wallet)
 <a name="Wallet..bcxRegistered"></a>
 
 ### Wallet~bcxRegistered : <code>Boolean</code>
 One flag to check BCX registration.
 
-**Kind**: inner property of [<code>Wallet</code>](#Wallet)  
+**Kind**: inner property of [<code>Wallet</code>](#Wallet)
 <a name="Wallet..type"></a>
 
 ### Wallet~type : <code>String</code>
 The type of the wallet. KEY_BASED or SMART_WALLET
 
-**Kind**: inner property of [<code>Wallet</code>](#Wallet)  
+**Kind**: inner property of [<code>Wallet</code>](#Wallet)
 <a name="ReferralLinks"></a>
 
 ## ReferralLinks : <code>object</code>
 ReferralLinks model maps to a MongoDB collection and defines the shape of the document.
 
-**Kind**: global namespace  
+**Kind**: global namespace
 
 | Param |
 | --- |
-| schema | 
+| schema |
 
 
 * [ReferralLinks](#ReferralLinks) : <code>object</code>
@@ -974,26 +982,26 @@ ReferralLinks model maps to a MongoDB collection and defines the shape of the do
 ### ReferralLinks~userId : <code>String</code>
 The user identifier.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
 **Required**
 <a name="ReferralLinks..link"></a>
 
 ### ReferralLinks~link : <code>String</code>
 The generated referral link
 
-**Kind**: inner property of [<code>ReferralLinks</code>](#ReferralLinks)  
-**Required** 
-**Unique** 
+**Kind**: inner property of [<code>ReferralLinks</code>](#ReferralLinks)
+**Required**
+**Unique**
 <a name="ReferralLinks..status"></a>
 
 ### ReferralLinks~status : <code>String</code>
 The status of each link.
 
-**Kind**: inner property of [<code>ReferralLinks</code>](#ReferralLinks)  
-**Required** 
+**Kind**: inner property of [<code>ReferralLinks</code>](#ReferralLinks)
+**Required**
 <a name="ReferralLinks..targetUserId"></a>
 
 ### ReferralLinks~targetUserId : <code>String</code>
 The user who claimed the link.
 
-**Kind**: inner property of [<code>User</code>](#User)  
+**Kind**: inner property of [<code>User</code>](#User)
