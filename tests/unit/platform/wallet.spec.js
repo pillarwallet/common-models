@@ -96,6 +96,23 @@ describe('Wallet Schema Validation', () => {
     );
   });
 
+  it('should be invalid when blocknativeRegistered field is not Boolean.', () => {
+    walletObject = {
+      userId: 'myUserId',
+      publicKey: 'myKey',
+      ethAddress: 'myEthAddress',
+      fcmToken: 'fcmId',
+      blocknativeRegistered: 'WrongType',
+    };
+    wallet = new WalletModel(walletObject);
+    error = wallet.validateSync();
+
+    expect(wallet.validateSync).toThrow();
+    expect(error.errors.blocknativeRegistered.message).toEqual(
+      'Cast to Boolean failed for value "WrongType" at path "blocknativeRegistered"',
+    );
+  });
+
   it('creates Schema with unique properties', () => {
     const firstCall = getMockFirstCall(schemaCreator.createSchema);
 

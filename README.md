@@ -910,6 +910,7 @@ Wallet model maps to a MongoDB collection and defines the shape of the document.
     * [~fcmToken](#Wallet..fcmToken) : <code>String</code>
     * [~signalRegistrationId](#Wallet..signalRegistrationId) : <code>String</code>
     * [~bcxRegistered](#Wallet..bcxRegistered) : <code>Boolean</code>
+    * [~blocknativeRegistered](#Wallet..blocknativeRegistered) : <code>Boolean</code>
     * [~type](#Wallet..tpye) : <code>String</code>
 
 <a name="Wallet..publicKey"></a>
@@ -951,6 +952,12 @@ The user's signal identifier.
 
 ### Wallet~bcxRegistered : <code>Boolean</code>
 One flag to check BCX registration.
+
+**Kind**: inner property of [<code>Wallet</code>](#Wallet)
+<a name="Wallet..blocknativeRegistered"></a>
+
+### Wallet~blocknativeRegistered : <code>Boolean</code>
+One flag to check Blocknative address registration.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)
 <a name="Wallet..type"></a>
