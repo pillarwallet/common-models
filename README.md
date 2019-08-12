@@ -753,7 +753,7 @@ User model maps to a MongoDB collection and defines the shape of the document.
     * [~icoService](#User..icoService) : <code>Object</code>
     * [~status](#User..status) : <code>String</code>
     * [~secretId](#User..secretId) : <code>String</code>
-    * [~firebaseDeviceId](#User..firebaseDeviceId) : <code>String</code>
+    * [~betaProgramParticipant](#User..betaProgramParticipant) : <code>Boolean</code>
 
 <a name="User..userId"></a>
 
@@ -892,10 +892,10 @@ Information related to the user's account with a service provider for ICOs.
 The user status in the system.
 
 **Kind**: inner property of [<code>User</code>](#User)
-<a name="User..firebaseDeviceId"></a>
+<a name="User..betaProgramParticipant"></a>
 
-### User~firebaseDeviceId : <code>String</code>
-The user Firebase Device Id.
+### User~betaProgramParticipant : <code>Boolean</code>
+One flag to check if user is beta program participant
 
 **Kind**: inner property of [<code>User</code>](#User)
 <a name="Wallet"></a>
