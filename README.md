@@ -43,6 +43,9 @@ const user = new platform.User(options);
 <dt><a href="#AccessTokenBackup">AccessTokenBackup</a> : <code>object</code></dt>
 <dd><p>AccessTokenBackup model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
+<dt><a href="#AccessTokenBlacklist">AccessTokenBlacklist</a> : <code>object</code></dt>
+<dd><p>AccessTokenBlacklist model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
 <dt><a href="#Asset">Asset</a> : <code>object</code></dt>
 <dd><p>Asset model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
@@ -141,6 +144,29 @@ The contact identifier.
 Unique identifier for each connection.
 
 **Kind**: inner property of [<code>AccessTokenBackup</code>](#AccessTokenBackup)
+**Required**:
+
+<a name="AccessTokenBlacklist"></a>
+
+## AccessTokenBlacklist : <code>object</code>
+AccessTokenBlacklist model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace
+
+| Param |
+| --- |
+| schema |
+
+
+* [AccessTokenBlacklist](#AccessTokenBlacklist) : <code>object</code>
+    * [~accessToken](#AccessTokenBlacklist..accessToken) : <code>String</code>
+
+<a name="AccessTokenBlacklist..accessToken"></a>
+
+### AccessTokenBlacklist~accessToken : <code>String</code>
+A user's valid access token.
+
+**Kind**: inner property of [<code>AccessTokenBlacklist</code>](#AccessTokenBlacklist)
 **Required**:
 <a name="Asset"></a>
 
