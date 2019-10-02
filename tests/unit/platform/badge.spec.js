@@ -11,16 +11,12 @@ describe('Badge Schema Validation', () => {
     error = Badge.validateSync();
 
     expect(Badge.validateSync).toThrow();
-    expect(error.errors.ethereumId.message).toEqual(
-      'Path `ethereumId` is required.',
-    );
     expect(error.errors.name.message).toEqual('Path `name` is required.');
     expect(error.errors.type.message).toEqual('Path `type` is required.');
   });
 
   it('should create object successfully', () => {
     badgeObject = {
-      ethereumId: 1,
       name: 'name',
       type: 'type',
     };
