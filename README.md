@@ -188,6 +188,7 @@ Asset model maps to a MongoDB collection and defines the shape of the document.
     * [~symbol](#Asset..symbol) : <code>String</code>
     * [~wallpaperUrl](#Asset..wallpaperUrl) : <code>String</code>
     * [~iconUrl](#Asset..iconUrl) : <code>String</code>
+    * [~iconMonoUrl](#Asset..iconMonoUrl) : <code>String</code>
     * [~patternUrl](#Asset..patternUrl) : <code>String</code>
     * [~email](#Asset..email) : <code>String</code>
     * [~socialMedia](#Asset..socialMedia) : <code>Array</code>
@@ -244,6 +245,12 @@ The token's predefined background image.
 
 ### Asset~iconUrl : <code>String</code>
 The token's predefined icon image.
+
+**Kind**: inner property of [<code>Asset</code>](#Asset)
+<a name="Asset..iconMonoUrl"></a>
+
+### Asset~iconMonoUrl : <code>String</code>
+The token's predefined monochrome icon image.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)
 <a name="Asset..patternUrl"></a>
