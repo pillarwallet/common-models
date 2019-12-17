@@ -21,10 +21,6 @@ describe('User Feature Flags Validation', () => {
 
     expect(userFeatureFlags.validateSync).toThrow();
     expect(error.errors.userId.message).toEqual('Path `userId` is required.');
-    expect(error.errors.smartWallet.message).toEqual(
-      'Path `smartWallet` is required.',
-    );
-    expect(error.errors.bitcoin.message).toEqual('Path `bitcoin` is required.');
   });
 
   it('creates Schema with unique properties', () => {
@@ -37,7 +33,7 @@ describe('User Feature Flags Validation', () => {
     userFeaturesObject = {
       userId: 'myUserId',
       smartWallet: 'WrongType',
-      bitcoin: 'WrongType',
+      btc: 'WrongType',
     };
     userFeatureFlags = new UserFeatureFlagsModel(userFeaturesObject);
     error = userFeatureFlags.validateSync();
@@ -46,8 +42,8 @@ describe('User Feature Flags Validation', () => {
     expect(error.errors.smartWallet.message).toEqual(
       'Cast to Boolean failed for value "WrongType" at path "smartWallet"',
     );
-    expect(error.errors.bitcoin.message).toEqual(
-      'Cast to Boolean failed for value "WrongType" at path "bitcoin"',
+    expect(error.errors.btc.message).toEqual(
+      'Cast to Boolean failed for value "WrongType" at path "btc"',
     );
   });
 
@@ -55,7 +51,7 @@ describe('User Feature Flags Validation', () => {
     userFeaturesObject = {
       userId: 'myUserId',
       smartWallet: false,
-      bitcoin: true,
+      btc: true,
     };
     userFeatureFlags = new UserFeatureFlagsModel(userFeaturesObject);
     error = userFeatureFlags.validateSync();
