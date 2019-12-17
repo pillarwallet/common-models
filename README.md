@@ -79,11 +79,11 @@ const user = new platform.User(options);
 <dt><a href="#User">User</a> : <code>object</code></dt>
 <dd><p>User model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
+<dt><a href="#UserFeatureFlags">UserFeatureFlags</a> : <code>object</code></dt>
+<dd><p>UserFeatureFlags model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
 <dt><a href="#Wallet">Wallet</a> : <code>object</code></dt>
 <dd><p>Wallet model maps to a MongoDB collection and defines the shape of the document.</p>
-</dd>
-<dt><a href="#ReferralLinks">ReferralLinks</a> : <code>object</code></dt>
-<dd><p>ReferralLinks model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
 </dl>
 
@@ -1006,10 +1006,10 @@ One flag to check Blocknative address registration.
 The type of the wallet. KEY_BASED or SMART_WALLET
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)
-<a name="ReferralLinks"></a>
+<a name="UserFeatureFlags"></a>
 
-## ReferralLinks : <code>object</code>
-ReferralLinks model maps to a MongoDB collection and defines the shape of the document.
+## UserFeatureFlags : <code>object</code>
+UserFeatureFlags model maps to a MongoDB collection and defines the shape of the document.
 
 **Kind**: global namespace
 
@@ -1018,37 +1018,28 @@ ReferralLinks model maps to a MongoDB collection and defines the shape of the do
 | schema |
 
 
-* [ReferralLinks](#ReferralLinks) : <code>object</code>
-    * [~userId](#ReferralLinks..userId) : <code>String</code>
-    * [~link](#ReferralLinks..link) : <code>String</code>
-    * [~status](#ReferralLinks..status) : <code>String</code>
-    * [~targetUserId](#ReferralLinks..targetUserId) : <code>String</code>
+* [UserFeatureFlags](#UserFeatureFlags) : <code>object</code>
+    * [~userId](#UserFeatureFlags..userId) : <code>String</code>
+    * [~smartWallet](#UserFeatureFlags..smartWallet) : <code>Boolean</code>
+    * [~btc](#UserFeatureFlags..btc) : <code>Boolean</code>
 
-<a name="ReferralLinks..userId"></a>
+<a name="UserFeatureFlags..userId"></a>
 
-### ReferralLinks~userId : <code>String</code>
+### UserFeatureFlags~userId : <code>String</code>
 The user identifier.
 
 **Kind**: inner property of [<code>User</code>](#User)
 **Required**
-<a name="ReferralLinks..link"></a>
+<a name="UserFeatureFlags..smartWallet"></a>
 
-### ReferralLinks~link : <code>String</code>
-The generated referral link
+### UserFeatureFlags~smartWallet : <code>Boolean</code>
+One flag for Smart Wallet support
 
-**Kind**: inner property of [<code>ReferralLinks</code>](#ReferralLinks)
-**Required**
-**Unique**
-<a name="ReferralLinks..status"></a>
+**Kind**: inner property of [<code>UserFeatureFlags</code>](#UserFeatureFlags)
+<a name="UserFeatureFlags..btc"></a>
 
-### ReferralLinks~status : <code>String</code>
-The status of each link.
+### UserFeatureFlags~btc : <code>Boolean</code>
+One flag for Bitcoin support.
 
-**Kind**: inner property of [<code>ReferralLinks</code>](#ReferralLinks)
-**Required**
-<a name="ReferralLinks..targetUserId"></a>
-
-### ReferralLinks~targetUserId : <code>String</code>
-The user who claimed the link.
-
-**Kind**: inner property of [<code>User</code>](#User)
+**Kind**: inner property of [<code>UserFeatureFlags</code>](#UserFeatureFlags)
+<a name="UserFeatureFlags..btc"></a>
