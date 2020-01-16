@@ -85,6 +85,9 @@ const user = new platform.User(options);
 <dt><a href="#Wallet">Wallet</a> : <code>object</code></dt>
 <dd><p>Wallet model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
+<dt><a href="#Referrals">Referrals</a> : <code>object</code></dt>
+<dd><p>Referrals model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
 </dl>
 
 <a name="telegram"></a>
@@ -1043,3 +1046,46 @@ One flag for Bitcoin support.
 
 **Kind**: inner property of [<code>UserFeatureFlags</code>](#UserFeatureFlags)
 <a name="UserFeatureFlags..btc"></a>
+<a name="Referrals"></a>
+
+## Referrals : <code>object</code>
+Referrals model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace
+
+| Param |
+| --- |
+| schema |
+
+
+* [Referrals](#Referrals) : <code>object</code>
+    * [~status](#Referrals..status) : <code>String</code>
+    * [~userAddress](#Referrals..userAddress) : <code>String</code>
+    * [~amount](#Referrals..amount) : <code>Number</code>
+    * [~notes](#Referrals..notes) : <code>String</code>
+
+<a name="Referrals..status"></a>
+
+### Referrals~status : <code>String</code>
+The status of the transaction [Success, Error]
+
+**Kind**: inner property of [<code>Referrals</code>](#Referrals)
+**Required**
+<a name="Referrals..userAddress"></a>
+
+### Referrals~userAddress : <code>String</code>
+Wallet address of the user to be rewarded
+
+**Kind**: inner property of [<code>Referrals</code>](#Referrals)
+<a name="Referrals..amount"></a>
+
+### Referrals~amount : <code>Number</code>
+The amount of PLR for the reward
+
+**Kind**: inner property of [<code>Referrals</code>](#Referrals)
+<a name="Referrals..notes"></a>
+
+### Referrals~notes : <code>String</code>
+If something goes wrong, the notes contains the reason
+
+**Kind**: inner property of [<code>Referrals</code>](#Referrals)
