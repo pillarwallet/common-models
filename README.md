@@ -85,8 +85,8 @@ const user = new platform.User(options);
 <dt><a href="#Wallet">Wallet</a> : <code>object</code></dt>
 <dd><p>Wallet model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
-<dt><a href="#Referrals">Referrals</a> : <code>object</code></dt>
-<dd><p>Referrals model maps to a MongoDB collection and defines the shape of the document.</p>
+<dt><a href="#ReferralTransaction">ReferralTransaction</a> : <code>object</code></dt>
+<dd><p>ReferralTransaction model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
 </dl>
 
@@ -1046,10 +1046,10 @@ One flag for Bitcoin support.
 
 **Kind**: inner property of [<code>UserFeatureFlags</code>](#UserFeatureFlags)
 <a name="UserFeatureFlags..btc"></a>
-<a name="Referrals"></a>
+<a name="ReferralTransaction"></a>
 
-## Referrals : <code>object</code>
-Referrals model maps to a MongoDB collection and defines the shape of the document.
+## ReferralTransaction : <code>object</code>
+ReferralTransaction model maps to a MongoDB collection and defines the shape of the document.
 
 **Kind**: global namespace
 
@@ -1058,34 +1058,43 @@ Referrals model maps to a MongoDB collection and defines the shape of the docume
 | schema |
 
 
-* [Referrals](#Referrals) : <code>object</code>
-    * [~status](#Referrals..status) : <code>String</code>
-    * [~userAddress](#Referrals..userAddress) : <code>String</code>
-    * [~amount](#Referrals..amount) : <code>Number</code>
-    * [~notes](#Referrals..notes) : <code>String</code>
+* [ReferralTransaction](#ReferralTransaction) : <code>object</code>
+    * [~status](#ReferralTransaction..status) : <code>String</code>
+    * [~ethAddress](#ReferralTransaction..ethAddress) : <code>String</code>
+    * [~txHash](#ReferralTransaction..txHash) : <code>String</code>
+    * [~amount](#ReferralTransaction..amount) : <code>Number</code>
+    * [~notes](#ReferralTransaction..notes) : <code>String</code>
 
-<a name="Referrals..status"></a>
+<a name="ReferralTransaction..status"></a>
 
-### Referrals~status : <code>String</code>
+### ReferralTransaction~status : <code>String</code>
 The status of the transaction [Success, Error]
 
-**Kind**: inner property of [<code>Referrals</code>](#Referrals)
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
 **Required**
-<a name="Referrals..userAddress"></a>
+<a name="ReferralTransaction..ethAddress"></a>
 
-### Referrals~userAddress : <code>String</code>
-Wallet address of the user to be rewarded
+### ReferralTransaction~ethAddress : <code>String</code>
+Address of the user to be rewarded
 
-**Kind**: inner property of [<code>Referrals</code>](#Referrals)
-<a name="Referrals..amount"></a>
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
+**Required**
+<a name="ReferralTransaction..txHash"></a>
 
-### Referrals~amount : <code>Number</code>
+### ReferralTransaction~txHash : <code>String</code>
+Hash of the transaction
+
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
+<a name="ReferralTransaction..amount"></a>
+
+### ReferralTransaction~amount : <code>Number</code>
 The amount of PLR for the reward
 
-**Kind**: inner property of [<code>Referrals</code>](#Referrals)
-<a name="Referrals..notes"></a>
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
+**Required**
+<a name="ReferralTransaction..notes"></a>
 
-### Referrals~notes : <code>String</code>
+### ReferralTransaction~notes : <code>String</code>
 If something goes wrong, the notes contains the reason
 
-**Kind**: inner property of [<code>Referrals</code>](#Referrals)
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
