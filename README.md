@@ -85,6 +85,9 @@ const user = new platform.User(options);
 <dt><a href="#Wallet">Wallet</a> : <code>object</code></dt>
 <dd><p>Wallet model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
+<dt><a href="#ReferralTransaction">ReferralTransaction</a> : <code>object</code></dt>
+<dd><p>ReferralTransaction model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
 </dl>
 
 <a name="telegram"></a>
@@ -1043,3 +1046,55 @@ One flag for Bitcoin support.
 
 **Kind**: inner property of [<code>UserFeatureFlags</code>](#UserFeatureFlags)
 <a name="UserFeatureFlags..btc"></a>
+<a name="ReferralTransaction"></a>
+
+## ReferralTransaction : <code>object</code>
+ReferralTransaction model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace
+
+| Param |
+| --- |
+| schema |
+
+
+* [ReferralTransaction](#ReferralTransaction) : <code>object</code>
+    * [~status](#ReferralTransaction..status) : <code>String</code>
+    * [~ethAddress](#ReferralTransaction..ethAddress) : <code>String</code>
+    * [~txHash](#ReferralTransaction..txHash) : <code>String</code>
+    * [~amount](#ReferralTransaction..amount) : <code>Number</code>
+    * [~errorMessage](#ReferralTransaction..errorMessage) : <code>String</code>
+
+<a name="ReferralTransaction..status"></a>
+
+### ReferralTransaction~status : <code>String</code>
+The status of the transaction [Success, Error]
+
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
+**Required**
+<a name="ReferralTransaction..ethAddress"></a>
+
+### ReferralTransaction~ethAddress : <code>String</code>
+Address of the user to be rewarded
+
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
+**Required**
+<a name="ReferralTransaction..txHash"></a>
+
+### ReferralTransaction~txHash : <code>String</code>
+Hash of the transaction
+
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
+<a name="ReferralTransaction..amount"></a>
+
+### ReferralTransaction~amount : <code>Number</code>
+The amount of PLR for the reward
+
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
+**Required**
+<a name="ReferralTransaction..errorMessage"></a>
+
+### ReferralTransaction~errorMessage : <code>String</code>
+Error message if something goes wrong
+
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
