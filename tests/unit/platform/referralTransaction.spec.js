@@ -14,7 +14,7 @@ describe('Referrals model', () => {
       ethAddress: 'testAddress',
       txHash: 'testHash',
       amount: 25,
-      notes: 'testNotes',
+      errorMessage: 'testMessage',
     });
 
     expect(referrals.toJSON()).toEqual({
@@ -23,7 +23,7 @@ describe('Referrals model', () => {
       ethAddress: 'testAddress',
       txHash: 'testHash',
       amount: 25,
-      notes: 'testNotes',
+      errorMessage: 'testMessage',
     });
   });
 
