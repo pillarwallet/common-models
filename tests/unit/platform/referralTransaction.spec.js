@@ -14,7 +14,7 @@ describe('Referrals model', () => {
       ethAddress: 'testAddress',
       txHash: 'testHash',
       amount: 25,
-      errorMessage: 'testMessage',
+      asset: 'PLR',
     });
 
     expect(referrals.toJSON()).toEqual({
@@ -23,7 +23,7 @@ describe('Referrals model', () => {
       ethAddress: 'testAddress',
       txHash: 'testHash',
       amount: 25,
-      errorMessage: 'testMessage',
+      asset: 'PLR',
     });
   });
 
@@ -34,7 +34,9 @@ describe('Referrals model', () => {
 
     const { errors } = referrals.validateSync();
     expect(errors.status.message).toMatch('Path `status` is required.');
+    expect(errors.txHash.message).toMatch('Path `txHash` is required.');
     expect(errors.ethAddress.message).toMatch('Path `ethAddress` is required.');
     expect(errors.amount.message).toMatch('Path `amount` is required.');
+    expect(errors.asset.message).toMatch('Path `asset` is required.');
   });
 });

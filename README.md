@@ -1063,7 +1063,7 @@ ReferralTransaction model maps to a MongoDB collection and defines the shape of 
     * [~ethAddress](#ReferralTransaction..ethAddress) : <code>String</code>
     * [~txHash](#ReferralTransaction..txHash) : <code>String</code>
     * [~amount](#ReferralTransaction..amount) : <code>Number</code>
-    * [~errorMessage](#ReferralTransaction..errorMessage) : <code>String</code>
+    * [~asset](#ReferralTransaction..asset) : <code>String</code>
 
 <a name="ReferralTransaction..status"></a>
 
@@ -1092,9 +1092,11 @@ The amount of PLR for the reward
 
 **Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
 **Required**
-<a name="ReferralTransaction..errorMessage"></a>
+<a name="ReferralTransaction..asset"></a>
 
-### ReferralTransaction~errorMessage : <code>String</code>
-Error message if something goes wrong
+### ReferralTransaction~asset : <code>String</code>
+Asset symbol
 
 **Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
+**Required**
+
