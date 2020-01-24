@@ -1,13 +1,13 @@
 {
   "name": "@pillarwallet/common-models",
-  "version": "1.25.1",
+  "version": "1.26.0",
   "description": "shared Database models between platform microservices.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test": "npm run test:unit && npm run test:integration",
-    "test:unit": "jest unit",
+    "test:unit": "jest unit --coverage",
     "test:integration": "jest integration",
     "generateReadme": "echo \"\" > README.md && jsdoc2md lib/**/* --template templates/README.hbs > README.md",
     "precommit": "npm run lint && npm run test"
