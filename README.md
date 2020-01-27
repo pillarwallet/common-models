@@ -85,6 +85,9 @@ const user = new platform.User(options);
 <dt><a href="#Wallet">Wallet</a> : <code>object</code></dt>
 <dd><p>Wallet model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
+<dt><a href="#Referral">Referral</a> : <code>object</code></dt>
+<dd><p>Referral model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
 <dt><a href="#ReferralTransaction">ReferralTransaction</a> : <code>object</code></dt>
 <dd><p>ReferralTransaction model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
@@ -1047,6 +1050,49 @@ One flag for Bitcoin support.
 **Kind**: inner property of [<code>UserFeatureFlags</code>](#UserFeatureFlags)
 <a name="UserFeatureFlags..btc"></a>
 <a name="ReferralTransaction"></a>
+
+## Referral : <code>object</code>
+Referral model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace
+
+| Param |
+| --- |
+| schema |
+
+
+* [Referral](#Referral) : <code>object</code>
+    * [~deviceInfo](#Referral..deviceInfo) : <code>String</code>
+    * [~firstInstall](#Referral..firstInstall) : <code>Boolean</code>
+    * [~userId](#Referral..userId) : <code>String</code>
+    * [~ethAddress](#Referral..ethAddress) : <code>String</code>
+
+<a name="Referral..deviceInfo"></a>
+
+### Referral~deviceInfo : <code>String</code>
+Device info stored as checksum.
+
+**Kind**: inner property of [<code>Referral</code>](#Referral)
+**Required**
+<a name="Referral..firstInstall"></a>
+
+### Referral~firstInstall : <code>Boolean</code>
+Flag for first install.
+
+**Kind**: inner property of [<code>Referral</code>](#Referral)
+**Required**
+<a name="Referral..userId"></a>
+
+### Referral~userId : <code>String</code>
+The user identifier of the invited person.
+
+**Kind**: inner property of [<code>Referral</code>](#Referral)
+<a name="Referral..ethAddress"></a>
+
+### Referral~ethAddress : <code>String</code>
+ETH address of the invited person.
+
+**Kind**: inner property of [<code>Referral</code>](#Referral)
 
 ## ReferralTransaction : <code>object</code>
 ReferralTransaction model maps to a MongoDB collection and defines the shape of the document.

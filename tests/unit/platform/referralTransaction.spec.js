@@ -3,13 +3,13 @@ const schemaCreator = require('../../../utilities/schemaCreator');
 jest.spyOn(schemaCreator, 'createSchema');
 const ReferralTransaction = require('../../../lib/platform/referralTransaction');
 
-describe('Referrals model', () => {
+describe('ReferralTransactions model', () => {
   afterAll(() => {
     schemaCreator.createSchema.mockRestore();
   });
 
   it('creates a model with specifed properties', () => {
-    const referrals = new ReferralTransaction({
+    const referralTransaction = new ReferralTransaction({
       status: 'Success',
       ethAddress: 'testAddress',
       txHash: 'testHash',
@@ -17,7 +17,7 @@ describe('Referrals model', () => {
       asset: 'PLR',
     });
 
-    expect(referrals.toJSON()).toEqual({
+    expect(referralTransaction.toJSON()).toEqual({
       id: expect.any(String),
       status: 'Success',
       ethAddress: 'testAddress',
@@ -28,11 +28,11 @@ describe('Referrals model', () => {
   });
 
   it('throws when required properties are missing', () => {
-    const referrals = new ReferralTransaction({});
+    const referralTransaction = new ReferralTransaction({});
 
-    expect(referrals.validateSync).toThrow();
+    expect(referralTransaction.validateSync).toThrow();
 
-    const { errors } = referrals.validateSync();
+    const { errors } = referralTransaction.validateSync();
     expect(errors.status.message).toMatch('Path `status` is required.');
     expect(errors.txHash.message).toMatch('Path `txHash` is required.');
     expect(errors.ethAddress.message).toMatch('Path `ethAddress` is required.');
