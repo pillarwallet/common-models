@@ -1064,8 +1064,6 @@ Referral model maps to a MongoDB collection and defines the shape of the documen
 * [Referral](#Referral) : <code>object</code>
     * [~deviceInfo](#Referral..deviceInfo) : <code>String</code>
     * [~firstInstall](#Referral..firstInstall) : <code>Boolean</code>
-    * [~referrerId](#Referral..referrerId) : <code>String</code>
-    * [~referrerEthAddress](#Referral..referrerEthAddress) : <code>String</code>
     * [~userId](#Referral..userId) : <code>String</code>
     * [~ethAddress](#Referral..ethAddress) : <code>String</code>
 
@@ -1080,20 +1078,6 @@ Device info stored as checksum.
 
 ### Referral~firstInstall : <code>Boolean</code>
 Flag for first install.
-
-**Kind**: inner property of [<code>Referral</code>](#Referral)
-**Required**
-<a name="Referral..referrerId"></a>
-
-### Referral~referrerId : <code>String</code>
-The user identifier of the person sending the invite.
-
-**Kind**: inner property of [<code>Referral</code>](#Referral)
-**Required**
-<a name="Referral..referrerEthAddress"></a>
-
-### Referral~referrerEthAddress : <code>Number</code>
-ETH address of the person sending the invite.
 
 **Kind**: inner property of [<code>Referral</code>](#Referral)
 **Required**

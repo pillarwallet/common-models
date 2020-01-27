@@ -12,8 +12,6 @@ describe('Referrals model', () => {
     const referral = new Referral({
       deviceInfo: 'device-info-checksum',
       firstInstall: true,
-      referrerId: 'referrer-user-id',
-      referrerEthAddress: 'referrer-eth-address',
       userId: 'user-id',
       ethAddress: 'user-eth-address',
     });
@@ -22,8 +20,6 @@ describe('Referrals model', () => {
       id: expect.any(String),
       deviceInfo: 'device-info-checksum',
       firstInstall: true,
-      referrerId: 'referrer-user-id',
-      referrerEthAddress: 'referrer-eth-address',
       userId: 'user-id',
       ethAddress: 'user-eth-address',
     });
@@ -38,10 +34,6 @@ describe('Referrals model', () => {
     expect(errors.deviceInfo.message).toMatch('Path `deviceInfo` is required.');
     expect(errors.firstInstall.message).toMatch(
       'Path `firstInstall` is required.',
-    );
-    expect(errors.referrerId.message).toMatch('Path `referrerId` is required.');
-    expect(errors.referrerEthAddress.message).toMatch(
-      'Path `referrerEthAddress` is required.',
     );
   });
 });
