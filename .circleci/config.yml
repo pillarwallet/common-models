@@ -42,7 +42,11 @@ jobs:
       - run:
           name: Publish package to Artifactory
           command: npm publish
-
+      - run:
+          name: Announce Publish
+          command: |
+            chmod +x .circleci/announcePublish.sh
+            .circleci/announcePublish.sh "common-models" "$(node -e "console.log(require('./package.json').name)")@$(node -e "console.log(require('./package.json').version)")"
 workflows:
   version: 2
   test_and_publish:
