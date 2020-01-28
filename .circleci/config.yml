@@ -49,23 +49,6 @@ jobs:
             .circleci/announcePublish.sh "common-models" "$(node -e "console.log(require('./package.json').name)")@$(node -e "console.log(require('./package.json').version)")"
 workflows:
   version: 2
-  build_test_and_deploy:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
-      - publish:
-          requires:
-            - test
-          filters:
-            branches:
-              only:
-                - master
-
-
-workflows:
-  version: 2
   test_and_publish:
     jobs:
       - test
