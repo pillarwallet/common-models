@@ -1063,6 +1063,7 @@ Referral model maps to a MongoDB collection and defines the shape of the documen
 
 * [Referral](#Referral) : <code>object</code>
     * [~deviceInfo](#Referral..deviceInfo) : <code>String</code>
+    * [~deviceOs](#Referral..deviceOs) : <code>String</code>
     * [~firstInstall](#Referral..firstInstall) : <code>Boolean</code>
     * [~userId](#Referral..userId) : <code>String</code>
     * [~ethAddress](#Referral..ethAddress) : <code>String</code>
@@ -1071,6 +1072,13 @@ Referral model maps to a MongoDB collection and defines the shape of the documen
 
 ### Referral~deviceInfo : <code>String</code>
 Device info stored as checksum.
+
+**Kind**: inner property of [<code>Referral</code>](#Referral)
+**Required**
+<a name="Referral..deviceOs"></a>
+
+### Referral~deviceOs : <code>String</code>
+Device OS.
 
 **Kind**: inner property of [<code>Referral</code>](#Referral)
 **Required**
