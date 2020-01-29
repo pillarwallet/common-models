@@ -91,6 +91,9 @@ const user = new platform.User(options);
 <dt><a href="#ReferralTransaction">ReferralTransaction</a> : <code>object</code></dt>
 <dd><p>ReferralTransaction model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
+<dt><a href="#ReferralInvitation">ReferralInvitation</a> : <code>object</code></dt>
+<dd><p>ReferralInvitation model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
 </dl>
 
 <a name="telegram"></a>
@@ -1154,3 +1157,38 @@ Asset symbol
 **Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
 **Required**
 
+## ReferralInvitation : <code>object</code>
+ReferralInvitation model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace
+
+| Param |
+| --- |
+| schema |
+
+
+* [ReferralInvitation](#ReferralInvitation) : <code>object</code>
+    * [~userId](#ReferralInvitation..userId) : <code>String</code>
+    * [~email](#ReferralInvitation..email) : <code>String</code>
+    * [~claimed](#ReferralInvitation..claimed) : <code>Boolean</code>
+
+<a name="ReferralInvitation..userId"></a>
+
+### ReferralInvitation~userId : <code>String</code>
+The user identifier of the inviting user
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+**Required**
+<a name="ReferralInvitation..email"></a>
+
+### ReferralInvitation~email : <code>String</code>
+Email of the invited person
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+**Required**
+<a name="ReferralInvitation..claimed"></a>
+
+### ReferralInvitation~claimed : <code>Boolean</code>
+Flag indicating if the user claimed the reward
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
