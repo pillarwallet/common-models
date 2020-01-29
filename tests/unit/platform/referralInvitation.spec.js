@@ -12,6 +12,7 @@ describe('ReferralInvitation model', () => {
     const referralInvitation = new ReferralInvitation({
       userId: 'abc-123',
       email: 'test@test',
+      phone: '+999999999999',
       claimed: false,
     });
 
@@ -19,6 +20,7 @@ describe('ReferralInvitation model', () => {
       id: expect.any(String),
       userId: 'abc-123',
       email: 'test@test',
+      phone: '+999999999999',
       claimed: false,
     });
   });
@@ -30,6 +32,5 @@ describe('ReferralInvitation model', () => {
 
     const { errors } = referralInvitation.validateSync();
     expect(errors.userId.message).toMatch('Path `userId` is required.');
-    expect(errors.email.message).toMatch('Path `email` is required.');
   });
 });
