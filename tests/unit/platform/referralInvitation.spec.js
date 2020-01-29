@@ -12,14 +12,14 @@ describe('ReferralInvitation model', () => {
     const referralInvitation = new ReferralInvitation({
       userId: 'abc-123',
       email: 'test@test',
-      rewarded: false,
+      claimed: false,
     });
 
     expect(referralInvitation.toJSON()).toEqual({
       id: expect.any(String),
       userId: 'abc-123',
       email: 'test@test',
-      rewarded: false,
+      claimed: false,
     });
   });
 
@@ -31,6 +31,5 @@ describe('ReferralInvitation model', () => {
     const { errors } = referralInvitation.validateSync();
     expect(errors.userId.message).toMatch('Path `userId` is required.');
     expect(errors.email.message).toMatch('Path `email` is required.');
-    expect(errors.rewarded.message).toMatch('Path `rewarded` is required.');
   });
 });
