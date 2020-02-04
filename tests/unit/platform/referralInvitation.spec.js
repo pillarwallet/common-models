@@ -8,11 +8,10 @@ describe('ReferralInvitation model', () => {
     schemaCreator.createSchema.mockRestore();
   });
 
-  it('creates a model with specifed properties', () => {
+  it('creates a model with specifed properties when phone is null', () => {
     const referralInvitation = new ReferralInvitation({
       userId: 'abc-123',
       email: 'test@test',
-      phone: '+999999999999',
       claimed: false,
     });
 
@@ -20,6 +19,22 @@ describe('ReferralInvitation model', () => {
       id: expect.any(String),
       userId: 'abc-123',
       email: 'test@test',
+      phone: null,
+      claimed: false,
+    });
+  });
+
+  it('creates a model with specifed properties when email is null', () => {
+    const referralInvitation = new ReferralInvitation({
+      userId: 'abc-123',
+      phone: '+999999999999',
+      claimed: false,
+    });
+
+    expect(referralInvitation.toJSON()).toEqual({
+      id: expect.any(String),
+      userId: 'abc-123',
+      email: null,
       phone: '+999999999999',
       claimed: false,
     });
