@@ -85,8 +85,8 @@ const user = new platform.User(options);
 <dt><a href="#Wallet">Wallet</a> : <code>object</code></dt>
 <dd><p>Wallet model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
-<dt><a href="#Referral">Referral</a> : <code>object</code></dt>
-<dd><p>Referral model maps to a MongoDB collection and defines the shape of the document.</p>
+<dt><a href="#ReferralDevice">ReferralDevice</a> : <code>object</code></dt>
+<dd><p>ReferralDevice model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
 <dt><a href="#ReferralTransaction">ReferralTransaction</a> : <code>object</code></dt>
 <dd><p>ReferralTransaction model maps to a MongoDB collection and defines the shape of the document.</p>
@@ -1054,8 +1054,8 @@ One flag for Bitcoin support.
 <a name="UserFeatureFlags..btc"></a>
 <a name="ReferralTransaction"></a>
 
-## Referral : <code>object</code>
-Referral model maps to a MongoDB collection and defines the shape of the document.
+## ReferralDevice : <code>object</code>
+ReferralDevice model maps to a MongoDB collection and defines the shape of the document.
 
 **Kind**: global namespace
 
@@ -1064,46 +1064,34 @@ Referral model maps to a MongoDB collection and defines the shape of the documen
 | schema |
 
 
-* [Referral](#Referral) : <code>object</code>
-    * [~deviceInfo](#Referral..deviceInfo) : <code>String</code>
-    * [~deviceOs](#Referral..deviceOs) : <code>String</code>
-    * [~firstInstall](#Referral..firstInstall) : <code>Boolean</code>
-    * [~userId](#Referral..userId) : <code>String</code>
-    * [~ethAddress](#Referral..ethAddress) : <code>String</code>
+* [ReferralDevice](#ReferralDevice) : <code>object</code>
+    * [~deviceInfo](#ReferralDevice..deviceInfo) : <code>String</code>
+    * [~deviceOs](#ReferralDevice..deviceOs) : <code>String</code>
+    * [~firstInstall](#ReferralDevice..firstInstall) : <code>Boolean</code>
+    * [~userId](#ReferralDevice..userId) : <code>String</code>
+    * [~ethAddress](#ReferralDevice..ethAddress) : <code>String</code>
 
-<a name="Referral..deviceInfo"></a>
+<a name="ReferralDevice..deviceInfo"></a>
 
-### Referral~deviceInfo : <code>String</code>
+### ReferralDevice~deviceInfo : <code>String</code>
 Device info stored as checksum.
 
-**Kind**: inner property of [<code>Referral</code>](#Referral)
+**Kind**: inner property of [<code>ReferralDevice</code>](#ReferralDevice)
 **Required**
-<a name="Referral..deviceOs"></a>
+<a name="ReferralDevice..deviceOs"></a>
 
-### Referral~deviceOs : <code>String</code>
+### ReferralDevice~deviceOs : <code>String</code>
 Device OS.
 
-**Kind**: inner property of [<code>Referral</code>](#Referral)
+**Kind**: inner property of [<code>ReferralDevice</code>](#ReferralDevice)
 **Required**
-<a name="Referral..firstInstall"></a>
+<a name="ReferralDevice..firstInstall"></a>
 
-### Referral~firstInstall : <code>Boolean</code>
+### ReferralDevice~firstInstall : <code>Boolean</code>
 Flag for first install.
 
-**Kind**: inner property of [<code>Referral</code>](#Referral)
+**Kind**: inner property of [<code>ReferralDevice</code>](#ReferralDevice)
 **Required**
-<a name="Referral..userId"></a>
-
-### Referral~userId : <code>String</code>
-The user identifier of the invited person.
-
-**Kind**: inner property of [<code>Referral</code>](#Referral)
-<a name="Referral..ethAddress"></a>
-
-### Referral~ethAddress : <code>String</code>
-ETH address of the invited person.
-
-**Kind**: inner property of [<code>Referral</code>](#Referral)
 
 ## ReferralTransaction : <code>object</code>
 ReferralTransaction model maps to a MongoDB collection and defines the shape of the document.

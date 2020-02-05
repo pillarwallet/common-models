@@ -1,38 +1,34 @@
 const schemaCreator = require('../../../utilities/schemaCreator');
 
 jest.spyOn(schemaCreator, 'createSchema');
-const Referral = require('../../../lib/platform/referral');
+const ReferralDevice = require('../../../lib/platform/referralDevice');
 
-describe('Referrals model', () => {
+describe('ReferralDevice model', () => {
   afterAll(() => {
     schemaCreator.createSchema.mockRestore();
   });
 
   it('creates a model with specifed properties', () => {
-    const referral = new Referral({
+    const referralDevice = new ReferralDevice({
       deviceInfo: 'device-info-checksum',
       deviceOs: 'ANDROID',
       firstInstall: true,
-      userId: 'user-id',
-      ethAddress: 'user-eth-address',
     });
 
-    expect(referral.toJSON()).toEqual({
+    expect(referralDevice.toJSON()).toEqual({
       id: expect.any(String),
       deviceInfo: 'device-info-checksum',
       deviceOs: 'ANDROID',
       firstInstall: true,
-      userId: 'user-id',
-      ethAddress: 'user-eth-address',
     });
   });
 
   it('throws when required properties are missing', () => {
-    const referral = new Referral({});
+    const referralDevice = new ReferralDevice({});
 
-    expect(referral.validateSync).toThrow();
+    expect(referralDevice.validateSync).toThrow();
 
-    const { errors } = referral.validateSync();
+    const { errors } = referralDevice.validateSync();
     expect(errors.deviceInfo.message).toMatch('Path `deviceInfo` is required.');
     expect(errors.deviceOs.message).toMatch('Path `deviceOs` is required.');
     expect(errors.firstInstall.message).toMatch(
