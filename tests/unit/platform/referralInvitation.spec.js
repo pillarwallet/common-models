@@ -13,6 +13,7 @@ describe('ReferralInvitation model', () => {
       userId: 'abc-123',
       email: 'test@test',
       claimed: false,
+      invitedUserId: null,
     });
 
     expect(referralInvitation.toJSON()).toEqual({
@@ -21,6 +22,7 @@ describe('ReferralInvitation model', () => {
       email: 'test@test',
       phone: null,
       claimed: false,
+      invitedUserId: null,
     });
   });
 
@@ -29,6 +31,7 @@ describe('ReferralInvitation model', () => {
       userId: 'abc-123',
       phone: '+999999999999',
       claimed: false,
+      invitedUserId: null,
     });
 
     expect(referralInvitation.toJSON()).toEqual({
@@ -37,6 +40,7 @@ describe('ReferralInvitation model', () => {
       email: null,
       phone: '+999999999999',
       claimed: false,
+      invitedUserId: null,
     });
   });
 

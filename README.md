@@ -1160,11 +1160,12 @@ ReferralInvitation model maps to a MongoDB collection and defines the shape of t
     * [~email](#ReferralInvitation..email) : <code>String</code>
     * [~phone](#ReferralInvitation..phone) : <code>String</code>
     * [~claimed](#ReferralInvitation..claimed) : <code>Boolean</code>
+    * [~invitedUserId](#ReferralInvitation..invitedUserId) : <code>String</code>
 
 <a name="ReferralInvitation..userId"></a>
 
 ### ReferralInvitation~userId : <code>String</code>
-The user identifier of the inviting user
+The user identifier of the inviter
 
 **Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
 **Required**
@@ -1184,5 +1185,11 @@ Phone of the invited person
 
 ### ReferralInvitation~claimed : <code>Boolean</code>
 Flag indicating if the user claimed the reward
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+<a name="ReferralInvitation..invitedUserId"></a>
+
+### ReferralInvitation~invitedUserId : <code>String</code>
+The user identifier of the invited user
 
 **Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
