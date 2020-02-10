@@ -14,6 +14,7 @@ describe('ReferralInvitation model', () => {
       email: 'test@test',
       claimed: false,
       invitedUserId: null,
+      token: 'abc',
     });
 
     expect(referralInvitation.toJSON()).toEqual({
@@ -23,6 +24,7 @@ describe('ReferralInvitation model', () => {
       phone: null,
       claimed: false,
       invitedUserId: null,
+      token: 'abc',
     });
   });
 
@@ -32,6 +34,7 @@ describe('ReferralInvitation model', () => {
       phone: '+999999999999',
       claimed: false,
       invitedUserId: null,
+      token: 'abc',
     });
 
     expect(referralInvitation.toJSON()).toEqual({
@@ -41,6 +44,7 @@ describe('ReferralInvitation model', () => {
       phone: '+999999999999',
       claimed: false,
       invitedUserId: null,
+      token: 'abc',
     });
   });
 
@@ -51,5 +55,6 @@ describe('ReferralInvitation model', () => {
 
     const { errors } = referralInvitation.validateSync();
     expect(errors.userId.message).toMatch('Path `userId` is required.');
+    expect(errors.token.message).toMatch('Path `token` is required.');
   });
 });
