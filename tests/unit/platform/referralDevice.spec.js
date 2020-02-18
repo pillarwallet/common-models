@@ -4,6 +4,8 @@ jest.spyOn(schemaCreator, 'createSchema');
 const ReferralDevice = require('../../../lib/platform/referralDevice');
 
 describe('ReferralDevice model', () => {
+  const getMockFirstCall = call => call.mock.calls[0][0];
+
   afterAll(() => {
     schemaCreator.createSchema.mockRestore();
   });
@@ -21,6 +23,12 @@ describe('ReferralDevice model', () => {
       deviceOs: 'ANDROID',
       firstInstall: true,
     });
+  });
+
+  it('creates Schema with unique properties', () => {
+    const firstCall = getMockFirstCall(schemaCreator.createSchema);
+
+    expect(firstCall.deviceInfo).toHaveProperty('unique', true);
   });
 
   it('throws when required properties are missing', () => {
