@@ -1077,6 +1077,7 @@ ReferralDevice model maps to a MongoDB collection and defines the shape of the d
 Device info stored as checksum.
 
 **Kind**: inner property of [<code>ReferralDevice</code>](#ReferralDevice)
+**Unique**:
 **Required**
 <a name="ReferralDevice..deviceOs"></a>
 
