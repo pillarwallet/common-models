@@ -961,6 +961,7 @@ Wallet model maps to a MongoDB collection and defines the shape of the document.
     * [~bcxRegistered](#Wallet..bcxRegistered) : <code>Boolean</code>
     * [~blocknativeRegistered](#Wallet..blocknativeRegistered) : <code>Boolean</code>
     * [~type](#Wallet..tpye) : <code>String</code>
+    * [~disabled](#Wallet..disabled) : <code>Boolean</code>
 
 <a name="Wallet..publicKey"></a>
 
@@ -1015,6 +1016,14 @@ One flag to check Blocknative address registration.
 The type of the wallet. KEY_BASED or SMART_WALLET
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)
+<a name="Wallet..disabled"></a>
+
+### Wallet~disabled : <code>Disabled</code>
+A flag indicating if the wallet is disabled or not.
+
+**Kind**: inner property of [<code>Wallet</code>](#Wallet)
+**Required**:
+
 <a name="UserFeatureFlags"></a>
 
 ## UserFeatureFlags : <code>object</code>
