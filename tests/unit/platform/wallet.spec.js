@@ -113,6 +113,24 @@ describe('Wallet Schema Validation', () => {
     );
   });
 
+  it('should be invalid when disabled field is not Boolean.', () => {
+    walletObject = {
+      userId: 'myUserId',
+      publicKey: 'myKey',
+      ethAddress: 'myEthAddress',
+      fcmToken: 'fcmId',
+      bcxRegistered: false,
+      disabled: 'wrongType',
+    };
+    wallet = new WalletModel(walletObject);
+    error = wallet.validateSync();
+
+    expect(wallet.validateSync).toThrow();
+    expect(error.errors.disabled.message).toEqual(
+      'Cast to Boolean failed for value "wrongType" at path "disabled"',
+    );
+  });
+
   it('creates Schema with unique properties', () => {
     const firstCall = getMockFirstCall(schemaCreator.createSchema);
 
