@@ -991,7 +991,6 @@ The ethereum address of one user.
 The fcm identifier of one user.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)
-**Required**:
 <a name="Wallet..signalRegistrationId"></a>
 
 ### Wallet~signalRegistrationId : <code>String</code>

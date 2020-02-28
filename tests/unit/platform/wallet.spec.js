@@ -64,7 +64,7 @@ describe('Wallet Schema Validation', () => {
     );
   });
 
-  it('should be invalid if try to create object without fcmToken field', () => {
+  it('should be valid to create object without fcmToken field', () => {
     walletObject = {
       userId: 'myUserId',
       publicKey: 'myKey',
@@ -73,10 +73,8 @@ describe('Wallet Schema Validation', () => {
     wallet = new WalletModel(walletObject);
     error = wallet.validateSync();
 
-    expect(wallet.validateSync).toThrow();
-    expect(error.errors.fcmToken.message).toEqual(
-      'Path `fcmToken` is required.',
-    );
+    expect(error).toBe(undefined);
+    expect(wallet).toMatchObject(walletObject);
   });
 
   it('should be invalid when bcxRegistered field is not Boolean.', () => {
