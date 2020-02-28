@@ -75,6 +75,7 @@ describe('Wallet Schema Validation', () => {
 
     expect(error).toBe(undefined);
     expect(wallet).toMatchObject(walletObject);
+    expect(wallet.fcmToken).toEqual(null);
   });
 
   it('should be invalid when bcxRegistered field is not Boolean.', () => {
