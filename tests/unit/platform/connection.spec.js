@@ -18,6 +18,26 @@ describe('Connection Schema Validation', () => {
     expect(error.errors.status.message).toEqual('Path `status` is required.');
   });
 
+  it('should be invalid to create random version', () => {
+    connectionObject = {
+      userId: 'myUserId',
+      accessKey: 'myKey',
+      status: 'myStatus',
+      sourceIdentityKey: 'sourceIdentityKey',
+      targetIdentityKey: 'targetIdentityKey',
+      targetUserId: null,
+      version: 'v4',
+    };
+
+    Connection = new ConnectionModel(connectionObject);
+    error = Connection.validateSync();
+
+    expect(Connection.validateSync).toThrow();
+    expect(error.errors.version.message).toEqual(
+      '`v4` is not a valid enum value for path `version`.',
+    );
+  });
+
   it('should create object successfully', () => {
     connectionObject = {
       userId: 'myUserId',
@@ -25,6 +45,8 @@ describe('Connection Schema Validation', () => {
       status: 'myStatus',
       sourceIdentityKey: 'sourceIdentityKey',
       targetIdentityKey: 'targetIdentityKey',
+      targetUserId: 'target-user-id',
+      version: 'v2',
     };
     Connection = new ConnectionModel(connectionObject);
     error = Connection.validateSync();
