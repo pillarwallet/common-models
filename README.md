@@ -513,6 +513,9 @@ Connection model maps to a MongoDB collection and defines the shape of the docum
     * [~status](#Connection..status) : <code>String</code>
     * [~sourceIdentityKey](#Connection..sourceIdentityKey) : <code>String</code>
     * [~targetIdentityKey](#Connection..targetIdentityKey) : <code>String</code>
+    * [~targetUserId](#Connection..targetUserId) : <code>String</code>
+    * [~version](#Connection..version) : <code>String</code>
+
 
 <a name="Connection..userId"></a>
 
@@ -546,6 +549,19 @@ The sourceIdentityKey of each connection.
 
 ### Connection~targetIdentityKey : <code>String</code>
 The targetIdentityKey of each connection.
+
+**Kind**: inner property of [<code>Connection</code>](#Connection)
+**Unique**:
+<a name="Connection..targetIdentityKey"></a>
+
+### Connection~targetUserId : <code>String</code>
+The targetUserId of each connection.
+
+**Kind**: inner property of [<code>Connection</code>](#Connection)
+<a name="Connection..version"></a>
+
+### Connection~version : <code>String</code>
+The version of the connection.
 
 **Kind**: inner property of [<code>Connection</code>](#Connection)
 **Unique**:
