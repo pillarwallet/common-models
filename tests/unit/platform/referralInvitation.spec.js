@@ -8,7 +8,7 @@ describe('ReferralInvitation model', () => {
     schemaCreator.createSchema.mockRestore();
   });
 
-  it('creates a model with specifed properties when phone is null', () => {
+  it('creates a model with specified properties when phone is null', () => {
     const referralInvitation = new ReferralInvitation({
       userId: 'abc-123',
       email: 'test@test',
@@ -25,10 +25,12 @@ describe('ReferralInvitation model', () => {
       claimed: false,
       invitedUserId: null,
       token: 'abc',
+      partner: false,
+      campaign: null,
     });
   });
 
-  it('creates a model with specifed properties when email is null', () => {
+  it('creates a model with specified properties when email is null', () => {
     const referralInvitation = new ReferralInvitation({
       userId: 'abc-123',
       phone: '+999999999999',
@@ -45,6 +47,55 @@ describe('ReferralInvitation model', () => {
       claimed: false,
       invitedUserId: null,
       token: 'abc',
+      partner: false,
+      campaign: null,
+    });
+  });
+
+  it('creates a model with specified properties when partner is true', () => {
+    const referralInvitation = new ReferralInvitation({
+      userId: 'abc-123',
+      phone: '+999999999999',
+      claimed: false,
+      invitedUserId: null,
+      token: 'abc',
+      partner: true,
+      campaign: 'abc',
+    });
+
+    expect(referralInvitation.toJSON()).toEqual({
+      id: expect.any(String),
+      userId: 'abc-123',
+      email: null,
+      phone: '+999999999999',
+      claimed: false,
+      invitedUserId: null,
+      token: 'abc',
+      partner: true,
+      campaign: 'abc',
+    });
+  });
+
+  it('creates a model with specified properties when campaign is `pillar`', () => {
+    const referralInvitation = new ReferralInvitation({
+      userId: 'abc-123',
+      phone: '+999999999999',
+      claimed: false,
+      invitedUserId: null,
+      token: 'abc',
+      campaign: 'pillar',
+    });
+
+    expect(referralInvitation.toJSON()).toEqual({
+      id: expect.any(String),
+      userId: 'abc-123',
+      email: null,
+      phone: '+999999999999',
+      claimed: false,
+      invitedUserId: null,
+      token: 'abc',
+      partner: false,
+      campaign: 'pillar',
     });
   });
 
