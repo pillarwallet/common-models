@@ -1187,6 +1187,8 @@ ReferralInvitation model maps to a MongoDB collection and defines the shape of t
     * [~claimed](#ReferralInvitation..claimed) : <code>Boolean</code>
     * [~invitedUserId](#ReferralInvitation..invitedUserId) : <code>String</code>
     * [~token](#ReferralInvitation..token) : <code>String</code>
+    * [~partner](#ReferralInvitation..partner) : <code>Boolean</code>
+    * [~campaign](#ReferralInvitation..campaign) : <code>String</code>
 
 <a name="ReferralInvitation..userId"></a>
 
