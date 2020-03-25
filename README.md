@@ -1196,7 +1196,6 @@ ReferralInvitation model maps to a MongoDB collection and defines the shape of t
 The user identifier of the inviter
 
 **Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
-**Required**
 <a name="ReferralInvitation..email"></a>
 
 ### ReferralInvitation~email : <code>String</code>

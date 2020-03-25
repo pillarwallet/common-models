@@ -54,7 +54,6 @@ describe('ReferralInvitation model', () => {
 
   it('creates a model with specified properties when partner is true', () => {
     const referralInvitation = new ReferralInvitation({
-      userId: 'abc-123',
       phone: '+999999999999',
       claimed: false,
       invitedUserId: null,
@@ -65,7 +64,7 @@ describe('ReferralInvitation model', () => {
 
     expect(referralInvitation.toJSON()).toEqual({
       id: expect.any(String),
-      userId: 'abc-123',
+      userId: null,
       email: null,
       phone: '+999999999999',
       claimed: false,
@@ -78,23 +77,23 @@ describe('ReferralInvitation model', () => {
 
   it('creates a model with specified properties when campaign is `pillar`', () => {
     const referralInvitation = new ReferralInvitation({
-      userId: 'abc-123',
       phone: '+999999999999',
       claimed: false,
       invitedUserId: null,
       token: 'abc',
+      partner: true,
       campaign: 'pillar',
     });
 
     expect(referralInvitation.toJSON()).toEqual({
       id: expect.any(String),
-      userId: 'abc-123',
+      userId: null,
       email: null,
       phone: '+999999999999',
       claimed: false,
       invitedUserId: null,
       token: 'abc',
-      partner: false,
+      partner: true,
       campaign: 'pillar',
     });
   });
@@ -105,7 +104,6 @@ describe('ReferralInvitation model', () => {
     expect(referralInvitation.validateSync).toThrow();
 
     const { errors } = referralInvitation.validateSync();
-    expect(errors.userId.message).toMatch('Path `userId` is required.');
     expect(errors.token.message).toMatch('Path `token` is required.');
   });
 });
