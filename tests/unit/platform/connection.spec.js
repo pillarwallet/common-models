@@ -38,6 +38,27 @@ describe('Connection Schema Validation', () => {
     );
   });
 
+  it('should be invalid to create random direction', () => {
+    connectionObject = {
+      userId: 'myUserId',
+      accessKey: 'myKey',
+      status: 'myStatus',
+      sourceIdentityKey: 'sourceIdentityKey',
+      targetIdentityKey: 'targetIdentityKey',
+      targetUserId: null,
+      direction: 'delivered',
+      version: 'v3',
+    };
+
+    Connection = new ConnectionModel(connectionObject);
+    error = Connection.validateSync();
+
+    expect(Connection.validateSync).toThrow();
+    expect(error.errors.direction.message).toEqual(
+      '`delivered` is not a valid enum value for path `direction`.',
+    );
+  });
+
   it('should create object successfully', () => {
     connectionObject = {
       userId: 'myUserId',
@@ -46,6 +67,7 @@ describe('Connection Schema Validation', () => {
       sourceIdentityKey: 'sourceIdentityKey',
       targetIdentityKey: 'targetIdentityKey',
       targetUserId: 'target-user-id',
+      direction: 'sent',
       version: 'v2',
     };
     Connection = new ConnectionModel(connectionObject);
