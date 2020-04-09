@@ -1,6 +1,6 @@
 {
   "name": "@pillarwallet/common-models",
-  "version": "1.36.0",
+  "version": "1.37.0",
   "description": "shared Database models between platform microservices.",
   "main": "index.js",
   "scripts": {
@@ -40,6 +40,7 @@
     "jest": "22.4.4",
     "jest-cli": "22.4.4",
     "jsdoc-to-markdown": "4.0.1",
+    "moment": "^2.24.0",
     "mongodb-memory-server": "^6.3.3",
     "mongoose": "5.2.0",
     "prettier": "1.13.7"

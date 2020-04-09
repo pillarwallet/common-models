@@ -1,3 +1,4 @@
+const moment = require('moment');
 const schemaCreator = require('../../../utilities/schemaCreator.js');
 
 jest.spyOn(schemaCreator, 'createSchema');
@@ -62,5 +63,40 @@ describe('User Schema Validation', () => {
     expect(error).toBe(undefined);
     expect(user).toMatchObject(userObject);
     expect(user).toHaveProperty('secretId');
+    expect(user).toHaveProperty('lastSeen');
+  });
+
+  it('should create object successfully with all properties seted', () => {
+    userObject = {
+      username: 'username',
+      registrationId: 'testRegistrationId',
+      firstName: 'firstName',
+      lastName: 'lastName',
+      email: 'email',
+      isEmailVerified: true,
+      emailOneTimePassword: 'testEmailOneTimePassword',
+      phone: '+9999999',
+      isPhoneVerified: true,
+      phoneOneTimePassword: 'testPhoneOneTimePassword',
+      country: 'testCountry',
+      state: 'testState',
+      city: 'testCity',
+      userSearchable: true,
+      tagline: 'testTagLine',
+      taglineStatus: true,
+      profileImage: 'profileImage',
+      status: 'ACTIVE',
+      secretId: 'test',
+      betaProgramParticipant: true,
+      lastSeen: moment().utc(),
+    };
+    user = new UserModel(userObject);
+    error = user.validateSync();
+
+    delete userObject.lastSeen;
+
+    expect(error).toBe(undefined);
+    expect(user).toMatchObject(userObject);
+    expect(user).toHaveProperty('lastSeen');
   });
 });
