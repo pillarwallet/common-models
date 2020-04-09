@@ -27,6 +27,7 @@ describe('ReferralInvitation model', () => {
       token: 'abc',
       partner: false,
       campaign: null,
+      amount: null,
     });
   });
 
@@ -49,6 +50,7 @@ describe('ReferralInvitation model', () => {
       token: 'abc',
       partner: false,
       campaign: null,
+      amount: null,
     });
   });
 
@@ -60,6 +62,7 @@ describe('ReferralInvitation model', () => {
       token: 'abc',
       partner: true,
       campaign: 'abc',
+      amount: 10,
     });
 
     expect(referralInvitation.toJSON()).toEqual({
@@ -72,6 +75,7 @@ describe('ReferralInvitation model', () => {
       token: 'abc',
       partner: true,
       campaign: 'abc',
+      amount: 10,
     });
   });
 
@@ -83,6 +87,7 @@ describe('ReferralInvitation model', () => {
       token: 'abc',
       partner: true,
       campaign: 'pillar',
+      amount: 10,
     });
 
     expect(referralInvitation.toJSON()).toEqual({
@@ -95,6 +100,7 @@ describe('ReferralInvitation model', () => {
       token: 'abc',
       partner: true,
       campaign: 'pillar',
+      amount: 10,
     });
   });
 

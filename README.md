@@ -1204,6 +1204,7 @@ ReferralInvitation model maps to a MongoDB collection and defines the shape of t
     * [~token](#ReferralInvitation..token) : <code>String</code>
     * [~partner](#ReferralInvitation..partner) : <code>Boolean</code>
     * [~campaign](#ReferralInvitation..campaign) : <code>String</code>
+    * [~amount](#ReferralInvitation..amount) : <code>Number</code>
 
 <a name="ReferralInvitation..userId"></a>
 
@@ -1252,5 +1253,11 @@ Flag indicating if it is a partner campaign.
 
 ### ReferralInvitation~campaign : <code>String</code>
 The campaign identifier.
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+<a name="ReferralInvitation..amount"></a>
+
+### ReferralInvitation~amount : <code>Number</code>
+The amount to reward.
 
 **Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
