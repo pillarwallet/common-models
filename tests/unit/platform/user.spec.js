@@ -62,5 +62,37 @@ describe('User Schema Validation', () => {
     expect(error).toBe(undefined);
     expect(user).toMatchObject(userObject);
     expect(user).toHaveProperty('secretId');
+    expect(user).toHaveProperty('lastSeen');
+  });
+
+  it('should create object successfully with all properties seted', () => {
+    userObject = {
+      username: 'username',
+      registrationId: 'testRegistrationId',
+      firstName: 'firstName',
+      lastName: 'lastName',
+      email: 'email',
+      isEmailVerified: true,
+      emailOneTimePassword: 'testEmailOneTimePassword',
+      phone: '+9999999',
+      isPhoneVerified: true,
+      phoneOneTimePassword: 'testPhoneOneTimePassword',
+      country: 'testCountry',
+      state: 'testState',
+      city: 'testCity',
+      userSearchable: true,
+      tagline: 'testTagLine',
+      taglineStatus: true,
+      profileImage: 'profileImage',
+      status: 'ACTIVE',
+      secretId: 'test',
+      betaProgramParticipant: true,
+      lastSeen: new Date(),
+    };
+    user = new UserModel(userObject);
+    error = user.validateSync();
+
+    expect(error).toBe(undefined);
+    expect(user).toMatchObject(userObject);
   });
 });
