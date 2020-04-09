@@ -985,6 +985,7 @@ Wallet model maps to a MongoDB collection and defines the shape of the document.
     * [~blocknativeRegistered](#Wallet..blocknativeRegistered) : <code>Boolean</code>
     * [~type](#Wallet..tpye) : <code>String</code>
     * [~disabled](#Wallet..disabled) : <code>Boolean</code>
+    * [~recovery](#Wallet..recovery) : <code>Boolean</code>
 
 <a name="Wallet..publicKey"></a>
 
@@ -1042,6 +1043,13 @@ The type of the wallet. KEY_BASED or SMART_WALLET
 
 ### Wallet~disabled : <code>Disabled</code>
 A flag indicating if the wallet is disabled or not.
+
+**Kind**: inner property of [<code>Wallet</code>](#Wallet)
+**Required**:
+<a name="Wallet..recovery"></a>
+
+### Wallet~recovery : <code>Recovery</code>
+A flag indicating if the wallet is recovery wallet or not.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)
 **Required**:
