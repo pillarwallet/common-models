@@ -1,4 +1,3 @@
-const moment = require('moment');
 const schemaCreator = require('../../../utilities/schemaCreator.js');
 
 jest.spyOn(schemaCreator, 'createSchema');
@@ -88,15 +87,12 @@ describe('User Schema Validation', () => {
       status: 'ACTIVE',
       secretId: 'test',
       betaProgramParticipant: true,
-      lastSeen: moment().utc(),
+      lastSeen: new Date(),
     };
     user = new UserModel(userObject);
     error = user.validateSync();
 
-    delete userObject.lastSeen;
-
     expect(error).toBe(undefined);
     expect(user).toMatchObject(userObject);
-    expect(user).toHaveProperty('lastSeen');
   });
 });
