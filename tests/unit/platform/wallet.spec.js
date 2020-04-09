@@ -120,6 +120,7 @@ describe('Wallet Schema Validation', () => {
       fcmToken: 'fcmId',
       bcxRegistered: false,
       disabled: 'wrongType',
+      recovery: false,
     };
     wallet = new WalletModel(walletObject);
     error = wallet.validateSync();
@@ -127,6 +128,24 @@ describe('Wallet Schema Validation', () => {
     expect(wallet.validateSync).toThrow();
     expect(error.errors.disabled.message).toEqual(
       'Cast to Boolean failed for value "wrongType" at path "disabled"',
+    );
+  });
+
+  it('should be invalid when recovery field is not Boolean.', () => {
+    walletObject = {
+      userId: 'myUserId',
+      publicKey: 'myKey',
+      ethAddress: 'myEthAddress',
+      fcmToken: 'fcmId',
+      bcxRegistered: false,
+      recovery: 'wrongType',
+    };
+    wallet = new WalletModel(walletObject);
+    error = wallet.validateSync();
+
+    expect(wallet.validateSync).toThrow();
+    expect(error.errors.recovery.message).toEqual(
+      'Cast to Boolean failed for value "wrongType" at path "recovery"',
     );
   });
 
