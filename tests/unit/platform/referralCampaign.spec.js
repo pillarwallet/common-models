@@ -138,9 +138,7 @@ describe('ReferralCampaign model', () => {
 
     expect(referralCampaign.validateSync).toThrow();
     expect(error.message).toEqual(
-      'ReferralCampaign validation failed:' +
-        'relatedCampaigns.0.walletAddress: Path `walletAddress` is required., ' +
-        'relatedCampaigns.0.name: Path `name` is required.',
+      'ReferralCampaign validation failed: relatedCampaigns.0.walletAddress: Path `walletAddress` is required., relatedCampaigns.0.name: Path `name` is required.',
     );
   });
 });
