@@ -13,7 +13,10 @@ describe('ReferralCampaign model', () => {
       name: 'pillar',
       token: 'PLR',
       contractAddress: '0x123',
-      walletAddress: '0x456',
+      wallet: {
+        address: '0x456',
+        path: 'm/0/0/0',
+      },
       amount: 10,
       logoUrl: 'image.jpg',
       badges: true,
@@ -26,7 +29,10 @@ describe('ReferralCampaign model', () => {
       name: 'pillar',
       token: 'PLR',
       contractAddress: '0x123',
-      walletAddress: '0x456',
+      wallet: {
+        address: '0x456',
+        path: 'm/0/0/0',
+      },
       amount: 10,
       logoUrl: 'image.jpg',
       badges: true,
@@ -40,7 +46,10 @@ describe('ReferralCampaign model', () => {
       name: 'pillar',
       token: 'PLR',
       contractAddress: '0x123',
-      walletAddress: '0x456',
+      wallet: {
+        address: '0x456',
+        path: 'm/0/0/0',
+      },
     });
 
     expect(referralCampaign.toJSON()).toEqual({
@@ -48,7 +57,10 @@ describe('ReferralCampaign model', () => {
       name: 'pillar',
       token: 'PLR',
       contractAddress: '0x123',
-      walletAddress: '0x456',
+      wallet: {
+        address: '0x456',
+        path: 'm/0/0/0',
+      },
       amount: null,
       logoUrl: null,
       badges: false,
@@ -62,13 +74,11 @@ describe('ReferralCampaign model', () => {
       name: 'pillar',
       token: 'PLR',
       contractAddress: '0x123',
-      walletAddress: '0x456',
-      relatedCampaigns: [
-        {
-          name: 'test-campaign',
-          amount: 10,
-        },
-      ],
+      wallet: {
+        address: '0x456',
+        path: 'm/0/0/0',
+      },
+      relatedCampaigns: ['test-campaign'],
     };
     const referralCampaign = new ReferralCampaign(campaign);
 
@@ -82,34 +92,17 @@ describe('ReferralCampaign model', () => {
     });
   });
 
-  it('creates a model with relatedCampaigns without amount', () => {
-    const campaign = {
-      name: 'pillar',
-      token: 'PLR',
-      contractAddress: '0x123',
-      walletAddress: '0x456',
-      relatedCampaigns: [
-        {
-          name: 'test-campaign',
-        },
-      ],
-    };
-    const referralCampaign = new ReferralCampaign(campaign);
-
-    expect(referralCampaign.toJSON().relatedCampaigns[0]).toMatchObject({
-      name: 'test-campaign',
-      amount: null,
-    });
-  });
-
   it('throws an error when properties are invalid type', () => {
     const referralCampaign = new ReferralCampaign({
       name: {},
       token: 'PLR',
       contractAddress: '0x123',
-      walletAddress: '0x456',
+      wallet: {
+        address: '0x456',
+        path: 'm/0/0/0',
+      },
       amount: 'amount',
-      relatedCampaigns: [],
+      relatedCampaigns: {},
     });
 
     const error = referralCampaign.validateSync();
@@ -121,14 +114,20 @@ describe('ReferralCampaign model', () => {
     expect(error.errors.amount.message).toEqual(
       'Cast to Number failed for value "amount" at path "amount"',
     );
+    expect(error.errors.relatedCampaigns.message).toEqual(
+      'Cast to Array failed for value "{}" at path "relatedCampaigns"',
+    );
   });
 
-  it('throws an error when relatedCampaigns properties are missing', () => {
+  it('throws an error when relatedCampaigns elements are invalid type', () => {
     const referralCampaign = new ReferralCampaign({
       name: 'pillar',
       token: 'PLR',
       contractAddress: '0x123',
-      walletAddress: '0x456',
+      wallet: {
+        address: '0x456',
+        path: 'm/0/0/0',
+      },
       relatedCampaigns: [{}],
     });
 
@@ -136,7 +135,23 @@ describe('ReferralCampaign model', () => {
 
     expect(referralCampaign.validateSync).toThrow();
     expect(error.message).toEqual(
-      'ReferralCampaign validation failed: relatedCampaigns.0.name: Path `name` is required.',
+      'ReferralCampaign validation failed: relatedCampaigns: Cast to Array failed for value "[ {} ]" at path "relatedCampaigns"',
+    );
+  });
+
+  it('throws an error when wallet properties are missing', () => {
+    const referralCampaign = new ReferralCampaign({
+      name: 'pillar',
+      token: 'PLR',
+      contractAddress: '0x123',
+      wallet: {},
+    });
+
+    const error = referralCampaign.validateSync();
+
+    expect(referralCampaign.validateSync).toThrow();
+    expect(error.message).toEqual(
+      'ReferralCampaign validation failed: wallet.path: Path `wallet.path` is required., wallet.address: Path `wallet.address` is required.',
     );
   });
 });
