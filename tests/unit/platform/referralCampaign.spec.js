@@ -67,6 +67,7 @@ describe('ReferralCampaign model', () => {
         {
           name: 'test-campaign',
           amount: 10,
+          walletAddress: '0x789',
         },
       ],
     };
@@ -82,7 +83,7 @@ describe('ReferralCampaign model', () => {
     });
   });
 
-  it('creates a model with relatedCampaigns without amount', () => {
+  it('creates a model with relatedCampaigns without amount and wallet address', () => {
     const campaign = {
       name: 'pillar',
       token: 'PLR',
@@ -91,6 +92,7 @@ describe('ReferralCampaign model', () => {
       relatedCampaigns: [
         {
           name: 'test-campaign',
+          walletAddress: '0x789',
         },
       ],
     };
@@ -136,7 +138,9 @@ describe('ReferralCampaign model', () => {
 
     expect(referralCampaign.validateSync).toThrow();
     expect(error.message).toEqual(
-      'ReferralCampaign validation failed: relatedCampaigns.0.name: Path `name` is required.',
+      'ReferralCampaign validation failed:' +
+        'relatedCampaigns.0.walletAddress: Path `walletAddress` is required., ' +
+        'relatedCampaigns.0.name: Path `name` is required.',
     );
   });
 });
