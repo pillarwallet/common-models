@@ -1205,6 +1205,7 @@ ReferralInvitation model maps to a MongoDB collection and defines the shape of t
     * [~partner](#ReferralInvitation..partner) : <code>Boolean</code>
     * [~campaign](#ReferralInvitation..campaign) : <code>String</code>
     * [~amount](#ReferralInvitation..amount) : <code>Number</code>
+    * [~notified](#ReferralInvitation..notified) : <code>Boolean</code>
 
 <a name="ReferralInvitation..userId"></a>
 
@@ -1259,5 +1260,11 @@ The campaign identifier.
 
 ### ReferralInvitation~amount : <code>Number</code>
 The amount to reward.
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+<a name="ReferralInvitation..notified"></a>
+
+### ReferralInvitation~notified : <code>Boolean</code>
+Flag indicating if the user has been notified when the campaign has been terminated.
 
 **Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
