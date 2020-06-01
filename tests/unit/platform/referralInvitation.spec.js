@@ -28,6 +28,7 @@ describe('ReferralInvitation model', () => {
       partner: false,
       campaign: null,
       amount: null,
+      notified: false,
     });
   });
 
@@ -51,6 +52,7 @@ describe('ReferralInvitation model', () => {
       partner: false,
       campaign: null,
       amount: null,
+      notified: false,
     });
   });
 
@@ -76,6 +78,7 @@ describe('ReferralInvitation model', () => {
       partner: true,
       campaign: 'abc',
       amount: 10,
+      notified: false,
     });
   });
 
@@ -101,6 +104,34 @@ describe('ReferralInvitation model', () => {
       partner: true,
       campaign: 'pillar',
       amount: 10,
+      notified: false,
+    });
+  });
+
+  it('creates a model with specified properties when notified is true', () => {
+    const referralInvitation = new ReferralInvitation({
+      phone: '+999999999999',
+      claimed: false,
+      invitedUserId: null,
+      token: 'abc',
+      partner: true,
+      campaign: 'pillar',
+      amount: 10,
+      notified: true,
+    });
+
+    expect(referralInvitation.toJSON()).toEqual({
+      id: expect.any(String),
+      userId: null,
+      email: null,
+      phone: '+999999999999',
+      claimed: false,
+      invitedUserId: null,
+      token: 'abc',
+      partner: true,
+      campaign: 'pillar',
+      amount: 10,
+      notified: true,
     });
   });
 
