@@ -1,3 +1,4 @@
+const { ObjectId } = require('mongoose').Types;
 const schemaCreator = require('../../../utilities/schemaCreator');
 
 jest.spyOn(schemaCreator, 'createSchema');
@@ -10,7 +11,7 @@ describe('Story Page model', () => {
 
   it('creates a model with all properties', () => {
     const storyPageObject = {
-      storyId: 'story-id',
+      storyId: ObjectId('5c726660d10f752679c2ef14'),
       pageNumber: 1,
       body: 'Lorem ipsum',
       imageUrl: 'image.jpg',
