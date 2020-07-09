@@ -10,12 +10,9 @@ describe('Story model', () => {
 
   it('creates a model with all properties', () => {
     const storyObject = {
-      topic: 'Awesome Features',
-      title: 'Cool new feature',
       shortTitle: 'New feature!',
       imageUrl: 'image.jpg',
       imageMonoUrl: 'mono-image.jpg',
-      likes: 0,
       active: false,
     };
     const story = new StoryModel(storyObject);
@@ -28,11 +25,8 @@ describe('Story model', () => {
 
   it('throws when required properties are missing', () => {
     const storyObject = {
-      title: 'Cool new feature',
-      shortTitle: 'New feature!',
       imageUrl: 'image.jpg',
       imageMonoUrl: 'mono-image.jpg',
-      likes: 0,
       active: false,
     };
     const story = new StoryModel(storyObject);
@@ -40,17 +34,14 @@ describe('Story model', () => {
     expect(story.validateSync).toThrow();
 
     const { errors } = story.validateSync();
-    expect(errors.topic.message).toMatch('Path `topic` is required.');
+    expect(errors.shortTitle.message).toMatch('Path `shortTitle` is required.');
   });
 
   it('throws when properties are invalid type', () => {
     const storyObject = {
-      topic: 'Awesome features',
-      title: 'Title!',
       shortTitle: 'New feature!',
       imageUrl: 'image.jpg',
       imageMonoUrl: 'mono-image.jpg',
-      likes: 0,
       active: 'hello',
     };
     const story = new StoryModel(storyObject);
@@ -65,12 +56,9 @@ describe('Story model', () => {
 
   it('throws when properties exceed maximum length', () => {
     const storyObject = {
-      topic: 'Awesome features',
-      title: 'Some very long title that exceedes max length',
-      shortTitle: 'New feature!',
+      shortTitle: 'Some very long title that exceedes max length',
       imageUrl: 'image.jpg',
       imageMonoUrl: 'mono-image.jpg',
-      likes: 0,
       active: false,
     };
     const story = new StoryModel(storyObject);
@@ -78,8 +66,8 @@ describe('Story model', () => {
     expect(story.validateSync).toThrow();
 
     const { errors } = story.validateSync();
-    expect(errors.title.message).toEqual(
-      'Path `title` (`Some very long title that exceedes max length`) is longer than the maximum allowed length (30).',
+    expect(errors.shortTitle.message).toEqual(
+      'Path `shortTitle` (`Some very long title that exceedes max length`) is longer than the maximum allowed length (32).',
     );
   });
 });

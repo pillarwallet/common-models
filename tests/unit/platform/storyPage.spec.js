@@ -13,12 +13,15 @@ describe('Story Page model', () => {
     const storyPageObject = {
       storyId: ObjectId('5c726660d10f752679c2ef14'),
       pageNumber: 1,
+      topic: 'Awesome Features',
+      title: 'Cool new feature',
       body: 'Lorem ipsum',
       imageUrl: 'image.jpg',
       imageMonoUrl: 'mono-image.jpg',
       layoutType: 'layout-one',
       backgroundColor: 'black',
       textContrast: '100%',
+      likes: 0,
     };
     const storyPage = new StoryPageModel(storyPageObject);
 
@@ -31,12 +34,15 @@ describe('Story Page model', () => {
   it('throws when required properties are missing', () => {
     const storyPageObject = {
       pageNumber: 1,
+      topic: 'Awesome Features',
+      title: 'Cool new feature',
       body: 'Lorem ipsum',
       imageUrl: 'image.jpg',
       imageMonoUrl: 'mono-image.jpg',
       layoutType: 'layout-one',
       backgroundColor: 'black',
       textContrast: '100%',
+      likes: 0,
     };
     const storyPage = new StoryPageModel(storyPageObject);
 
