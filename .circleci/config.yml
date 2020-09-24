@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   slack: circleci/slack@3.4.2
+  discord: antonioned/discord@0.1.0
 
 jobs:
   test:
@@ -12,6 +13,9 @@ jobs:
       - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$PILLAR_NPM_TOKEN" > ~/common-models/.npmrc
       - run:
           name: Install dependencies
           command: npm i
@@ -29,6 +33,10 @@ jobs:
           fail_only: true
           failure_message: "Triggered by: *${CIRCLE_USERNAME}* \n\n Ooops! The *$CIRCLE_JOB* job has failed! :circleci-fail:"
           webhook: "${SLACK_WEBHOOK_URL}"
+      - discord/status:
+          fail_only: true
+          failure_message: "Triggered by: **${CIRCLE_USERNAME}** \\n\\n Ooops! The **$CIRCLE_JOB** job has failed!"
+          webhook: "${DISCORD_WEBHOOK_URL}"
 
   publish:
     working_directory: ~/common-models
@@ -60,6 +68,10 @@ jobs:
           failure_message: "Triggered by: *${CIRCLE_USERNAME}* \n\n Ooops! The *$CIRCLE_JOB* job has failed! :circleci-fail:"
           only_for_branches: master
           webhook: "${SLACK_WEBHOOK_URL}"
+      - discord/status:
+          fail_only: true
+          failure_message: "Triggered by: **${CIRCLE_USERNAME}** \\n\\n **$CIRCLE_JOB** failed, new package is not published."
+          webhook: "${DISCORD_WEBHOOK_URL}"
 
 workflows:
   version: 2.1
