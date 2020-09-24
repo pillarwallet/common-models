@@ -12,9 +12,6 @@
     "generateReadme": "echo \"\" > README.md && jsdoc2md lib/**/* --template templates/README.hbs > README.md",
     "precommit": "npm run lint && npm run test"
   },
-  "publishConfig": {
-    "registry": "https://pillarproject.jfrog.io/pillarproject/api/npm/npm/"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pillarwallet/common-models.git"
