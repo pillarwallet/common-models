@@ -61,8 +61,14 @@ const user = new platform.User(options);
 <dt><a href="#BlacklistedUsernames">BlacklistedUsernames</a> : <code>object</code></dt>
 <dd><p>BlacklistedUsernames model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
+<dt><a href="#BtcDeposit">BtcDeposit</a> : <code>object</code></dt>
+<dd><p>BtcDeposit model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
 <dt><a href="#Connection">Connection</a> : <code>object</code></dt>
 <dd><p>Connection model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
+<dt><a href="#IpfsStorage">IpfsStorage</a> : <code>object</code></dt>
+<dd><p>IpfsStorage model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
 <dt><a href="#Notification">Notification</a> : <code>object</code></dt>
 <dd><p>Notification model maps to a MongoDB collection and defines the shape of the document.</p>
@@ -73,8 +79,26 @@ const user = new platform.User(options);
 <dt><a href="#NotificationType">NotificationType</a> : <code>object</code></dt>
 <dd><p>NotificationType model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
+<dt><a href="#ReferralCampaign">ReferralCampaign</a> : <code>object</code></dt>
+<dd><p>ReferralCampaign model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
+<dt><a href="#ReferralDevice">ReferralDevice</a> : <code>object</code></dt>
+<dd><p>ReferralDevice model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
+<dt><a href="#ReferralInvitation">ReferralInvitation</a> : <code>object</code></dt>
+<dd><p>ReferralInvitation model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
+<dt><a href="#ReferralTransaction">ReferralTransaction</a> : <code>object</code></dt>
+<dd><p>ReferralTransaction model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
 <dt><a href="#Register">Register</a> : <code>object</code></dt>
 <dd><p>Register model</p>
+</dd>
+<dt><a href="#Story">Story</a> : <code>object</code></dt>
+<dd><p>Story model maps to a MongoDB collection and defines the shape of the document.</p>
+</dd>
+<dt><a href="#StoryPage">StoryPage</a> : <code>object</code></dt>
+<dd><p>StoryPage model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
 <dt><a href="#User">User</a> : <code>object</code></dt>
 <dd><p>User model maps to a MongoDB collection and defines the shape of the document.</p>
@@ -84,15 +108,6 @@ const user = new platform.User(options);
 </dd>
 <dt><a href="#Wallet">Wallet</a> : <code>object</code></dt>
 <dd><p>Wallet model maps to a MongoDB collection and defines the shape of the document.</p>
-</dd>
-<dt><a href="#ReferralDevice">ReferralDevice</a> : <code>object</code></dt>
-<dd><p>ReferralDevice model maps to a MongoDB collection and defines the shape of the document.</p>
-</dd>
-<dt><a href="#ReferralTransaction">ReferralTransaction</a> : <code>object</code></dt>
-<dd><p>ReferralTransaction model maps to a MongoDB collection and defines the shape of the document.</p>
-</dd>
-<dt><a href="#ReferralInvitation">ReferralInvitation</a> : <code>object</code></dt>
-<dd><p>ReferralInvitation model maps to a MongoDB collection and defines the shape of the document.</p>
 </dd>
 </dl>
 
@@ -154,7 +169,6 @@ Unique identifier for each connection.
 
 **Kind**: inner property of [<code>AccessTokenBackup</code>](#AccessTokenBackup)
 **Required**:
-
 <a name="AccessTokenBlacklist"></a>
 
 ## AccessTokenBlacklist : <code>object</code>
@@ -165,10 +179,6 @@ AccessTokenBlacklist model maps to a MongoDB collection and defines the shape of
 | Param |
 | --- |
 | schema |
-
-
-* [AccessTokenBlacklist](#AccessTokenBlacklist) : <code>object</code>
-    * [~accessToken](#AccessTokenBlacklist..accessToken) : <code>String</code>
 
 <a name="AccessTokenBlacklist..accessToken"></a>
 
@@ -205,7 +215,9 @@ Asset model maps to a MongoDB collection and defines the shape of the document.
     * [~whitepaper](#Asset..whitepaper) : <code>String</code>
     * [~isDefault](#Asset..isDefault) : <code>Boolean</code>
     * [~isPreferred](#Asset..isPreferred) : <code>Boolean</code>
+    * [~totalSupply](#Asset..totalSupply) : <code>String</code>
     * [~icos](#Asset..icos) : <code>Array</code>
+    * [~isSynthetixAsset](#Asset..isSynthetixAsset) : <code>Boolean</code>
 
 <a name="Asset..address"></a>
 
@@ -259,7 +271,7 @@ The token's predefined icon image.
 <a name="Asset..iconMonoUrl"></a>
 
 ### Asset~iconMonoUrl : <code>String</code>
-The token's predefined monochrome icon image.
+The token's predefined mono icon image.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)
 <a name="Asset..patternUrl"></a>
@@ -304,10 +316,20 @@ One flag to check if the Token is default on the wallet.
 A flag to indicate preferred tokens within the system.
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)
+<a name="Asset..totalSupply"></a>
+
+### Asset~totalSupply : <code>String</code>
+**Kind**: inner property of [<code>Asset</code>](#Asset)
 <a name="Asset..icos"></a>
 
 ### Asset~icos : <code>Array</code>
 Ico details of one Token.
+
+**Kind**: inner property of [<code>Asset</code>](#Asset)
+<a name="Asset..isSynthetixAsset"></a>
+
+### Asset~isSynthetixAsset : <code>Boolean</code>
+A boolean flag to indicate whether this is a Synthetix asset
 
 **Kind**: inner property of [<code>Asset</code>](#Asset)
 <a name="Badge"></a>
@@ -323,27 +345,13 @@ Badge model maps to a MongoDB collection and defines the shape of the document.
 
 
 * [Badge](#Badge) : <code>object</code>
-    * [~ethereumId](#Badge..ethereumId) : <code>Number</code>
     * [~name](#Badge..name) : <code>String</code>
     * [~type](#Badge..type) : <code>String</code>
     * [~imageUrl](#Badge..imageUrl) : <code>String</code>
     * [~subtitle](#Badge..subtitle) : <code>String</code>
     * [~description](#Badge..description) : <code>String</code>
     * [~selfAward](#Badge..selfAward) : <code>Boolean</code>
-    * [~tokenSupply](#Badge..tokenSupply) : <code>Number</code>
-    * [~isTransferable](#Badge..isTransferable) : <code>Boolean</code>
-    * [~isNft](#Badge..isNft) : <code>Boolean</code>
-    * [~txStatus](#Badge..txStatus) : <code>String</code>
-    * [~txHash](#Badge..txHash) : <code>String</code>
 
-<a name="Badge..ethereumId"></a>
-
-### Badge~ethereumId : <code>Number</code>
-Refers to badge id on ethereum network.
-
-**Kind**: inner property of [<code>Badge</code>](#Badge)
-**Required**:
-**Unique**:
 <a name="Badge..name"></a>
 
 ### Badge~name : <code>String</code>
@@ -383,36 +391,6 @@ Simple description of one badge.
 A flag to indicate if the badge could be self awarded.
 
 **Kind**: inner property of [<code>Badge</code>](#Badge)
-<a name="Badge..tokenSupply"></a>
-
-### Badge~tokenSupply : <code>Number</code>
-Indicates the maximum amount of badges those could be awarded.
-
-**Kind**: inner property of [<code>Badge</code>](#Badge)
-<a name="Badge..isTransferable"></a>
-
-### Badge~isTransferable : <code>Boolean</code>
-A flag to indicate if the badge could be transferred to another user.
-
-**Kind**: inner property of [<code>Badge</code>](#Badge)
-<a name="Badge..isNft"></a>
-
-### Badge~isNft : <code>Boolean</code>
-A flag to indicate if the badge is NFT.
-
-**Kind**: inner property of [<code>Badge</code>](#Badge)
-<a name="Badge..txStatus"></a>
-
-### Badge~txStatus : <code>String</code>
-Ethereum Transaction status.
-
-**Kind**: inner property of [<code>Badge</code>](#Badge)
-<a name="Badge..txHash"></a>
-
-### Badge~txHash : <code>String</code>
-Ethereum Transaction hash.
-
-**Kind**: inner property of [<code>Badge</code>](#Badge)
 <a name="BadgeAward"></a>
 
 ## BadgeAward : <code>object</code>
@@ -430,8 +408,6 @@ BadgeAward model maps to a MongoDB collection and defines the shape of the docum
     * [~badgeType](#BadgeAward..badgeType) : <code>String</code>
     * [~userId](#BadgeAward..userId) : <code>String</code>
     * [~walletId](#BadgeAward..walletId) : <code>String</code>
-    * [~txStatus](#BadgeAward..txStatus) : <code>String</code>
-    * [~txHash](#BadgeAward..txHash) : <code>String</code>
 
 <a name="BadgeAward..badge"></a>
 
@@ -461,18 +437,6 @@ Wallet Id.
 
 **Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)
 **Required**:
-<a name="BadgeAward..txStatus"></a>
-
-### BadgeAward~txStatus : <code>String</code>
-Ethereum Transaction status.
-
-**Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)
-<a name="BadgeAward..txHash"></a>
-
-### BadgeAward~txHash : <code>String</code>
-Ethereum Transaction hash.
-
-**Kind**: inner property of [<code>BadgeAward</code>](#BadgeAward)
 <a name="Blacklist"></a>
 
 ## Blacklist : <code>object</code>
@@ -495,6 +459,107 @@ BlacklistedUsernames model maps to a MongoDB collection and defines the shape of
 | --- |
 | schema |
 
+<a name="BtcDeposit"></a>
+
+## BtcDeposit : <code>object</code>
+BtcDeposit model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace
+
+| Param |
+| --- |
+| schema |
+
+
+* [BtcDeposit](#BtcDeposit) : <code>object</code>
+    * [~status](#BtcDeposit..status) : <code>String</code>
+    * [~nonce](#BtcDeposit..nonce) : <code>String</code>
+    * [~txHash](#BtcDeposit..txHash) : <code>String</code>
+    * [~method](#BtcDeposit..method) : <code>String</code>
+    * [~amount](#BtcDeposit..amount) : <code>Number</code>
+    * [~sender](#BtcDeposit..sender) : <code>String</code>
+    * [~destination](#BtcDeposit..destination) : <code>String</code>
+    * [~gateway](#BtcDeposit..gateway) : <code>String</code>
+    * [~nHash](#BtcDeposit..nHash) : <code>String</code>
+    * [~signature](#BtcDeposit..signature) : <code>String</code>
+    * [~vOut](#BtcDeposit..vOut) : <code>Number</code>
+
+<a name="BtcDeposit..status"></a>
+
+### BtcDeposit~status : <code>String</code>
+The status of the deposit [awaiting, received, submitted].
+
+**Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)
+**Required**:
+<a name="BtcDeposit..nonce"></a>
+
+### BtcDeposit~nonce : <code>String</code>
+The nonce of the deposit.
+
+**Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)
+**Required**:
+<a name="BtcDeposit..txHash"></a>
+
+### BtcDeposit~txHash : <code>String</code>
+Hash of the transaction.
+
+**Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)
+**Required**:
+<a name="BtcDeposit..method"></a>
+
+### BtcDeposit~method : <code>String</code>
+The method [mint, burn].
+
+**Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)
+**Required**:
+<a name="BtcDeposit..amount"></a>
+
+### BtcDeposit~amount : <code>Number</code>
+The transaction amount.
+
+**Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)
+<a name="BtcDeposit..sender"></a>
+
+### BtcDeposit~sender : <code>String</code>
+The sender address.
+
+**Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)
+**Required**:
+<a name="BtcDeposit..destination"></a>
+
+### BtcDeposit~destination : <code>String</code>
+The destination address.
+
+**Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)
+**Required**:
+<a name="BtcDeposit..gateway"></a>
+
+### BtcDeposit~gateway : <code>String</code>
+The gateway address.
+
+**Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)
+**Required**:
+<a name="BtcDeposit..nHash"></a>
+
+### BtcDeposit~nHash : <code>String</code>
+The deposit nhash.
+
+**Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)
+**Required**:
+<a name="BtcDeposit..signature"></a>
+
+### BtcDeposit~signature : <code>String</code>
+The deposit signature.
+
+**Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)
+**Required**:
+<a name="BtcDeposit..vOut"></a>
+
+### BtcDeposit~vOut : <code>Number</code>
+The deposit vOut.
+
+**Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)
+**Required**:
 <a name="Connection"></a>
 
 ## Connection : <code>object</code>
@@ -516,7 +581,6 @@ Connection model maps to a MongoDB collection and defines the shape of the docum
     * [~targetUserId](#Connection..targetUserId) : <code>String</code>
     * [~direction](#Connection..direction) : <code>String</code>
     * [~version](#Connection..version) : <code>String</code>
-
 
 <a name="Connection..userId"></a>
 
@@ -553,24 +617,63 @@ The targetIdentityKey of each connection.
 
 **Kind**: inner property of [<code>Connection</code>](#Connection)
 **Unique**:
-<a name="Connection..targetIdentityKey"></a>
+<a name="Connection..targetUserId"></a>
 
 ### Connection~targetUserId : <code>String</code>
-The targetUserId of each connection.
+The target user identifier.
 
 **Kind**: inner property of [<code>Connection</code>](#Connection)
 <a name="Connection..direction"></a>
 
 ### Connection~direction : <code>String</code>
-The direction of each connection (sent, received).
+The direction of the connection.
 
 **Kind**: inner property of [<code>Connection</code>](#Connection)
 <a name="Connection..version"></a>
 
 ### Connection~version : <code>String</code>
-The version of the connection.
+Connections supoort version.
 
 **Kind**: inner property of [<code>Connection</code>](#Connection)
+<a name="IpfsStorage"></a>
+
+## IpfsStorage : <code>object</code>
+IpfsStorage model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace
+
+| Param |
+| --- |
+| schema |
+
+
+* [IpfsStorage](#IpfsStorage) : <code>object</code>
+    * [~walletId](#IpfsStorage..walletId) : <code>String</code>
+    * [~storageId](#IpfsStorage..storageId) : <code>String</code>
+    * [~secretKey](#IpfsStorage..secretKey) : <code>String</code>
+
+<a name="IpfsStorage..walletId"></a>
+
+### IpfsStorage~walletId : <code>String</code>
+The id of the wallet.
+
+**Kind**: inner property of [<code>IpfsStorage</code>](#IpfsStorage)
+**Required**:
+<a name="IpfsStorage..storageId"></a>
+
+### IpfsStorage~storageId : <code>String</code>
+The id of the IPFS storage.
+
+**Kind**: inner property of [<code>IpfsStorage</code>](#IpfsStorage)
+**Required**:
+**Unique**:
+<a name="IpfsStorage..secretKey"></a>
+
+### IpfsStorage~secretKey : <code>String</code>
+Secret key for the IPFS storage.
+
+**Kind**: inner property of [<code>IpfsStorage</code>](#IpfsStorage)
+**Required**:
 **Unique**:
 <a name="Notification"></a>
 
@@ -728,6 +831,266 @@ Actions related with one notification.
 
 **Kind**: inner property of [<code>NotificationType</code>](#NotificationType)
 **Required**:
+<a name="ReferralCampaign"></a>
+
+## ReferralCampaign : <code>object</code>
+ReferralCampaign model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace
+
+| Param |
+| --- |
+| schema |
+
+
+* [ReferralCampaign](#ReferralCampaign) : <code>object</code>
+    * [~name](#ReferralCampaign..name) : <code>String</code>
+    * [~token](#ReferralCampaign..token) : <code>String</code>
+    * [~contractAddress](#ReferralCampaign..contractAddress) : <code>String</code>
+    * [~wallet](#ReferralCampaign..wallet) : <code>Object</code>
+    * [~logoUrl](#ReferralCampaign..logoUrl) : <code>String</code>
+    * [~badges](#ReferralCampaign..badges) : <code>Boolean</code>
+    * [~isActive](#ReferralCampaign..isActive) : <code>Boolean</code>
+    * [~relatedCampaigns](#ReferralCampaign..relatedCampaigns) : <code>[ &#x27;Array&#x27; ].&lt;String&gt;</code>
+
+<a name="ReferralCampaign..name"></a>
+
+### ReferralCampaign~name : <code>String</code>
+Name of the campaign.
+
+**Kind**: inner property of [<code>ReferralCampaign</code>](#ReferralCampaign)
+**Required**:
+**Unique**:
+<a name="ReferralCampaign..token"></a>
+
+### ReferralCampaign~token : <code>String</code>
+Default token issued for the campaign.
+
+**Kind**: inner property of [<code>ReferralCampaign</code>](#ReferralCampaign)
+**Required**:
+<a name="ReferralCampaign..contractAddress"></a>
+
+### ReferralCampaign~contractAddress : <code>String</code>
+Contract address of the default token.
+
+**Kind**: inner property of [<code>ReferralCampaign</code>](#ReferralCampaign)
+**Required**:
+<a name="ReferralCampaign..wallet"></a>
+
+### ReferralCampaign~wallet : <code>Object</code>
+The reward wallet.
+
+**Kind**: inner property of [<code>ReferralCampaign</code>](#ReferralCampaign)
+**Required**:
+<a name="ReferralCampaign..logoUrl"></a>
+
+### ReferralCampaign~logoUrl : <code>String</code>
+Logo URL to S3.
+
+**Kind**: inner property of [<code>ReferralCampaign</code>](#ReferralCampaign)
+<a name="ReferralCampaign..badges"></a>
+
+### ReferralCampaign~badges : <code>Boolean</code>
+Flag indicating if the campaign should issue badges.
+
+**Kind**: inner property of [<code>ReferralCampaign</code>](#ReferralCampaign)
+<a name="ReferralCampaign..isActive"></a>
+
+### ReferralCampaign~isActive : <code>Boolean</code>
+Flag indicating if the campaign is active.
+
+**Kind**: inner property of [<code>ReferralCampaign</code>](#ReferralCampaign)
+<a name="ReferralCampaign..relatedCampaigns"></a>
+
+### ReferralCampaign~relatedCampaigns : <code>[ &#x27;Array&#x27; ].&lt;String&gt;</code>
+An array of related campaigns.
+
+**Kind**: inner property of [<code>ReferralCampaign</code>](#ReferralCampaign)
+<a name="ReferralDevice"></a>
+
+## ReferralDevice : <code>object</code>
+ReferralDevice model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace
+
+| Param |
+| --- |
+| schema |
+
+
+* [ReferralDevice](#ReferralDevice) : <code>object</code>
+    * [~deviceInfo](#ReferralDevice..deviceInfo) : <code>String</code>
+    * [~deviceOs](#ReferralDevice..deviceOs) : <code>String</code>
+    * [~firstInstall](#ReferralDevice..firstInstall) : <code>String</code>
+
+<a name="ReferralDevice..deviceInfo"></a>
+
+### ReferralDevice~deviceInfo : <code>String</code>
+Device info stored as checksum.
+
+**Kind**: inner property of [<code>ReferralDevice</code>](#ReferralDevice)
+**Unique**:
+**Required**:
+<a name="ReferralDevice..deviceOs"></a>
+
+### ReferralDevice~deviceOs : <code>String</code>
+Device OS.
+
+**Kind**: inner property of [<code>ReferralDevice</code>](#ReferralDevice)
+**Required**:
+<a name="ReferralDevice..firstInstall"></a>
+
+### ReferralDevice~firstInstall : <code>String</code>
+Flag for first install.
+
+**Kind**: inner property of [<code>ReferralDevice</code>](#ReferralDevice)
+**Required**:
+<a name="ReferralInvitation"></a>
+
+## ReferralInvitation : <code>object</code>
+ReferralInvitation model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace
+
+| Param |
+| --- |
+| schema |
+
+
+* [ReferralInvitation](#ReferralInvitation) : <code>object</code>
+    * [~amount](#ReferralInvitation..amount) : <code>Number</code>
+    * [~userId](#ReferralInvitation..userId) : <code>String</code>
+    * [~email](#ReferralInvitation..email) : <code>String</code>
+    * [~phone](#ReferralInvitation..phone) : <code>String</code>
+    * [~claimed](#ReferralInvitation..claimed) : <code>Boolean</code>
+    * [~invitedUserId](#ReferralInvitation..invitedUserId) : <code>String</code>
+    * [~token](#ReferralInvitation..token) : <code>String</code>
+    * [~partner](#ReferralInvitation..partner) : <code>Boolean</code>
+    * [~campaign](#ReferralInvitation..campaign) : <code>String</code>
+    * [~amount](#ReferralInvitation..amount) : <code>Number</code>
+    * [~notified](#ReferralInvitation..notified) : <code>Boolean</code>
+
+<a name="ReferralInvitation..amount"></a>
+
+### ReferralInvitation~amount : <code>Number</code>
+Default amount to reward.
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+<a name="ReferralInvitation..userId"></a>
+
+### ReferralInvitation~userId : <code>String</code>
+The user identifier of the inviter.
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+**Required**:
+<a name="ReferralInvitation..email"></a>
+
+### ReferralInvitation~email : <code>String</code>
+Email of the invited person.
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+<a name="ReferralInvitation..phone"></a>
+
+### ReferralInvitation~phone : <code>String</code>
+Phone of the invited person.
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+<a name="ReferralInvitation..claimed"></a>
+
+### ReferralInvitation~claimed : <code>Boolean</code>
+Flag indicating if the user claimed the reward.
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+<a name="ReferralInvitation..invitedUserId"></a>
+
+### ReferralInvitation~invitedUserId : <code>String</code>
+The user identifier of the invited user.
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+<a name="ReferralInvitation..token"></a>
+
+### ReferralInvitation~token : <code>String</code>
+Token generated by Platform-Core API, to validate Branch.io webhooks.
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+**Required**:
+<a name="ReferralInvitation..partner"></a>
+
+### ReferralInvitation~partner : <code>Boolean</code>
+Flag indicating if it is a partner campaign.
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+<a name="ReferralInvitation..campaign"></a>
+
+### ReferralInvitation~campaign : <code>String</code>
+The campaign identifier.
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+<a name="ReferralInvitation..amount"></a>
+
+### ReferralInvitation~amount : <code>Number</code>
+The amount to reward.
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+<a name="ReferralInvitation..notified"></a>
+
+### ReferralInvitation~notified : <code>Boolean</code>
+Flag indicating if the user has been notified when the campaign has been terminated.
+
+**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
+<a name="ReferralTransaction"></a>
+
+## ReferralTransaction : <code>object</code>
+ReferralTransaction model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace
+
+| Param |
+| --- |
+| schema |
+
+
+* [ReferralTransaction](#ReferralTransaction) : <code>object</code>
+    * [~name](#ReferralTransaction..name) : <code>String</code>
+    * [~ethAddress](#ReferralTransaction..ethAddress) : <code>String</code>
+    * [~txHash](#ReferralTransaction..txHash) : <code>String</code>
+    * [~amount](#ReferralTransaction..amount) : <code>Number</code>
+    * [~asset](#ReferralTransaction..asset) : <code>String</code>
+
+<a name="ReferralTransaction..name"></a>
+
+### ReferralTransaction~name : <code>String</code>
+The status of the transaction [confirmed, failed].
+
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
+**Required**:
+<a name="ReferralTransaction..ethAddress"></a>
+
+### ReferralTransaction~ethAddress : <code>String</code>
+Address of the user to be rewarded.
+
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
+**Required**:
+<a name="ReferralTransaction..txHash"></a>
+
+### ReferralTransaction~txHash : <code>String</code>
+Hash of the transaction.
+
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
+**Required**:
+<a name="ReferralTransaction..amount"></a>
+
+### ReferralTransaction~amount : <code>Number</code>
+The amount of PLR for the reward.
+
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
+**Required**:
+<a name="ReferralTransaction..asset"></a>
+
+### ReferralTransaction~asset : <code>String</code>
+Asset symbol.
+
+**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
 <a name="Register"></a>
 
 ## Register : <code>object</code>
@@ -783,6 +1146,143 @@ A random unique identifier used for the registration process
 The ID of a wallet that's created as part of the registration flow
 
 **Kind**: inner property of [<code>Register</code>](#Register)
+<a name="Story"></a>
+
+## Story : <code>object</code>
+Story model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace
+
+| Param |
+| --- |
+| schema |
+
+
+* [Story](#Story) : <code>object</code>
+    * [~shortTitle](#Story..shortTitle) : <code>String</code>
+    * [~imageUrl](#Story..imageUrl) : <code>String</code>
+    * [~imageMonoUrl](#Story..imageMonoUrl) : <code>String</code>
+    * [~active](#Story..active) : <code>Boolean</code>
+    * [~topic](#Story..topic) : <code>String</code>
+    * [~title](#Story..title) : <code>String</code>
+    * [~likes](#Story..likes) : <code>Number</code>
+
+<a name="Story..shortTitle"></a>
+
+### Story~shortTitle : <code>String</code>
+Short title of the story.
+
+**Kind**: inner property of [<code>Story</code>](#Story)
+**Required**:
+<a name="Story..imageUrl"></a>
+
+### Story~imageUrl : <code>String</code>
+The story's preview image.
+
+**Kind**: inner property of [<code>Story</code>](#Story)
+<a name="Story..imageMonoUrl"></a>
+
+### Story~imageMonoUrl : <code>String</code>
+The story's preview mono image.
+
+**Kind**: inner property of [<code>Story</code>](#Story)
+<a name="Story..active"></a>
+
+### Story~active : <code>Boolean</code>
+Flag to enable/disable the story preview.
+
+**Kind**: inner property of [<code>Story</code>](#Story)
+<a name="Story..topic"></a>
+
+### Story~topic : <code>String</code>
+Topic for the story page.
+
+**Kind**: inner property of [<code>Story</code>](#Story)
+**Required**:
+<a name="Story..title"></a>
+
+### Story~title : <code>String</code>
+Title of the story page.
+
+**Kind**: inner property of [<code>Story</code>](#Story)
+**Required**:
+<a name="Story..likes"></a>
+
+### Story~likes : <code>Number</code>
+Counter for the likes of a story page.
+
+**Kind**: inner property of [<code>Story</code>](#Story)
+<a name="StoryPage"></a>
+
+## StoryPage : <code>object</code>
+StoryPage model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace
+
+| Param |
+| --- |
+| schema |
+
+
+* [StoryPage](#StoryPage) : <code>object</code>
+    * [~storyId](#StoryPage..storyId) : <code>String</code>
+    * [~pageNumber](#StoryPage..pageNumber) : <code>Number</code>
+    * [~body](#StoryPage..body) : <code>String</code>
+    * [~imageUrl](#StoryPage..imageUrl) : <code>String</code>
+    * [~imageMonoUrl](#StoryPage..imageMonoUrl) : <code>String</code>
+    * [~layoutType](#StoryPage..layoutType) : <code>String</code>
+    * [~backgroundColor](#StoryPage..backgroundColor) : <code>String</code>
+    * [~textContrast](#StoryPage..textContrast) : <code>String</code>
+
+<a name="StoryPage..storyId"></a>
+
+### StoryPage~storyId : <code>String</code>
+ID of the story to which the page belongs.
+
+**Kind**: inner property of [<code>StoryPage</code>](#StoryPage)
+<a name="StoryPage..pageNumber"></a>
+
+### StoryPage~pageNumber : <code>Number</code>
+Number of the page in a story.
+
+**Kind**: inner property of [<code>StoryPage</code>](#StoryPage)
+<a name="StoryPage..body"></a>
+
+### StoryPage~body : <code>String</code>
+Body text of the story page.
+
+**Kind**: inner property of [<code>StoryPage</code>](#StoryPage)
+<a name="StoryPage..imageUrl"></a>
+
+### StoryPage~imageUrl : <code>String</code>
+The story's uploaded image.
+
+**Kind**: inner property of [<code>StoryPage</code>](#StoryPage)
+<a name="StoryPage..imageMonoUrl"></a>
+
+### StoryPage~imageMonoUrl : <code>String</code>
+The story's uploaded mono image.
+
+**Kind**: inner property of [<code>StoryPage</code>](#StoryPage)
+<a name="StoryPage..layoutType"></a>
+
+### StoryPage~layoutType : <code>String</code>
+Predefined layout type for the story page.
+
+**Kind**: inner property of [<code>StoryPage</code>](#StoryPage)
+**Required**:
+<a name="StoryPage..backgroundColor"></a>
+
+### StoryPage~backgroundColor : <code>String</code>
+Background color value.
+
+**Kind**: inner property of [<code>StoryPage</code>](#StoryPage)
+<a name="StoryPage..textContrast"></a>
+
+### StoryPage~textContrast : <code>String</code>
+Text Contrast.
+
+**Kind**: inner property of [<code>StoryPage</code>](#StoryPage)
 <a name="User"></a>
 
 ## User : <code>object</code>
@@ -819,18 +1319,12 @@ User model maps to a MongoDB collection and defines the shape of the document.
     * [~status](#User..status) : <code>String</code>
     * [~secretId](#User..secretId) : <code>String</code>
     * [~betaProgramParticipant](#User..betaProgramParticipant) : <code>Boolean</code>
+    * [~lastSeen](#User..lastSeen) : <code>Date</code>
 
 <a name="User..userId"></a>
 
 ### User~userId : <code>String</code>
 The user identifier.
-
-**Kind**: inner property of [<code>User</code>](#User)
-**Required**:
-<a name="User..secretId"></a>
-
-### User~secretId : <code>String</code>
-The user secret identifier.
 
 **Kind**: inner property of [<code>User</code>](#User)
 **Required**:
@@ -957,12 +1451,62 @@ Information related to the user's account with a service provider for ICOs.
 The user status in the system.
 
 **Kind**: inner property of [<code>User</code>](#User)
+<a name="User..secretId"></a>
+
+### User~secretId : <code>String</code>
+The user secretId.
+
+**Kind**: inner property of [<code>User</code>](#User)
+**Required**:
 <a name="User..betaProgramParticipant"></a>
 
 ### User~betaProgramParticipant : <code>Boolean</code>
-One flag to check if user is beta program participant
+One flag to check if user is beta program participant.
 
 **Kind**: inner property of [<code>User</code>](#User)
+<a name="User..lastSeen"></a>
+
+### User~lastSeen : <code>Date</code>
+A timestamp with user last activity
+
+**Kind**: inner property of [<code>User</code>](#User)
+<a name="UserFeatureFlags"></a>
+
+## UserFeatureFlags : <code>object</code>
+UserFeatureFlags model maps to a MongoDB collection and defines the shape of the document.
+
+**Kind**: global namespace
+
+| Param |
+| --- |
+| schema |
+
+
+* [UserFeatureFlags](#UserFeatureFlags) : <code>object</code>
+    * [~userId](#UserFeatureFlags..userId) : <code>String</code>
+    * [~smartWallet](#UserFeatureFlags..smartWallet) : <code>Boolean</code>
+    * [~bitcoin](#UserFeatureFlags..bitcoin) : <code>Boolean</code>
+
+<a name="UserFeatureFlags..userId"></a>
+
+### UserFeatureFlags~userId : <code>String</code>
+The user identifier.
+
+**Kind**: inner property of [<code>UserFeatureFlags</code>](#UserFeatureFlags)
+**Required**:
+**Unique**:
+<a name="UserFeatureFlags..smartWallet"></a>
+
+### UserFeatureFlags~smartWallet : <code>Boolean</code>
+One flag for Smart Wallet support.
+
+**Kind**: inner property of [<code>UserFeatureFlags</code>](#UserFeatureFlags)
+<a name="UserFeatureFlags..bitcoin"></a>
+
+### UserFeatureFlags~bitcoin : <code>Boolean</code>
+One flag for Bitcoin support.
+
+**Kind**: inner property of [<code>UserFeatureFlags</code>](#UserFeatureFlags)
 <a name="Wallet"></a>
 
 ## Wallet : <code>object</code>
@@ -983,7 +1527,7 @@ Wallet model maps to a MongoDB collection and defines the shape of the document.
     * [~signalRegistrationId](#Wallet..signalRegistrationId) : <code>String</code>
     * [~bcxRegistered](#Wallet..bcxRegistered) : <code>Boolean</code>
     * [~blocknativeRegistered](#Wallet..blocknativeRegistered) : <code>Boolean</code>
-    * [~type](#Wallet..tpye) : <code>String</code>
+    * [~type](#Wallet..type) : <code>String</code>
     * [~disabled](#Wallet..disabled) : <code>Boolean</code>
     * [~recovery](#Wallet..recovery) : <code>Boolean</code>
 
@@ -1036,235 +1580,20 @@ One flag to check Blocknative address registration.
 <a name="Wallet..type"></a>
 
 ### Wallet~type : <code>String</code>
-The type of the wallet. KEY_BASED or SMART_WALLET
+The type of the wallet.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)
 <a name="Wallet..disabled"></a>
 
-### Wallet~disabled : <code>Disabled</code>
+### Wallet~disabled : <code>Boolean</code>
 A flag indicating if the wallet is disabled or not.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)
 **Required**:
 <a name="Wallet..recovery"></a>
 
-### Wallet~recovery : <code>Recovery</code>
+### Wallet~recovery : <code>Boolean</code>
 A flag indicating if the wallet is recovery wallet or not.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)
 **Required**:
-
-<a name="UserFeatureFlags"></a>
-
-## UserFeatureFlags : <code>object</code>
-UserFeatureFlags model maps to a MongoDB collection and defines the shape of the document.
-
-**Kind**: global namespace
-
-| Param |
-| --- |
-| schema |
-
-
-* [UserFeatureFlags](#UserFeatureFlags) : <code>object</code>
-    * [~userId](#UserFeatureFlags..userId) : <code>String</code>
-    * [~smartWallet](#UserFeatureFlags..smartWallet) : <code>Boolean</code>
-    * [~btc](#UserFeatureFlags..btc) : <code>Boolean</code>
-
-<a name="UserFeatureFlags..userId"></a>
-
-### UserFeatureFlags~userId : <code>String</code>
-The user identifier.
-
-**Kind**: inner property of [<code>User</code>](#User)
-**Required**
-<a name="UserFeatureFlags..smartWallet"></a>
-
-### UserFeatureFlags~smartWallet : <code>Boolean</code>
-One flag for Smart Wallet support
-
-**Kind**: inner property of [<code>UserFeatureFlags</code>](#UserFeatureFlags)
-<a name="UserFeatureFlags..btc"></a>
-
-### UserFeatureFlags~btc : <code>Boolean</code>
-One flag for Bitcoin support.
-
-**Kind**: inner property of [<code>UserFeatureFlags</code>](#UserFeatureFlags)
-<a name="UserFeatureFlags..btc"></a>
-<a name="ReferralTransaction"></a>
-
-## ReferralDevice : <code>object</code>
-ReferralDevice model maps to a MongoDB collection and defines the shape of the document.
-
-**Kind**: global namespace
-
-| Param |
-| --- |
-| schema |
-
-
-* [ReferralDevice](#ReferralDevice) : <code>object</code>
-    * [~deviceInfo](#ReferralDevice..deviceInfo) : <code>String</code>
-    * [~deviceOs](#ReferralDevice..deviceOs) : <code>String</code>
-    * [~firstInstall](#ReferralDevice..firstInstall) : <code>Boolean</code>
-    * [~userId](#ReferralDevice..userId) : <code>String</code>
-    * [~ethAddress](#ReferralDevice..ethAddress) : <code>String</code>
-
-<a name="ReferralDevice..deviceInfo"></a>
-
-### ReferralDevice~deviceInfo : <code>String</code>
-Device info stored as checksum.
-
-**Kind**: inner property of [<code>ReferralDevice</code>](#ReferralDevice)
-**Unique**:
-**Required**
-<a name="ReferralDevice..deviceOs"></a>
-
-### ReferralDevice~deviceOs : <code>String</code>
-Device OS.
-
-**Kind**: inner property of [<code>ReferralDevice</code>](#ReferralDevice)
-**Required**
-<a name="ReferralDevice..firstInstall"></a>
-
-### ReferralDevice~firstInstall : <code>Boolean</code>
-Flag for first install.
-
-**Kind**: inner property of [<code>ReferralDevice</code>](#ReferralDevice)
-**Required**
-
-## ReferralTransaction : <code>object</code>
-ReferralTransaction model maps to a MongoDB collection and defines the shape of the document.
-
-**Kind**: global namespace
-
-| Param |
-| --- |
-| schema |
-
-
-* [ReferralTransaction](#ReferralTransaction) : <code>object</code>
-    * [~status](#ReferralTransaction..status) : <code>String</code>
-    * [~ethAddress](#ReferralTransaction..ethAddress) : <code>String</code>
-    * [~txHash](#ReferralTransaction..txHash) : <code>String</code>
-    * [~amount](#ReferralTransaction..amount) : <code>Number</code>
-    * [~asset](#ReferralTransaction..asset) : <code>String</code>
-
-<a name="ReferralTransaction..status"></a>
-
-### ReferralTransaction~status : <code>String</code>
-The status of the transaction [Success, Error]
-
-**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
-**Required**
-<a name="ReferralTransaction..ethAddress"></a>
-
-### ReferralTransaction~ethAddress : <code>String</code>
-Address of the user to be rewarded
-
-**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
-**Required**
-<a name="ReferralTransaction..txHash"></a>
-
-### ReferralTransaction~txHash : <code>String</code>
-Hash of the transaction
-
-**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
-<a name="ReferralTransaction..amount"></a>
-
-### ReferralTransaction~amount : <code>Number</code>
-The amount of PLR for the reward
-
-**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
-**Required**
-<a name="ReferralTransaction..asset"></a>
-
-### ReferralTransaction~asset : <code>String</code>
-Asset symbol
-
-**Kind**: inner property of [<code>ReferralTransaction</code>](#ReferralTransaction)
-**Required**
-
-## ReferralInvitation : <code>object</code>
-ReferralInvitation model maps to a MongoDB collection and defines the shape of the document.
-
-**Kind**: global namespace
-
-| Param |
-| --- |
-| schema |
-
-
-* [ReferralInvitation](#ReferralInvitation) : <code>object</code>
-    * [~userId](#ReferralInvitation..userId) : <code>String</code>
-    * [~email](#ReferralInvitation..email) : <code>String</code>
-    * [~phone](#ReferralInvitation..phone) : <code>String</code>
-    * [~claimed](#ReferralInvitation..claimed) : <code>Boolean</code>
-    * [~invitedUserId](#ReferralInvitation..invitedUserId) : <code>String</code>
-    * [~token](#ReferralInvitation..token) : <code>String</code>
-    * [~partner](#ReferralInvitation..partner) : <code>Boolean</code>
-    * [~campaign](#ReferralInvitation..campaign) : <code>String</code>
-    * [~amount](#ReferralInvitation..amount) : <code>Number</code>
-    * [~notified](#ReferralInvitation..notified) : <code>Boolean</code>
-
-<a name="ReferralInvitation..userId"></a>
-
-### ReferralInvitation~userId : <code>String</code>
-The user identifier of the inviter
-
-**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
-<a name="ReferralInvitation..email"></a>
-
-### ReferralInvitation~email : <code>String</code>
-Email of the invited person
-
-**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
-<a name="ReferralInvitation..phone"></a>
-
-### ReferralInvitation~phone : <code>String</code>
-Phone of the invited person
-
-**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
-<a name="ReferralInvitation..claimed"></a>
-
-### ReferralInvitation~claimed : <code>Boolean</code>
-Flag indicating if the user claimed the reward
-
-**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
-<a name="ReferralInvitation..invitedUserId"></a>
-
-### ReferralInvitation~invitedUserId : <code>String</code>
-The user identifier of the invited user
-
-**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
-<a name="ReferralInvitation..token"></a>
-
-### ReferralInvitation~token : <code>String</code>
-Token generated by Platform-Core API, to validate Branch.io webhooks
-
-**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
-**Required**
-<a name="ReferralInvitation..partner"></a>
-
-### ReferralInvitation~partner : <code>Boolean</code>
-Flag indicating if it is a partner campaign.
-
-**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
-<a name="ReferralInvitation..campaign"></a>
-
-### ReferralInvitation~campaign : <code>String</code>
-The campaign identifier.
-
-**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
-<a name="ReferralInvitation..amount"></a>
-
-### ReferralInvitation~amount : <code>Number</code>
-The amount to reward.
-
-**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
-<a name="ReferralInvitation..notified"></a>
-
-### ReferralInvitation~notified : <code>Boolean</code>
-Flag indicating if the user has been notified when the campaign has been terminated.
-
-**Kind**: inner property of [<code>ReferralInvitation</code>](#ReferralInvitation)
