@@ -556,7 +556,7 @@ The deposit signature.
 <a name="BtcDeposit..vOut"></a>
 
 ### BtcDeposit~vOut : <code>Number</code>
-The deposit signature.
+The deposit vOut.
 
 **Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)
 **Required**:
