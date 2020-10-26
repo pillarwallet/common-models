@@ -65,7 +65,9 @@ describe('BtcDeposit model', () => {
     expect(deposit.validateSync).toThrow();
 
     const { errors } = deposit.validateSync();
-    expect(errors.destination.message).toMatch('Path `destination` is required.');
+    expect(errors.destination.message).toMatch(
+      'Path `destination` is required.',
+    );
     expect(errors.sender.message).toMatch('Path `sender` is required.');
     expect(errors.amount.message).toMatch('Path `amount` is required.');
     expect(errors.method.message).toMatch('Path `method` is required.');
