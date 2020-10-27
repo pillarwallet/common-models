@@ -23,6 +23,7 @@ describe('BtcDeposit model', () => {
       nHash: '0x123',
       signature: '0x123',
       vOut: 1,
+      confirmations: 0,
     };
     const deposit = new BtcDeposit(depositObject);
 
@@ -59,6 +60,7 @@ describe('BtcDeposit model', () => {
       nHash: null,
       signature: null,
       vOut: null,
+      confirmations: null,
     });
   });
 

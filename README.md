@@ -494,6 +494,7 @@ BtcDeposit model maps to a MongoDB collection and defines the shape of the docum
     * [~nHash](#BtcDeposit..nHash) : <code>String</code>
     * [~signature](#BtcDeposit..signature) : <code>String</code>
     * [~vOut](#BtcDeposit..vOut) : <code>Number</code>
+    * [~confirmations](#BtcDeposit..confirmations) : <code>Number</code>
 
 <a name="BtcDeposit..status"></a>
 
@@ -580,6 +581,13 @@ The deposit signature.
 
 ### BtcDeposit~vOut : <code>Number</code>
 The deposit vOut.
+
+**Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)  
+**Required**:   
+<a name="BtcDeposit..confirmations"></a>
+
+### BtcDeposit~confirmations : <code>Number</code>
+The number of confirmations.
 
 **Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)  
 **Required**:   
