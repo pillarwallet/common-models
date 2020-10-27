@@ -15,6 +15,8 @@ describe('BtcDeposit model', () => {
       txHash: '0x123',
       method: 'mint',
       amount: 1,
+      exchangeRate: 1,
+      slippage: 1e-4,
       sender: '0x123',
       destination: '0x123',
       gateway: 'abc',
@@ -36,6 +38,8 @@ describe('BtcDeposit model', () => {
       nonce: '123',
       method: 'mint',
       amount: 1,
+      exchangeRate: 1,
+      slippage: 1e-4,
       sender: '0x123',
       destination: '0x123',
     };
@@ -68,8 +72,12 @@ describe('BtcDeposit model', () => {
     expect(errors.destination.message).toMatch(
       'Path `destination` is required.',
     );
+    expect(errors.exchangeRate.message).toMatch(
+      'Path `exchangeRate` is required.',
+    );
     expect(errors.sender.message).toMatch('Path `sender` is required.');
     expect(errors.amount.message).toMatch('Path `amount` is required.');
+    expect(errors.slippage.message).toMatch('Path `slippage` is required.');
     expect(errors.method.message).toMatch('Path `method` is required.');
     expect(errors.nonce.message).toMatch('Path `nonce` is required.');
     expect(errors.status.message).toMatch('Path `status` is required.');
