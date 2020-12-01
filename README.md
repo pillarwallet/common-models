@@ -484,6 +484,7 @@ BtcDeposit model maps to a MongoDB collection and defines the shape of the docum
     * [~status](#BtcDeposit..status) : <code>String</code>
     * [~nonce](#BtcDeposit..nonce) : <code>String</code>
     * [~txHash](#BtcDeposit..txHash) : <code>String</code>
+    * [~ethereumTxHash](#BtcDeposit..ethereumTxHash) : <code>String</code>
     * [~method](#BtcDeposit..method) : <code>String</code>
     * [~amount](#BtcDeposit..amount) : <code>Number</code>
     * [~exchangeRate](#BtcDeposit..exchangeRate) : <code>Number</code>
@@ -514,6 +515,13 @@ The nonce of the deposit.
 
 ### BtcDeposit~txHash : <code>String</code>
 Hash of the transaction.
+
+**Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)  
+**Required**:   
+<a name="BtcDeposit..ethereumTxHash"></a>
+
+### BtcDeposit~ethereumTxHash : <code>String</code>
+Hash of the ethereum transaction.
 
 **Kind**: inner property of [<code>BtcDeposit</code>](#BtcDeposit)  
 **Required**:   
