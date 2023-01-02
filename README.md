@@ -1620,3 +1620,4 @@ A flag indicating if the wallet is recovery wallet or not.
 
 **Kind**: inner property of [<code>Wallet</code>](#Wallet)  
 **Required**:   
+test
